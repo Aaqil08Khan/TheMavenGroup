@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap');
+@import "tailwindcss";
+
+
+:root {
+  --navy: #0B1C2D;
+  --navy-light: #112338;
+  --navy-mid: #0D2137;
+  --blue-royal: #1A56DB;
+  --blue-electric: #3B82F6;
+  --blue-bright: #60A5FA;
+  --teal: #0D9488;
+  --cyan: #22D3EE;
+  --purple: #7C3AED;
+  --purple-soft: #A78BFA;
+  --gold: #F59E0B;
+  --gold-soft: #FCD34D;
+  --white: #F8FAFC;
+  --text-muted: #94A3B8;
+  --glass-bg: rgba(255, 255, 255, 0.04);
+  --glass-border: rgba(255, 255, 255, 0.08);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--navy);
+  color: var(--white);
+  font-family: 'DM Sans', sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Syne', sans-serif;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--navy);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--blue-royal);
+  border-radius: 3px;
+}
+
+/* Reusable utility classes */
+.glass {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(12px);
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, var(--blue-electric), var(--cyan));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.glow-blue {
+  box-shadow: 0 0 30px rgba(59, 130, 246, 0.3);
+}
+
+.section-padding {
+  padding: 100px 0;
+}
+
+/* Gradient backgrounds */
+.bg-radial-navy {
+  background: radial-gradient(ellipse at 50% 0%, #112338 0%, #0B1C2D 70%);
+}
+
+.bg-radial-blue {
+  background: radial-gradient(ellipse at 50% 0%, #0D2137 0%, #0B1C2D 70%);
+}
