@@ -38,7 +38,7 @@ function Counter({ to, suffix = '', prefix = '', duration = 1600, inView }) {
 const PILLARS = [
   {
     icon: '◈', color: '#3B82F6',
-    title: 'Capital Preservation First',
+    title: 'Risk Preservation First',
     desc: 'We never risk what we cannot afford to lose. Every allocation starts with a downside scenario before we model upside. Preservation is not a constraint — it is the strategy.',
   },
   {
@@ -142,7 +142,7 @@ const PARTNER_TYPES = [
   },
   {
     type: 'Family Offices',
-    desc: 'Multi-generational wealth structures looking for a cross-border operating group that aligns capital with business-building, not just financial returns.',
+    desc: 'Multi-generational wealth structures looking for a cross-border operating group that aligns strategy with business-building, not just financial returns.',
     min: 'By discussion',
     color: '#22D3EE',
     icon: '⬡',
@@ -275,7 +275,7 @@ export default function Investors() {
               transition:'all .7s ease .45s',
             }}>
               TMG is a long-horizon holding group. We do not chase quarters.
-              We build verticals, deploy capital with conviction, and create
+              We build verticals, build with conviction, and create
               compounding value across India and the Gulf.
             </p>
 
@@ -334,11 +334,11 @@ export default function Investors() {
                 color:'#F8FAFC', lineHeight:'1.55', marginBottom:'28px',
                 borderLeft:'3px solid #3B82F6', paddingLeft:'20px',
               }}>
-                "We are not traders. We are builders who understand capital."
+                "We are not traders. We are builders who understand execution."
               </blockquote>
 
               <p style={{ fontFamily:'DM Sans, sans-serif', fontSize:'14px', color:'#94A3B8', lineHeight:'1.8', marginBottom:'28px' }}>
-                Every rupee and riyal we deploy is backed by a business thesis — not a price target.
+                Every move we make is backed by a business thesis — not short-term targets.
                 We invest in markets we operate in, and we operate in markets we understand deeply.
               </p>
 
@@ -398,7 +398,7 @@ export default function Investors() {
           <div style={{ display:'flex', alignItems:'center', gap:'12px', marginBottom:'20px' }}>
             <div style={{ width:'32px', height:'2px', background:'linear-gradient(90deg,#3B82F6,#22D3EE)' }}/>
             <span style={{ color:'#22D3EE', fontSize:'12px', fontWeight:'600', letterSpacing:'3px', textTransform:'uppercase', fontFamily:'DM Sans, sans-serif' }}>
-              Capital Philosophy
+              Operating Philosophy
             </span>
           </div>
           <h2 style={{ fontFamily:'Syne, sans-serif', fontSize:'clamp(26px,4vw,42px)', fontWeight:'800', color:'#F8FAFC', marginBottom:'64px', maxWidth:'500px' }}>
@@ -563,7 +563,7 @@ export default function Investors() {
                 </span>
               </h2>
               <p style={{ fontFamily:'DM Sans, sans-serif', fontSize:'15px', color:'#94A3B8', lineHeight:'1.9', marginBottom:'32px' }}>
-                Governance at TMG is not a checkbox. It is how we earn and keep the trust of every person whose capital or partnership we hold.
+                Governance at TMG is not a checkbox. It is how we earn and keep the trust of every person whose partnership we hold.
               </p>
               {/* Visual governance diagram — concentric rings */}
               <div style={{ position:'relative', height:'220px', display:'flex', alignItems:'center', justifyContent:'center' }}>

@@ -26,7 +26,7 @@ const lines = [
   'built on one conviction: that the most valuable enterprises',
   'are those that create real impact across real borders.',
   '',
-  'Founded with capital deployed across Indian markets,',
+  'Founded with execution across Indian markets,',
   'Gulf infrastructure, and AI-driven technology —',
   'we operate where others see complexity.',
   '',
@@ -298,7 +298,7 @@ export default function About() {
                 { num: '2024', label: 'Year Founded', color: '#3B82F6' },
                 { num: '4', label: 'Business Verticals', color: '#22D3EE' },
                 { num: '3+', label: 'Active Markets', color: '#A78BFA' },
-                { num: '₹1.9Cr', label: 'Capital Deployed', color: '#F59E0B' },
+                { num: '4+', label: 'Active Verticals', color: '#F59E0B' },
               ].map((item, i) => (
                 <div key={i} style={{
                   padding: '16px',

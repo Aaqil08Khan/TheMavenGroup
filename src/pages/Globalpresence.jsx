@@ -230,7 +230,7 @@ export default function GlobalPresence() {
             transition:'all .7s ease .5s',
           }}>
             From South Asia to the Gulf — TMG operates where opportunity meets discipline.
-            Capital, technology, and people working across borders.
+            Technology and people working across borders.
           </p>
         </div>
       </section>

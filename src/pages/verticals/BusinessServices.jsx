@@ -87,7 +87,7 @@ const SERVICES = [
   {
     icon: '⬢',
     title: 'Cross-Border Structuring',
-    desc: 'Capital structuring and entity formation across India, UAE, and KSA for smooth cross-border investment flows.',
+    desc: 'Entity structuring and formation across India, UAE, and KSA for smooth cross-border investment flows.',
     tags: ['India', 'KSA', 'UAE'],
     color: '#F59E0B',
   },
@@ -108,7 +108,7 @@ const TEAM = [
     initials: 'TM',
     name: 'The Maven',
     role: 'Group Founder & Principal',
-    desc: 'Drives overall group strategy and capital allocation philosophy across all verticals.',
+    desc: 'Drives overall group strategy and operating philosophy across all verticals.',
     color: '#3B82F6',
   },
   {
@@ -253,7 +253,7 @@ export default function BusinessServices() {
               opacity: visible?1:0, transform: visible?'translateY(0)':'translateY(30px)',
               transition: 'all .7s ease .2s',
             }}>
-              Where Capital Meets
+              Where Strategy Meets
             </h1>
             <h1 style={{
               fontFamily: 'Syne, sans-serif', fontSize: 'clamp(2.2rem,4.5vw,3.6rem)',
@@ -717,7 +717,7 @@ export default function BusinessServices() {
                 </span>
               </h2>
               <p style={{ fontFamily:'DM Sans, sans-serif', fontSize:'15px', color:'#94A3B8', lineHeight:'1.9', marginBottom:'36px' }}>
-                Maven Business Services operates on a simple mandate: protect capital first,
+                Maven Business Services operates on a simple mandate: protect the downside first,
                 grow it second. Every decision passes through a disciplined risk-review process
                 before execution.
               </p>
@@ -726,7 +726,7 @@ export default function BusinessServices() {
                 { icon:'◈', title:'Risk-First Framework',    desc:'Every allocation reviewed against downside before upside.',       color:'#3B82F6' },
                 { icon:'⬡', title:'Transparent Reporting',   desc:'Regular performance updates with no hidden fees or ambiguity.',   color:'#22D3EE' },
                 { icon:'◉', title:'Independent Oversight',   desc:'External advisory input on all positions above threshold size.',  color:'#A78BFA' },
-                { icon:'⬢', title:'Ethical Capital Mandate', desc:'No leverage without consent. No speculation beyond mandate.',     color:'#F59E0B' },
+                { icon:'⬢', title:'Ethical Operating Mandate', desc:'No leverage without consent. No speculation beyond mandate.',     color:'#F59E0B' },
               ].map((p, i) => (
                 <div key={i} style={{
                   display:'flex', gap:'16px', marginBottom:'20px',

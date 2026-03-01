@@ -68,7 +68,7 @@ const compliance = [
 
 const contractModels = [
   { label: 'EPC Contracts', color: '#3B82F6', desc: 'Engineering, Procurement & Construction' },
-  { label: 'Lump Sum', color: '#22D3EE', desc: 'Fixed price turnkey delivery' },
+  { label: 'Lump Sum', color: '#22D3EE', desc: 'Fixed-scope turnkey delivery' },
   { label: 'Unit Rate', color: '#F59E0B', desc: 'Measurable unit-based billing' },
   { label: 'Manpower Supply', color: '#A78BFA', desc: 'Skilled workforce deployment' },
 ]
