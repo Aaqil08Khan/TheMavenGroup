@@ -12,7 +12,7 @@ const particles = Array.from({ length: 60 }, (_, i) => ({
 }))
 
 const projectStreams = [
-  { id: 'operations', title: 'Operations Engine', value: 'High Momentum', note: 'Portfolio Execution', color: '#3B82F6', icon: '📈' },
+  { id: 'capital', title: 'Capital Engine', value: '₹1.60Cr+', note: 'Portfolio Momentum', color: '#3B82F6', icon: '📈' },
   { id: 'tech', title: 'AI Venture Lab', value: '3 Products', note: 'Investigat · OmniX · Aura', color: '#22D3EE', icon: '🤖' },
   { id: 'infra', title: 'Saudi Infra', value: 'Live Ops', note: 'Execution + Compliance', color: '#A78BFA', icon: '🏗️' },
   { id: 'commerce', title: 'Global Commerce', value: 'Cross-border', note: 'Brand Expansion Layer', color: '#F59E0B', icon: '🌐' },
@@ -589,7 +589,7 @@ function ProjectPulsePanel({ visible }) {
 
         <div style={{ marginTop: '14px', display: 'flex', alignItems: 'center', gap: '8px' }}>
           <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#3B82F6', boxShadow: '0 0 10px #3B82F6' }} />
-          <p style={{ color: '#94A3B8', fontFamily: 'DM Sans, sans-serif', fontSize: '11px' }}>Synchronized AI products, infrastructure, and commerce in one operating rhythm.</p>
+          <p style={{ color: '#94A3B8', fontFamily: 'DM Sans, sans-serif', fontSize: '11px' }}>Synchronized capital, AI products, infrastructure, and commerce in one operating rhythm.</p>
         </div>
       </div>
     </div>
