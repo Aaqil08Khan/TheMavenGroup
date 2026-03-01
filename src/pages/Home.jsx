@@ -138,7 +138,7 @@ function HeroSection() {
             A diversified holding group building scalable enterprises across
             <span style={{ color: '#60A5FA' }}> India</span>,
             <span style={{ color: '#22D3EE' }}> Saudi Arabia</span>, and
-            <span style={{ color: '#A78BFA' }}> global markets</span> — through technology, capital, and strategic partnerships.
+            <span style={{ color: '#A78BFA' }}> global markets</span> — through technology, operations, and strategic partnerships.
           </p>
 
           <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap', opacity: visible ? 1 : 0, transform: visible ? 'translateY(0)' : 'translateY(20px)', transition: 'all 0.7s ease 0.65s' }}>
@@ -174,7 +174,7 @@ function WhatWeDoSection() {
   const [ref, inView] = useInView(0.15)
 
   const pillars = [
-    { icon: '💼', title: 'Capital Deployment', desc: 'Systematic allocation across Indian equities, international markets, and Gulf real estate — with a compounding-first philosophy.', color: '#3B82F6' },
+    { icon: '💼', title: 'Strategic Deployment', desc: 'Systematic allocation across Indian equities, international markets, and Gulf real estate — with a compounding-first philosophy.', color: '#3B82F6' },
     { icon: '🤖', title: 'Technology Ventures', desc: 'Building AI-native products for legal intelligence, enterprise operations, and human-centered experiences.', color: '#22D3EE' },
     { icon: '🏗️', title: 'Infrastructure & Contracting', desc: 'Delivering critical infrastructure projects across Saudi Arabia — from compliance to execution.', color: '#A78BFA' },
     { icon: '🌐', title: 'Global Commerce', desc: 'Curating and scaling e-commerce brands that carry the essence of quality across borders.', color: '#F59E0B' },
@@ -242,12 +242,12 @@ function VerticalsSection() {
     {
       id: 'business-services',
       name: 'Maven Business Services',
-      tag: 'Finance & Capital',
+      tag: 'Finance & Strategy',
       color: '#3B82F6',
       gradient: 'linear-gradient(135deg, rgba(59,130,246,0.15), rgba(34,211,238,0.08))',
       icon: '📈',
-      headline: 'Capital Markets. Compounded.',
-      description: 'Systematic deployment across Indian equities, international instruments, and Saudi real estate. From ₹1.60Cr to beyond — with discipline and conviction.',
+      headline: 'Markets. Compounded.',
+      description: 'Systematic deployment across Indian equities, international instruments, and Saudi real estate — with discipline and conviction.',
       stats: [{ label: 'AUM Growth', value: '18%', suffix: '+' }, { label: 'Markets', value: '3' }, { label: 'Strategy', value: 'Multi-asset' }],
       href: '/verticals/business-services',
     },
@@ -386,7 +386,7 @@ function GlobalStatsSection() {
   const [ref, inView] = useInView(0.2)
 
   const stats = [
-    { prefix: '₹', value: 1.9, suffix: 'Cr+', label: 'Capital Under Management', color: '#3B82F6' },
+    { prefix: '', value: 4, suffix: '+', label: 'Active Verticals', color: '#3B82F6' },
     { value: 4, suffix: '', label: 'Business Verticals', color: '#22D3EE' },
     { value: 3, suffix: '+', label: 'Active Global Markets', color: '#A78BFA' },
     { value: 100, suffix: '%', label: 'Founder-Led, Independent', color: '#F59E0B' },
@@ -446,7 +446,7 @@ function WhyTMGSection() {
     { icon: '🌍', title: 'Cross-Border DNA', desc: 'Built from day one to operate across jurisdictions — India, Gulf, and beyond. We speak every market\'s language.', color: '#22D3EE' },
     { icon: '⚙️', title: 'Systems Over Hustle', desc: 'Scalable frameworks, not heroic effort. We build systems that compound.', color: '#A78BFA' },
     { icon: '🤝', title: 'Trust as Infrastructure', desc: 'Relationships in business are infrastructure. We build trust the way we build companies — with patience and precision.', color: '#F59E0B' },
-    { icon: '📐', title: 'Disciplined Capital', desc: 'Every rupee has a role. No speculative bets — just strategic, principled allocation.', color: '#22D3EE' },
+    { icon: '📐', title: 'Disciplined Execution', desc: 'Every move has a role. No speculative bets — just strategic, principled allocation.', color: '#22D3EE' },
     { icon: '🌱', title: 'Long-Term Thinking', desc: 'We measure success in decades, not quarters. Every vertical is built to outlast.', color: '#3B82F6' },
   ]
 
@@ -462,10 +462,10 @@ function WhyTMGSection() {
               <span style={{ background: 'linear-gradient(135deg, #3B82F6, #22D3EE)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>We Build.</span>
             </h2>
             <p style={{ color: '#94A3B8', fontSize: '1.05rem', lineHeight: '1.85', fontFamily: 'DM Sans, sans-serif', marginBottom: '32px' }}>
-              TMG is not a fund. It's not an agency. It's not a consultancy. It's a holding group built by operators — for operators. We deploy capital, build products, and create presence in markets others overlook.
+              TMG is not a fund. It's not an agency. It's not a consultancy. It's a holding group built by operators — for operators. We build products and create presence in markets others overlook.
             </p>
             <p style={{ color: '#64748B', fontSize: '0.95rem', lineHeight: '1.8', fontFamily: 'DM Sans, sans-serif' }}>
-              From India's capital markets to Saudi Arabia's infrastructure boom — we go where conviction leads, and we stay until we've built something that matters.
+              From India's markets to Saudi Arabia's infrastructure boom — we go where conviction leads, and we stay until we've built something that matters.
             </p>
 
             {/* Quote block */}

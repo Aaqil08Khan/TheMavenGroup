@@ -11,7 +11,7 @@ const particles = Array.from({ length: 60 }, (_, i) => ({
 }))
 
 const nodes = [
-  { id: 'india', label: 'India', x: 68, y: 52, color: '#3B82F6', desc: 'Headquarters & Capital Markets' },
+  { id: 'india', label: 'India', x: 68, y: 52, color: '#3B82F6', desc: 'Headquarters & Market Operations' },
   { id: 'ksa', label: 'Saudi Arabia', x: 55, y: 45, color: '#22D3EE', desc: 'AI Tech & Infrastructure' },
   { id: 'uae', label: 'UAE', x: 58, y: 48, color: '#A78BFA', desc: 'Investment & E-Commerce' },
 ]
@@ -165,7 +165,7 @@ export default function Hero() {
             <span style={{ color: '#60A5FA' }}> India</span>,
             <span style={{ color: '#22D3EE' }}> Saudi Arabia</span>, and
             <span style={{ color: '#A78BFA' }}> global markets</span> — through
-            technology, capital, and strategic partnerships.
+            technology, operations, and strategic partnerships.
           </p>
 
           {/* CTA Buttons */}
@@ -386,7 +386,7 @@ export default function Hero() {
             delay="0s"
             icon="🇮🇳"
             label="India"
-            sub="HQ & Capital Markets"
+            sub="HQ & Market Operations"
             color="#3B82F6"
           />
           <FloatingCard

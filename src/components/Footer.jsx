@@ -16,7 +16,7 @@ const company = [
 ]
 
 const markets = [
-  { flag: '🇮🇳', label: 'India', sub: 'Headquarters & Capital Markets' },
+  { flag: '🇮🇳', label: 'India', sub: 'Headquarters & Market Operations' },
   { flag: '🇸🇦', label: 'Saudi Arabia', sub: 'AI Tech & Infrastructure' },
   { flag: '🇦🇪', label: 'UAE', sub: 'Investment & E-Commerce' },
 ]
@@ -82,7 +82,7 @@ export default function Footer() {
             }}>
               A diversified global holding group engineering growth across India,
               Saudi Arabia, UAE and international markets through technology,
-              capital, and strategic partnerships.
+              operations, and strategic partnerships.
             </p>
 
             {/* Market presence */}
@@ -258,7 +258,7 @@ export default function Footer() {
                     Investor Relations →
                   </div>
                   <div style={{ color: '#334155', fontSize: '11px' }}>
-                    View strategy & capital allocation
+                    View strategy overview
                   </div>
                 </div>
               </Link>

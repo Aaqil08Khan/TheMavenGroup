@@ -17,8 +17,8 @@ function useInView(threshold = 0.2) {
 const pillars = [
   {
     icon: '◈',
-    title: 'Capital Intelligence',
-    desc: 'We deploy capital where conviction meets clarity — across Indian equity markets, Saudi real estate, and emerging Gulf opportunities. Every rupee and riyal is placed with purpose.',
+    title: 'Strategic Intelligence',
+    desc: 'We deploy resources where conviction meets clarity — across Indian equity markets, Saudi real estate, and emerging Gulf opportunities.',
     color: '#1A56DB',
   },
   {
@@ -30,7 +30,7 @@ const pillars = [
   {
     icon: '◉',
     title: 'Cross-Border Edge',
-    desc: 'With active presence across India, Saudi Arabia, UAE, and Bahrain, we connect capital, talent, and opportunity across borders that others treat as barriers.',
+    desc: 'With active presence across India, Saudi Arabia, UAE, and Bahrain, we connect talent and opportunity across borders that others treat as barriers.',
     color: '#A78BFA',
   },
   {
@@ -42,7 +42,7 @@ const pillars = [
 ]
 
 const verticals = [
-  { name: 'Maven Business Services', tag: 'Finance & Capital Markets', color: '#1A56DB' },
+  { name: 'Maven Business Services', tag: 'Finance & Markets', color: '#1A56DB' },
   { name: 'Maven AI Tech', tag: 'Artificial Intelligence & SaaS', color: '#22D3EE' },
   { name: 'Maven Contractors', tag: 'Infrastructure & Construction', color: '#A78BFA' },
   { name: 'Maven E-Commerce', tag: 'Retail & Digital Commerce', color: '#F59E0B' },
@@ -111,7 +111,7 @@ export default function About() {
             transform: heroInView ? 'translateY(0)' : 'translateY(24px)',
             transition: 'all 0.7s ease 0.2s',
           }}>
-            The Maven's Group is a diversified global holding group with capital, operations, and ambitions 
+            The Maven's Group is a diversified global holding group with operations and ambitions 
             stretching from South Asia to the Gulf.
           </p>
         </div>
@@ -146,7 +146,7 @@ export default function About() {
             </h2>
 
             <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: '16px', color: '#94A3B8', lineHeight: '1.9', marginBottom: '20px' }}>
-              The Maven's Group didn't start with a masterplan. It started with a conviction — that capital, 
+              The Maven's Group didn't start with a masterplan. It started with a conviction — that conviction, 
               when paired with clarity of purpose and operational discipline, can build something meaningful 
               across borders.
             </p>
@@ -159,7 +159,7 @@ export default function About() {
 
             <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: '16px', color: '#94A3B8', lineHeight: '1.9' }}>
               Today, TMG is not just an investment vehicle. It is an operating group — with people on the 
-              ground, capital at work, and a long-term view that refuses to trade values for velocity.
+              ground, real execution, and a long-term view that refuses to trade values for velocity.
             </p>
           </div>
 
@@ -170,7 +170,7 @@ export default function About() {
             gap: '16px',
           }}>
             {[
-              { value: '₹1.9Cr+', label: 'Capital Deployed', color: '#1A56DB' },
+              { value: '4+', label: 'Active Verticals', color: '#1A56DB' },
               { value: '4', label: 'Active Markets', color: '#22D3EE' },
               { value: '4', label: 'Business Verticals', color: '#A78BFA' },
               { value: '2026', label: 'Gulf Expansion', color: '#F59E0B' },
