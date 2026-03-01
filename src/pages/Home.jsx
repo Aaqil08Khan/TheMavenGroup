@@ -11,16 +11,11 @@ const particles = Array.from({ length: 60 }, (_, i) => ({
   opacity: Math.random() * 0.5 + 0.1,
 }))
 
-const nodes = [
-  { id: 'india', label: 'India', x: 68, y: 52, color: '#3B82F6', desc: 'Headquarters & Capital Markets' },
-  { id: 'ksa', label: 'Saudi Arabia', x: 55, y: 45, color: '#22D3EE', desc: 'AI Tech & Infrastructure' },
-  { id: 'uae', label: 'UAE', x: 58, y: 48, color: '#A78BFA', desc: 'Investment & E-Commerce' },
-]
-
-const connections = [
-  { from: { x: 68, y: 52 }, to: { x: 55, y: 45 } },
-  { from: { x: 55, y: 45 }, to: { x: 58, y: 48 } },
-  { from: { x: 68, y: 52 }, to: { x: 58, y: 48 } },
+const projectStreams = [
+  { id: 'capital', title: 'Capital Engine', value: '₹1.60Cr+', note: 'Portfolio Momentum', color: '#3B82F6', icon: '📈' },
+  { id: 'tech', title: 'AI Venture Lab', value: '3 Products', note: 'Investigat · OmniX · Aura', color: '#22D3EE', icon: '🤖' },
+  { id: 'infra', title: 'Saudi Infra', value: 'Live Ops', note: 'Execution + Compliance', color: '#A78BFA', icon: '🏗️' },
+  { id: 'commerce', title: 'Global Commerce', value: 'Cross-border', note: 'Brand Expansion Layer', color: '#F59E0B', icon: '🌐' },
 ]
 
 // ─── useInView Hook ───────────────────────────────────────────
@@ -97,7 +92,6 @@ export default function Home() {
 
 // ─── 1. HERO ──────────────────────────────────────────────────
 function HeroSection() {
-  const [activeNode, setActiveNode] = useState(null)
   const [visible, setVisible] = useState(false)
 
   useEffect(() => {
@@ -162,40 +156,8 @@ function HeroSection() {
           </div>
         </div>
 
-        {/* RIGHT — Map */}
-        <div style={{ position: 'relative', height: '500px', opacity: visible ? 1 : 0, transform: visible ? 'translateX(0)' : 'translateX(40px)', transition: 'all 0.9s ease 0.4s' }}>
-          <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', width: '400px', height: '400px', borderRadius: '50%', background: 'radial-gradient(circle, rgba(26,86,219,0.15) 0%, transparent 70%)', animation: 'orbPulse 4s ease-in-out infinite' }} />
-          <div style={{ position: 'absolute', inset: 0, borderRadius: '20px', background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.06)', overflow: 'hidden', backdropFilter: 'blur(4px)' }}>
-            <svg viewBox="0 0 100 70" style={{ width: '100%', height: '100%', opacity: 0.15 }}>
-              <ellipse cx="47" cy="28" rx="7" ry="5" fill="#3B82F6" />
-              <ellipse cx="48" cy="42" rx="6" ry="9" fill="#3B82F6" />
-              <ellipse cx="67" cy="30" rx="14" ry="8" fill="#3B82F6" />
-              <ellipse cx="22" cy="35" rx="8" ry="12" fill="#3B82F6" />
-              <ellipse cx="78" cy="52" rx="5" ry="4" fill="#3B82F6" />
-            </svg>
-            <svg viewBox="0 0 100 70" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%' }}>
-              {connections.map((conn, i) => (
-                <line key={i} x1={conn.from.x} y1={conn.from.y} x2={conn.to.x} y2={conn.to.y} stroke="url(#lineGrad)" strokeWidth="0.3" strokeDasharray="2,2" style={{ animation: `dashMove 3s ${i * 1}s linear infinite` }} />
-              ))}
-              <defs><linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stopColor="#3B82F6" stopOpacity="0.8" /><stop offset="100%" stopColor="#22D3EE" stopOpacity="0.8" /></linearGradient></defs>
-            </svg>
-            {nodes.map(node => (
-              <div key={node.id} style={{ position: 'absolute', left: `${node.x}%`, top: `${node.y}%`, transform: 'translate(-50%, -50%)', cursor: 'pointer', zIndex: 10 }} onMouseEnter={() => setActiveNode(node.id)} onMouseLeave={() => setActiveNode(null)}>
-                <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', width: activeNode === node.id ? '40px' : '28px', height: activeNode === node.id ? '40px' : '28px', borderRadius: '50%', border: `1px solid ${node.color}44`, transition: 'all 0.3s ease', animation: 'ping 2s ease-in-out infinite' }} />
-                <div style={{ width: activeNode === node.id ? '14px' : '10px', height: activeNode === node.id ? '14px' : '10px', borderRadius: '50%', background: node.color, boxShadow: `0 0 ${activeNode === node.id ? 16 : 8}px ${node.color}`, transition: 'all 0.3s ease' }} />
-                {activeNode === node.id && (
-                  <div style={{ position: 'absolute', bottom: '120%', left: '50%', transform: 'translateX(-50%)', background: 'rgba(11,28,45,0.95)', border: `1px solid ${node.color}44`, borderRadius: '10px', padding: '10px 14px', minWidth: '160px', textAlign: 'center', backdropFilter: 'blur(10px)', zIndex: 20 }}>
-                    <div style={{ fontFamily: 'Syne, sans-serif', fontWeight: '700', fontSize: '13px', color: node.color, marginBottom: '4px' }}>{node.label}</div>
-                    <div style={{ fontSize: '11px', color: '#64748B', fontFamily: 'DM Sans, sans-serif' }}>{node.desc}</div>
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
-          <FloatingCard style={{ top: '8%', right: '-5%' }} delay="0s" icon="🇮🇳" label="India" sub="HQ & Capital Markets" color="#3B82F6" />
-          <FloatingCard style={{ bottom: '20%', right: '-8%' }} delay="1.5s" icon="🇸🇦" label="Saudi Arabia" sub="AI Tech & Infrastructure" color="#22D3EE" />
-          <FloatingCard style={{ bottom: '5%', left: '5%' }} delay="3s" icon="🇦🇪" label="UAE" sub="Investment Hub" color="#A78BFA" />
-        </div>
+        {/* RIGHT — Animated Project Matrix */}
+        <ProjectPulsePanel visible={visible} />
       </div>
 
       {/* Scroll indicator */}
@@ -593,29 +555,43 @@ function CTASection() {
 }
 
 // ─── SHARED COMPONENTS ────────────────────────────────────────
-function FloatingCard({ style, delay, icon, label, sub, color }) {
+function ProjectPulsePanel({ visible }) {
   return (
-    <div style={{
-      position: 'absolute', ...style,
-      background: 'rgba(11,28,45,0.85)',
-      border: `1px solid ${color}33`,
-      borderRadius: '12px',
-      padding: '12px 16px',
-      backdropFilter: 'blur(12px)',
-      display: 'flex',
-      alignItems: 'center',
-      gap: '10px',
-      minWidth: '170px',
-      animation: `cardFloat 4s ${delay} ease-in-out infinite`,
-      boxShadow: `0 8px 32px rgba(0,0,0,0.3), 0 0 0 1px ${color}11`,
-      zIndex: 5,
-    }}>
-      <div style={{ fontSize: '22px' }}>{icon}</div>
-      <div>
-        <div style={{ fontFamily: 'Syne, sans-serif', fontWeight: '700', fontSize: '13px', color: '#F8FAFC' }}>{label}</div>
-        <div style={{ fontSize: '11px', color: '#64748B', fontFamily: 'DM Sans, sans-serif' }}>{sub}</div>
+    <div style={{ position: 'relative', height: '500px', opacity: visible ? 1 : 0, transform: visible ? 'translateX(0)' : 'translateX(40px)', transition: 'all 0.9s ease 0.4s' }}>
+      <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', width: '420px', height: '420px', borderRadius: '50%', background: 'radial-gradient(circle, rgba(34,211,238,0.16) 0%, rgba(26,86,219,0.08) 45%, transparent 72%)', animation: 'orbPulse 4s ease-in-out infinite' }} />
+
+      <div style={{ position: 'absolute', inset: 0, borderRadius: '20px', background: 'linear-gradient(145deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01))', border: '1px solid rgba(255,255,255,0.08)', overflow: 'hidden', backdropFilter: 'blur(5px)', padding: '24px' }}>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '16px' }}>
+          <div>
+            <p style={{ color: '#22D3EE', letterSpacing: '2px', fontSize: '11px', fontWeight: '600', marginBottom: '4px', fontFamily: 'DM Sans, sans-serif' }}>LIVE EXECUTION MATRIX</p>
+            <h3 style={{ color: '#F8FAFC', fontFamily: 'Syne, sans-serif', fontSize: '1.2rem' }}>TMG Growth Engine</h3>
+          </div>
+          <div style={{ width: '10px', height: '10px', borderRadius: '50%', background: '#22D3EE', boxShadow: '0 0 14px #22D3EE', animation: 'pulse 2s infinite' }} />
+        </div>
+
+        <div style={{ display: 'grid', gap: '12px' }}>
+          {projectStreams.map((stream, idx) => (
+            <div key={stream.id} style={{ border: `1px solid ${stream.color}44`, borderRadius: '12px', padding: '12px 14px', background: 'rgba(11,28,45,0.65)', boxShadow: `inset 0 0 0 1px ${stream.color}22`, animation: `fadeInCard 0.6s ${0.15 * idx}s both` }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                <span style={{ fontSize: '18px' }}>{stream.icon}</span>
+                <div style={{ flex: 1 }}>
+                  <p style={{ color: '#E2E8F0', fontFamily: 'Syne, sans-serif', fontSize: '13px', fontWeight: '700' }}>{stream.title}</p>
+                  <p style={{ color: '#64748B', fontFamily: 'DM Sans, sans-serif', fontSize: '11px' }}>{stream.note}</p>
+                </div>
+                <p style={{ color: stream.color, fontFamily: 'Syne, sans-serif', fontSize: '12px', fontWeight: '700' }}>{stream.value}</p>
+              </div>
+              <div style={{ marginTop: '8px', height: '4px', borderRadius: '10px', background: 'rgba(148,163,184,0.18)', overflow: 'hidden' }}>
+                <div style={{ width: `${75 + idx * 6}%`, height: '100%', borderRadius: '10px', background: `linear-gradient(90deg, ${stream.color}, rgba(255,255,255,0.2))`, animation: `dataFlow 3s ${0.3 * idx}s ease-in-out infinite` }} />
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div style={{ marginTop: '14px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+          <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#3B82F6', boxShadow: '0 0 10px #3B82F6' }} />
+          <p style={{ color: '#94A3B8', fontFamily: 'DM Sans, sans-serif', fontSize: '11px' }}>Synchronized capital, AI products, infrastructure, and commerce in one operating rhythm.</p>
+        </div>
       </div>
-      <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: color, boxShadow: `0 0 8px ${color}`, marginLeft: 'auto', animation: 'pulse 2s infinite' }} />
     </div>
   )
 }
@@ -676,13 +652,13 @@ function GlobalStyles() {
         50% { opacity: 1; transform: scaleY(1); }
         100% { opacity: 0; transform: scaleY(1); transform-origin: bottom; }
       }
-      @keyframes cardFloat {
-        0%, 100% { transform: translateY(0px); }
-        50% { transform: translateY(-8px); }
-      }
       @keyframes fadeInCard {
         from { opacity: 0; transform: translateY(12px); }
         to { opacity: 1; transform: translateY(0); }
+      }
+      @keyframes dataFlow {
+        0%, 100% { opacity: 0.75; transform: translateX(0); }
+        50% { opacity: 1; transform: translateX(3%); }
       }
     `}</style>
   )
