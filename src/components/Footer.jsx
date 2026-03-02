@@ -1,4 +1,12 @@
 import { Link } from 'react-router-dom'
+import { 
+  Facebook, 
+  Linkedin, 
+  Instagram,
+  Mail,
+  Phone,
+  MapPin
+} from "lucide-react";
 
 const verticals = [
   { label: 'Maven Business Services', path: '/verticals/business-services', color: '#3B82F6' },
@@ -19,6 +27,12 @@ const markets = [
   { flag: '🇮🇳', label: 'India', sub: 'Headquarters & Market Operations' },
   { flag: '🇸🇦', label: 'Saudi Arabia', sub: 'AI Tech & Infrastructure' },
   { flag: '🇦🇪', label: 'UAE', sub: 'Investment & E-Commerce' },
+]
+
+const socialLinks = [
+  { icon: Facebook, href: 'https://www.facebook.com/mavenaitech/', label: 'Facebook' },
+  { icon: Linkedin, href: 'https://linkedin.com/company/maven-ai-tech', label: 'LinkedIn' },
+  { icon: Instagram, href: 'https://www.instagram.com/maven_aitech?igsh=MTFsZWtpMXNuZXYwMA==', label: 'Instagram' },
 ]
 
 export default function Footer() {
@@ -100,34 +114,40 @@ export default function Footer() {
               ))}
             </div>
 
-            {/* Social links */}
+            {/* Social links — Lucide icons */}
             <div style={{ display: 'flex', gap: '10px' }}>
-              {[
-                { icon: '💼', label: 'LinkedIn' },
-                { icon: '🐦', label: 'Twitter' },
-                { icon: '📸', label: 'Instagram' },
-              ].map((social, i) => (
-                <div key={i} style={{
-                  width: '36px', height: '36px', borderRadius: '8px',
-                  background: 'rgba(255,255,255,0.04)',
-                  border: '1px solid rgba(255,255,255,0.07)',
-                  display: 'flex', alignItems: 'center', justifyContent: 'center',
-                  fontSize: '16px', cursor: 'pointer',
-                  transition: 'all 0.2s ease',
-                }}
+              {socialLinks.map(({ icon: Icon, href, label }) => (
+                <a
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={label}
+                  style={{
+                    width: '36px', height: '36px', borderRadius: '8px',
+                    background: 'rgba(255,255,255,0.04)',
+                    border: '1px solid rgba(255,255,255,0.07)',
+                    display: 'flex', alignItems: 'center', justifyContent: 'center',
+                    color: '#475569',
+                    cursor: 'pointer',
+                    transition: 'all 0.2s ease',
+                    textDecoration: 'none',
+                  }}
                   onMouseEnter={e => {
                     e.currentTarget.style.background = 'rgba(59,130,246,0.1)'
                     e.currentTarget.style.borderColor = 'rgba(59,130,246,0.3)'
                     e.currentTarget.style.transform = 'translateY(-2px)'
+                    e.currentTarget.style.color = '#ffffff'
                   }}
                   onMouseLeave={e => {
                     e.currentTarget.style.background = 'rgba(255,255,255,0.04)'
                     e.currentTarget.style.borderColor = 'rgba(255,255,255,0.07)'
                     e.currentTarget.style.transform = 'translateY(0)'
+                    e.currentTarget.style.color = '#475569'
                   }}
                 >
-                  {social.icon}
-                </div>
+                  <Icon size={16} />
+                </a>
               ))}
             </div>
           </div>
@@ -216,18 +236,46 @@ export default function Footer() {
               Connect
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
-              {[
-                { icon: '📧', label: 'partnerships@themavengroup.com', color: '#3B82F6' },
-                { icon: '📍', label: 'India · Saudi Arabia · UAE', color: '#22D3EE' },
-                { icon: '🕌', label: 'The Islamic Family Initiative', color: '#C8A96E' },
-              ].map((item, i) => (
-                <div key={i} style={{ display: 'flex', gap: '10px', alignItems: 'flex-start' }}>
-                  <span style={{ fontSize: '14px', marginTop: '1px' }}>{item.icon}</span>
-                  <span style={{ color: '#475569', fontSize: '12px', lineHeight: '1.6' }}>
-                    {item.label}
-                  </span>
-                </div>
-              ))}
+
+              {/* Email */}
+              <a
+                href="mailto:info@mavenaitech.com"
+                style={{
+                  display: 'flex', alignItems: 'center', gap: '10px',
+                  color: '#475569', fontSize: '12px', textDecoration: 'none',
+                  transition: 'color 0.2s ease',
+                }}
+                onMouseEnter={e => e.currentTarget.style.color = '#3B82F6'}
+                onMouseLeave={e => e.currentTarget.style.color = '#475569'}
+              >
+                <Mail size={15} style={{ flexShrink: 0 }} />
+                info@mavenaitech.com
+              </a>
+
+              {/* Phone */}
+              <a
+                href="tel:+919381472914"
+                style={{
+                  display: 'flex', alignItems: 'center', gap: '10px',
+                  color: '#475569', fontSize: '12px', textDecoration: 'none',
+                  transition: 'color 0.2s ease',
+                }}
+                onMouseEnter={e => e.currentTarget.style.color = '#3B82F6'}
+                onMouseLeave={e => e.currentTarget.style.color = '#475569'}
+              >
+                <Phone size={15} style={{ flexShrink: 0 }} />
+                +91 9381472914
+              </a>
+
+              {/* Address */}
+              <div style={{ display: 'flex', gap: '10px', alignItems: 'flex-start' }}>
+                <MapPin size={15} style={{ flexShrink: 0, marginTop: '2px', color: '#475569' }} />
+                <span style={{ color: '#475569', fontSize: '12px', lineHeight: '1.7' }}>
+                  5th floor, Bait al Rahma, Shaikpet,<br />
+                  Hyderabad, Telangana - 500008
+                </span>
+              </div>
+
             </div>
 
             {/* CTA */}

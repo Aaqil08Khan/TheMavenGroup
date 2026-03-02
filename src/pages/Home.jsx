@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 // ─── Particles ───────────────────────────────────────────────
 const particles = Array.from({ length: 60 }, (_, i) => ({
@@ -93,6 +94,7 @@ export default function Home() {
 // ─── 1. HERO ──────────────────────────────────────────────────
 function HeroSection() {
   const [visible, setVisible] = useState(false)
+  const navigate = useNavigate()
 
   useEffect(() => {
     setTimeout(() => setVisible(true), 100)
@@ -142,8 +144,25 @@ function HeroSection() {
           </p>
 
           <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap', opacity: visible ? 1 : 0, transform: visible ? 'translateY(0)' : 'translateY(20px)', transition: 'all 0.7s ease 0.65s' }}>
-            <button style={primaryBtn} onMouseEnter={e => { e.currentTarget.style.transform = 'scale(1.05) translateY(-2px)'; e.currentTarget.style.boxShadow = '0 0 40px rgba(59,130,246,0.6)' }} onMouseLeave={e => { e.currentTarget.style.transform = 'scale(1) translateY(0)'; e.currentTarget.style.boxShadow = '0 0 25px rgba(59,130,246,0.35)' }}>Explore Our Verticals →</button>
-            <button style={secondaryBtn} onMouseEnter={e => { e.currentTarget.style.background = 'rgba(255,255,255,0.08)'; e.currentTarget.style.borderColor = 'rgba(59,130,246,0.5)'; e.currentTarget.style.color = '#F8FAFC' }} onMouseLeave={e => { e.currentTarget.style.background = 'rgba(255,255,255,0.03)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.12)'; e.currentTarget.style.color = '#94A3B8' }}>Partner With TMG</button>
+            {/* Explore Our Verticals → /verticals/ai-tech (first vertical) */}
+            <button
+              style={primaryBtn}
+              onClick={() => navigate('/verticals/ai-tech')}
+              onMouseEnter={e => { e.currentTarget.style.transform = 'scale(1.05) translateY(-2px)'; e.currentTarget.style.boxShadow = '0 0 40px rgba(59,130,246,0.6)' }}
+              onMouseLeave={e => { e.currentTarget.style.transform = 'scale(1) translateY(0)'; e.currentTarget.style.boxShadow = '0 0 25px rgba(59,130,246,0.35)' }}
+            >
+              Explore Our Verticals →
+            </button>
+
+            {/* Partner With TMG → /about */}
+            <button
+              style={secondaryBtn}
+              onClick={() => navigate('/about')}
+              onMouseEnter={e => { e.currentTarget.style.background = 'rgba(255,255,255,0.08)'; e.currentTarget.style.borderColor = 'rgba(59,130,246,0.5)'; e.currentTarget.style.color = '#F8FAFC' }}
+              onMouseLeave={e => { e.currentTarget.style.background = 'rgba(255,255,255,0.03)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.12)'; e.currentTarget.style.color = '#94A3B8' }}
+            >
+              Partner With TMG
+            </button>
           </div>
 
           <div style={{ display: 'flex', gap: '32px', marginTop: '52px', paddingTop: '32px', borderTop: '1px solid rgba(255,255,255,0.07)', opacity: visible ? 1 : 0, transition: 'all 0.7s ease 0.8s' }}>
@@ -182,7 +201,6 @@ function WhatWeDoSection() {
 
   return (
     <section ref={ref} style={{ padding: '120px 32px', maxWidth: '1280px', margin: '0 auto', position: 'relative' }}>
-      {/* Background radial */}
       <div style={{ position: 'absolute', top: '0', left: '50%', transform: 'translateX(-50%)', width: '600px', height: '400px', background: 'radial-gradient(ellipse, rgba(26,86,219,0.06) 0%, transparent 70%)', pointerEvents: 'none' }} />
 
       <div style={{ textAlign: 'center', marginBottom: '80px', opacity: inView ? 1 : 0, transform: inView ? 'translateY(0)' : 'translateY(24px)', transition: 'all 0.7s ease' }}>
@@ -221,7 +239,6 @@ function WhatWeDoSection() {
               e.currentTarget.style.boxShadow = 'none'
             }}
           >
-            {/* Top gradient accent */}
             <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '2px', background: `linear-gradient(90deg, ${p.color}, transparent)` }} />
             <div style={{ fontSize: '32px', marginBottom: '20px' }}>{p.icon}</div>
             <h3 style={{ fontFamily: 'Syne, sans-serif', fontWeight: '700', fontSize: '1.15rem', color: '#F8FAFC', marginBottom: '12px' }}>{p.title}</h3>
@@ -270,7 +287,7 @@ function VerticalsSection() {
       color: '#A78BFA',
       gradient: 'linear-gradient(135deg, rgba(167,139,250,0.15), rgba(59,130,246,0.08))',
       icon: '🏗️',
-      headline: 'Building the Gulf\'s Future.',
+      headline: "Building the Gulf's Future.",
       description: 'Infrastructure contracting in Saudi Arabia — navigating Iqama, Kafala, and compliance complexities to deliver critical projects with precision and trust.',
       stats: [{ label: 'Region', value: 'KSA' }, { label: 'Focus', value: 'Infrastructure' }, { label: 'Status', value: 'Active' }],
       href: '/verticals/contractors',
@@ -338,7 +355,6 @@ function VerticalsSection() {
           position: 'relative',
           overflow: 'hidden',
         }}>
-          {/* Decorative corner glow */}
           <div style={{ position: 'absolute', top: '-80px', right: '-80px', width: '300px', height: '300px', borderRadius: '50%', background: `radial-gradient(circle, ${v.color}18 0%, transparent 70%)`, pointerEvents: 'none' }} />
 
           <div>
@@ -363,9 +379,7 @@ function VerticalsSection() {
           </div>
 
           <div>
-            {/* Big icon display */}
             <div style={{ textAlign: 'center', fontSize: '80px', marginBottom: '40px', filter: `drop-shadow(0 0 40px ${v.color}66)` }}>{v.icon}</div>
-            {/* Stats */}
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '16px' }}>
               {v.stats.map(s => (
                 <div key={s.label} style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.07)', borderRadius: '14px', padding: '18px 14px', textAlign: 'center' }}>
@@ -394,7 +408,6 @@ function GlobalStatsSection() {
 
   return (
     <section ref={ref} style={{ padding: '100px 32px', position: 'relative', overflow: 'hidden' }}>
-      {/* Background */}
       <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse at 50% 50%, rgba(26,86,219,0.07) 0%, transparent 70%)' }} />
       <div style={{ position: 'absolute', inset: 0, backgroundImage: `linear-gradient(rgba(59,130,246,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(59,130,246,0.02) 1px, transparent 1px)`, backgroundSize: '60px 60px' }} />
 
@@ -443,7 +456,7 @@ function WhyTMGSection() {
 
   const values = [
     { icon: '🧭', title: 'Founder-Led Vision', desc: 'Every decision is made by builders who have skin in the game — not committees or bureaucracies.', color: '#3B82F6' },
-    { icon: '🌍', title: 'Cross-Border DNA', desc: 'Built from day one to operate across jurisdictions — India, Gulf, and beyond. We speak every market\'s language.', color: '#22D3EE' },
+    { icon: '🌍', title: 'Cross-Border DNA', desc: "Built from day one to operate across jurisdictions — India, Gulf, and beyond. We speak every market's language.", color: '#22D3EE' },
     { icon: '⚙️', title: 'Systems Over Hustle', desc: 'Scalable frameworks, not heroic effort. We build systems that compound.', color: '#A78BFA' },
     { icon: '🤝', title: 'Trust as Infrastructure', desc: 'Relationships in business are infrastructure. We build trust the way we build companies — with patience and precision.', color: '#F59E0B' },
     { icon: '📐', title: 'Disciplined Execution', desc: 'Every move has a role. No speculative bets — just strategic, principled allocation.', color: '#22D3EE' },
@@ -454,7 +467,6 @@ function WhyTMGSection() {
     <section ref={ref} style={{ padding: '100px 32px', position: 'relative', background: 'linear-gradient(180deg, var(--navy) 0%, #060F1A 100%)' }}>
       <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '80px', alignItems: 'start' }}>
-          {/* Left */}
           <div style={{ opacity: inView ? 1 : 0, transform: inView ? 'translateX(0)' : 'translateX(-24px)', transition: 'all 0.7s ease' }}>
             <SectionLabel text="Why TMG" />
             <h2 style={{ fontFamily: 'Syne, sans-serif', fontSize: 'clamp(2rem, 3.5vw, 2.8rem)', fontWeight: '800', color: '#F8FAFC', lineHeight: '1.15', marginBottom: '24px' }}>
@@ -468,7 +480,6 @@ function WhyTMGSection() {
               From India's markets to Saudi Arabia's infrastructure boom — we go where conviction leads, and we stay until we've built something that matters.
             </p>
 
-            {/* Quote block */}
             <div style={{ marginTop: '48px', padding: '28px 32px', background: 'rgba(59,130,246,0.06)', border: '1px solid rgba(59,130,246,0.15)', borderLeft: '3px solid #3B82F6', borderRadius: '12px' }}>
               <p style={{ color: '#94A3B8', fontSize: '1rem', lineHeight: '1.7', fontFamily: 'DM Sans, sans-serif', fontStyle: 'italic', margin: 0 }}>
                 "We're not chasing markets. We're building the infrastructure that markets will depend on."
@@ -477,7 +488,6 @@ function WhyTMGSection() {
             </div>
           </div>
 
-          {/* Right — Values grid */}
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
             {values.map((v, i) => (
               <div key={v.title} style={{
@@ -508,14 +518,13 @@ function WhyTMGSection() {
 // ─── 6. CTA ───────────────────────────────────────────────────
 function CTASection() {
   const [ref, inView] = useInView(0.2)
+  const navigate = useNavigate()
 
   return (
     <section ref={ref} style={{ padding: '100px 32px 120px', position: 'relative', overflow: 'hidden' }}>
-      {/* Background */}
       <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse at 50% 60%, rgba(26,86,219,0.14) 0%, transparent 65%)' }} />
 
       <div style={{ maxWidth: '860px', margin: '0 auto', textAlign: 'center', position: 'relative', opacity: inView ? 1 : 0, transform: inView ? 'translateY(0)' : 'translateY(30px)', transition: 'all 0.8s ease' }}>
-        {/* Decorative top line */}
         <div style={{ width: '1px', height: '60px', background: 'linear-gradient(to bottom, transparent, #3B82F6)', margin: '0 auto 40px' }} />
 
         <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '6px 16px', borderRadius: '100px', background: 'rgba(59,130,246,0.1)', border: '1px solid rgba(59,130,246,0.2)', marginBottom: '32px' }}>
@@ -533,13 +542,20 @@ function CTASection() {
         </p>
 
         <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
-          <button style={{ ...primaryBtn, padding: '16px 36px', fontSize: '15px' }}
+          {/* Investor Relations → /investors */}
+          <button
+            style={{ ...primaryBtn, padding: '16px 36px', fontSize: '15px' }}
+            onClick={() => navigate('/investors')}
             onMouseEnter={e => { e.currentTarget.style.transform = 'scale(1.05) translateY(-2px)'; e.currentTarget.style.boxShadow = '0 0 50px rgba(59,130,246,0.6)' }}
             onMouseLeave={e => { e.currentTarget.style.transform = 'scale(1) translateY(0)'; e.currentTarget.style.boxShadow = '0 0 25px rgba(59,130,246,0.35)' }}
           >
             Investor Relations →
           </button>
-          <button style={{ ...secondaryBtn, padding: '16px 36px', fontSize: '15px' }}
+
+          {/* Partner With TMG → /about */}
+          <button
+            style={{ ...secondaryBtn, padding: '16px 36px', fontSize: '15px' }}
+            onClick={() => navigate('/about')}
             onMouseEnter={e => { e.currentTarget.style.background = 'rgba(255,255,255,0.08)'; e.currentTarget.style.borderColor = 'rgba(59,130,246,0.5)'; e.currentTarget.style.color = '#F8FAFC' }}
             onMouseLeave={e => { e.currentTarget.style.background = 'rgba(255,255,255,0.03)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.12)'; e.currentTarget.style.color = '#94A3B8' }}
           >
@@ -547,7 +563,6 @@ function CTASection() {
           </button>
         </div>
 
-        {/* Decorative bottom line */}
         <div style={{ width: '1px', height: '60px', background: 'linear-gradient(to bottom, #3B82F6, transparent)', margin: '60px auto 0' }} />
       </div>
     </section>
