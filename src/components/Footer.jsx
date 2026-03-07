@@ -24,9 +24,9 @@ const company = [
 ]
 
 const markets = [
-  { flag: '🇮🇳', label: 'India', sub: 'Headquarters & Market Operations' },
-  { flag: '🇸🇦', label: 'Saudi Arabia', sub: 'AI Tech & Infrastructure' },
-  { flag: '🇦🇪', label: 'UAE', sub: 'Investment & E-Commerce' },
+  { flag: '🇸🇦', label: 'Saudi Arabia', sub: 'Headquarters' },
+  { flag: '🇦🇪', label: 'UAE', sub: 'Registered · Investment & E-Commerce' },
+  { flag: '🇮🇳', label: 'India', sub: 'Tech Operations' },
 ]
 
 const socialLinks = [
@@ -89,8 +89,9 @@ export default function Footer() {
               </div>
 
               <p style={{ color: '#475569', fontSize: '13px', lineHeight: '1.8', marginBottom: '24px' }}>
-                A diversified global holding group engineering growth across India,
-                Saudi Arabia, UAE and international markets through technology,
+                A diversified global holding group headquartered in Saudi Arabia,
+                registered in the UAE, and running tech operations from India —
+                engineering growth across the Gulf and South Asia through technology,
                 operations, and strategic partnerships.
               </p>
 
@@ -204,8 +205,8 @@ export default function Footer() {
                 <div style={{ display: 'flex', gap: '10px', alignItems: 'flex-start' }}>
                   <MapPin size={15} style={{ flexShrink: 0, marginTop: '2px', color: '#475569' }} />
                   <span style={{ color: '#475569', fontSize: '12px', lineHeight: '1.7' }}>
-                    5th floor, Bait al Rahma, Shaikpet,<br />
-                    Hyderabad, Telangana - 500008
+                    Riyadh, Saudi Arabia<br />
+                    <span style={{ color: '#334155' }}>Registered in Dubai, UAE</span>
                   </span>
                 </div>
               </div>
@@ -293,7 +294,6 @@ export default function Footer() {
           z-index: 1;
         }
 
-        /* ── Desktop: 4-col ── */
         .tmg-footer-grid {
           display: grid;
           grid-template-columns: 2fr 1fr 1fr 1fr;
@@ -326,19 +326,16 @@ export default function Footer() {
           flex-wrap: wrap;
         }
 
-        /* ── Tablet ≤ 960px: 2-col ── */
         @media (max-width: 960px) {
           .tmg-footer-grid {
             grid-template-columns: 1fr 1fr;
             gap: 40px 32px;
           }
-          /* Brand spans full row */
           .tmg-footer-brand {
             grid-column: 1 / -1;
           }
         }
 
-        /* ── Mobile ≤ 600px: single col ── */
         @media (max-width: 600px) {
           .tmg-footer-wrap {
             padding: 48px 20px 32px;
@@ -354,7 +351,6 @@ export default function Footer() {
             grid-column: auto;
           }
 
-          /* Divider lines between sections */
           .tmg-footer-grid > div:not(.tmg-footer-brand) {
             padding-top: 24px;
             border-top: 1px solid rgba(255, 255, 255, 0.05);
@@ -371,7 +367,6 @@ export default function Footer() {
           }
         }
 
-        /* ── Small mobile ≤ 380px ── */
         @media (max-width: 380px) {
           .tmg-footer-wrap {
             padding: 36px 16px 28px;
