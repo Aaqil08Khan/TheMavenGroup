@@ -25,7 +25,7 @@ const company = [
 
 const markets = [
   { flag: '🇸🇦', label: 'Saudi Arabia', sub: 'Headquarters' },
-  { flag: '🇦🇪', label: 'UAE', sub: 'Registered · Investment & E-Commerce' },
+  { flag: '🇦🇪', label: 'UAE', sub: 'Registered' },
   { flag: '🇮🇳', label: 'India', sub: 'Tech Operations' },
 ]
 
