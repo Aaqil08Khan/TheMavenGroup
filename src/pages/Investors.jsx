@@ -94,6 +94,30 @@ export default function Investors() {
         .gov-item{transition:all .25s ease}
         .gov-item:hover{transform:translateX(6px)!important}
 
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@400;500;600;700;800&display=swap');
+
+        /* ── Heading sizes ── */
+        .inv-hero-h1-main {
+          font-size: clamp(1.6rem, 4.5vw, 3.8rem);
+          letter-spacing: -0.5px;
+        }
+        .inv-hero-h1-grad {
+          font-size: clamp(1.6rem, 4.5vw, 3.8rem);
+          letter-spacing: -0.5px;
+        }
+        .inv-section-h2 {
+          font-size: clamp(1.3rem, 4vw, 2.6rem);
+        }
+        .inv-gov-h2 {
+          font-size: clamp(1.3rem, 3.5vw, 2.4rem);
+        }
+        .inv-partners-h2 {
+          font-size: clamp(1.3rem, 4vw, 2.6rem);
+        }
+        .inv-cta-h3 {
+          font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+        }
+
         /* ── Responsive ── */
         @media(max-width:1024px){
           .inv-hero-grid{grid-template-columns:1fr!important}
@@ -112,6 +136,13 @@ export default function Investors() {
           .inv-stats-grid{grid-template-columns:1fr!important}
           .inv-pillars-grid{grid-template-columns:1fr!important}
           .inv-hero-btns{flex-direction:column!important;align-items:flex-start!important}
+
+          .inv-hero-h1-main { font-size: clamp(1.4rem, 8vw, 2.2rem); }
+          .inv-hero-h1-grad { font-size: clamp(1.4rem, 8vw, 2.2rem); }
+          .inv-section-h2   { font-size: clamp(1.2rem, 6vw, 1.6rem); }
+          .inv-gov-h2       { font-size: clamp(1.2rem, 6vw, 1.6rem); }
+          .inv-partners-h2  { font-size: clamp(1.2rem, 6vw, 1.6rem); }
+          .inv-cta-h3       { font-size: clamp(1rem, 5vw, 1.3rem); }
         }
       `}</style>
 
@@ -130,24 +161,22 @@ export default function Investors() {
                 <div style={{ width:'6px', height:'6px', borderRadius:'50%', background:'#3B82F6', animation:'softPulse 2s infinite' }}/>
                 <span style={{ color:'#3B82F6', fontSize:'12px', fontWeight:'600', letterSpacing:'2px', fontFamily:'DM Sans, sans-serif' }}>INVESTOR & STRATEGY</span>
               </div>
-              <h1 style={{ fontFamily:'Syne, sans-serif', fontSize:'clamp(2rem,4.5vw,3.8rem)', fontWeight:'800', color:'#F8FAFC', lineHeight:'1.08', marginBottom:'14px', letterSpacing:'-0.5px', opacity:visible?1:0, transform:visible?'translateY(0)':'translateY(30px)', transition:'all .7s ease .2s' }}>
-                Building for<br/>the Long Term.
+              <h1 className="inv-hero-h1-main" style={{ fontFamily:'Bebas Neue, sans-serif', fontWeight:'400', letterSpacing:'2px', color:'#F8FAFC', lineHeight:'1.0', marginBottom:'14px', opacity:visible?1:0, transform:visible?'translateY(0)':'translateY(30px)', transition:'all .7s ease .2s' }}>
+                Building for the Long Term.
               </h1>
-              <h1 style={{ fontFamily:'Syne, sans-serif', fontSize:'clamp(2rem,4.5vw,3.8rem)', fontWeight:'800', lineHeight:'1.08', marginBottom:'28px', letterSpacing:'-0.5px', background:'linear-gradient(135deg,#3B82F6,#22D3EE)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text', opacity:visible?1:0, transform:visible?'translateY(0)':'translateY(30px)', transition:'all .7s ease .32s' }}>
+              <h1 className="inv-hero-h1-grad" style={{ fontFamily:'Bebas Neue, sans-serif', fontWeight:'400', letterSpacing:'2px', lineHeight:'1.0', marginBottom:'28px', background:'linear-gradient(135deg,#3B82F6,#22D3EE)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text', opacity:visible?1:0, transform:visible?'translateY(0)':'translateY(30px)', transition:'all .7s ease .32s' }}>
                 Not the Next Quarter.
               </h1>
-              <p style={{ fontFamily:'DM Sans, sans-serif', fontSize:'17px', color:'#94A3B8', lineHeight:'1.85', maxWidth:'460px', marginBottom:'40px', opacity:visible?1:0, transform:visible?'translateY(0)':'translateY(20px)', transition:'all .7s ease .45s' }}>
+              <p style={{ fontFamily:'DM Sans, sans-serif', fontSize:'clamp(15px, 2vw, 17px)', color:'#94A3B8', lineHeight:'1.85', maxWidth:'460px', marginBottom:'40px', opacity:visible?1:0, transform:visible?'translateY(0)':'translateY(20px)', transition:'all .7s ease .45s' }}>
                 TMG is a long-horizon holding group. We do not chase quarters. We build verticals, build with conviction, and create compounding value across India and the Gulf.
               </p>
               <div className="inv-hero-btns" style={{ display:'flex', gap:'14px', opacity:visible?1:0, transition:'all .7s ease .58s', flexWrap:'wrap' }}>
-                {/* Partner With TMG — this IS the contact/partner page, scroll to partner section */}
-                <button onClick={() => document.querySelector('.inv-partner-section')?.scrollIntoView({ behavior:'smooth' })} style={{ padding:'13px 26px', borderRadius:'10px', background:'linear-gradient(135deg,#1A56DB,#3B82F6)', border:'none', color:'#fff', fontFamily:'Syne, sans-serif', fontWeight:'600', fontSize:'14px', cursor:'pointer', transition:'all .25s ease', boxShadow:'0 0 24px rgba(26,86,219,.4)' }}
+                <button onClick={() => document.querySelector('.inv-partner-section')?.scrollIntoView({ behavior:'smooth' })} style={{ padding:'13px 26px', borderRadius:'10px', background:'linear-gradient(135deg,#1A56DB,#3B82F6)', border:'none', color:'#fff', fontFamily:'Outfit, sans-serif', fontWeight:'600', fontSize:'14px', cursor:'pointer', transition:'all .25s ease', boxShadow:'0 0 24px rgba(26,86,219,.4)' }}
                   onMouseEnter={e => { e.currentTarget.style.transform='translateY(-2px)'; e.currentTarget.style.boxShadow='0 0 40px rgba(26,86,219,.65)' }}
                   onMouseLeave={e => { e.currentTarget.style.transform='translateY(0)'; e.currentTarget.style.boxShadow='0 0 24px rgba(26,86,219,.4)' }}>
                   Partner With TMG →
                 </button>
-                {/* View Strategy Deck → scrolls to roadmap */}
-                <button onClick={() => document.querySelector('.inv-roadmap-section')?.scrollIntoView({ behavior:'smooth' })} style={{ padding:'13px 26px', borderRadius:'10px', background:'rgba(255,255,255,.04)', border:'1px solid rgba(255,255,255,.1)', color:'#94A3B8', fontFamily:'Syne, sans-serif', fontWeight:'600', fontSize:'14px', cursor:'pointer', transition:'all .25s ease' }}
+                <button onClick={() => document.querySelector('.inv-roadmap-section')?.scrollIntoView({ behavior:'smooth' })} style={{ padding:'13px 26px', borderRadius:'10px', background:'rgba(255,255,255,.04)', border:'1px solid rgba(255,255,255,.1)', color:'#94A3B8', fontFamily:'Outfit, sans-serif', fontWeight:'600', fontSize:'14px', cursor:'pointer', transition:'all .25s ease' }}
                   onMouseEnter={e => { e.currentTarget.style.background='rgba(255,255,255,.08)'; e.currentTarget.style.borderColor='rgba(59,130,246,.4)'; e.currentTarget.style.color='#F8FAFC' }}
                   onMouseLeave={e => { e.currentTarget.style.background='rgba(255,255,255,.04)'; e.currentTarget.style.borderColor='rgba(255,255,255,.1)'; e.currentTarget.style.color='#94A3B8' }}>
                   View Strategy Deck
@@ -161,7 +190,7 @@ export default function Investors() {
                   <div style={{ width:'8px', height:'8px', borderRadius:'50%', background:'#3B82F6', animation:'softPulse 1.8s infinite', boxShadow:'0 0 8px #3B82F6' }}/>
                   <span style={{ fontFamily:'DM Sans, sans-serif', fontSize:'11px', color:'#64748B', letterSpacing:'2px', fontWeight:'600' }}>INVESTMENT PHILOSOPHY</span>
                 </div>
-                <blockquote style={{ fontFamily:'Syne, sans-serif', fontSize:'20px', fontWeight:'700', color:'#F8FAFC', lineHeight:'1.55', marginBottom:'28px', borderLeft:'3px solid #3B82F6', paddingLeft:'20px' }}>
+                <blockquote style={{ fontFamily:'Outfit, sans-serif', fontSize:'20px', fontWeight:'700', color:'#F8FAFC', lineHeight:'1.55', marginBottom:'28px', borderLeft:'3px solid #3B82F6', paddingLeft:'20px' }}>
                   "We are not traders. We are builders who understand execution."
                 </blockquote>
                 <p style={{ fontFamily:'DM Sans, sans-serif', fontSize:'14px', color:'#94A3B8', lineHeight:'1.8', marginBottom:'28px' }}>
@@ -192,7 +221,7 @@ export default function Investors() {
                 onMouseEnter={e => { e.currentTarget.style.transform='translateY(-5px)'; e.currentTarget.style.borderColor=s.color+'50'; e.currentTarget.style.background=s.color+'0C' }}
                 onMouseLeave={e => { e.currentTarget.style.transform='translateY(0)'; e.currentTarget.style.borderColor=s.color+'20'; e.currentTarget.style.background='rgba(255,255,255,.03)' }}>
                 <div style={{ position:'absolute', top:'-16px', right:'-16px', width:'70px', height:'70px', borderRadius:'50%', background:`radial-gradient(circle,${s.color}25 0%,transparent 70%)`, pointerEvents:'none' }}/>
-                <div style={{ fontFamily:'Syne, sans-serif', fontSize:'36px', fontWeight:'800', color:s.color, marginBottom:'6px', filter:`drop-shadow(0 0 10px ${s.color}55)` }}>
+                <div style={{ fontFamily:'Outfit, sans-serif', fontSize:'clamp(26px,3vw,36px)', fontWeight:'800', color:s.color, marginBottom:'6px', filter:`drop-shadow(0 0 10px ${s.color}55)` }}>
                   <Counter to={s.to} suffix={s.suffix} inView={statsInView}/>
                 </div>
                 <div style={{ fontFamily:'DM Sans, sans-serif', fontSize:'13px', color:'#F8FAFC', fontWeight:'600', marginBottom:'3px' }}>{s.label}</div>
@@ -210,8 +239,8 @@ export default function Investors() {
             <div style={{ width:'32px', height:'2px', background:'linear-gradient(90deg,#3B82F6,#22D3EE)' }}/>
             <span style={{ color:'#22D3EE', fontSize:'12px', fontWeight:'600', letterSpacing:'3px', textTransform:'uppercase', fontFamily:'DM Sans, sans-serif' }}>Operating Philosophy</span>
           </div>
-          <h2 style={{ fontFamily:'Syne, sans-serif', fontSize:'clamp(22px,4vw,42px)', fontWeight:'800', color:'#F8FAFC', marginBottom:'64px', maxWidth:'500px' }}>
-            How We Think<br/>About Money
+          <h2 className="inv-section-h2" style={{ fontFamily:'Outfit, sans-serif', fontWeight:'800', color:'#F8FAFC', marginBottom:'64px', maxWidth:'500px' }}>
+            How We Think About Money
           </h2>
           <div className="inv-pillars-grid" style={{ display:'grid', gridTemplateColumns:'repeat(2,1fr)', gap:'20px' }}>
             {PILLARS.map((p, i) => (
@@ -220,7 +249,7 @@ export default function Investors() {
                 onMouseLeave={e => { e.currentTarget.style.borderColor='rgba(255,255,255,.07)'; e.currentTarget.style.background='rgba(255,255,255,.03)'; e.currentTarget.style.transform='translateY(0)' }}>
                 <div style={{ position:'absolute', top:'-24px', right:'-24px', width:'100px', height:'100px', borderRadius:'50%', background:`radial-gradient(circle,${p.color}18 0%,transparent 70%)`, pointerEvents:'none' }}/>
                 <div style={{ fontSize:'28px', color:p.color, marginBottom:'20px', filter:`drop-shadow(0 0 10px ${p.color}55)` }}>{p.icon}</div>
-                <h3 style={{ fontFamily:'Syne, sans-serif', fontSize:'18px', fontWeight:'700', color:'#F8FAFC', marginBottom:'12px' }}>{p.title}</h3>
+                <h3 style={{ fontFamily:'Outfit, sans-serif', fontSize:'clamp(15px, 1.8vw, 18px)', fontWeight:'700', color:'#F8FAFC', marginBottom:'12px' }}>{p.title}</h3>
                 <p style={{ fontFamily:'DM Sans, sans-serif', fontSize:'14px', color:'#94A3B8', lineHeight:'1.85' }}>{p.desc}</p>
               </div>
             ))}
@@ -235,7 +264,7 @@ export default function Investors() {
             <div style={{ width:'32px', height:'2px', background:'linear-gradient(90deg,#3B82F6,#22D3EE)' }}/>
             <span style={{ color:'#22D3EE', fontSize:'12px', fontWeight:'600', letterSpacing:'3px', textTransform:'uppercase', fontFamily:'DM Sans, sans-serif' }}>Strategic Roadmap</span>
           </div>
-          <h2 style={{ fontFamily:'Syne, sans-serif', fontSize:'clamp(22px,4vw,42px)', fontWeight:'800', color:'#F8FAFC', marginBottom:'56px' }}>2024 — 2027</h2>
+          <h2 className="inv-section-h2" style={{ fontFamily:'Outfit, sans-serif', fontWeight:'800', color:'#F8FAFC', marginBottom:'56px' }}>2024 — 2027</h2>
           <div className="inv-roadmap-grid" style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:'48px', alignItems:'start' }}>
             <div>
               {ROADMAP.map((r, i) => (
@@ -247,7 +276,7 @@ export default function Investors() {
                   </div>
                   <div style={{ flex:1 }}>
                     <div style={{ display:'flex', alignItems:'center', gap:'10px', marginBottom:'4px', flexWrap:'wrap' }}>
-                      <span style={{ fontFamily:'Syne, sans-serif', fontSize:'20px', fontWeight:'800', color:activeYear===r.year?r.color:'#F8FAFC' }}>{r.year}</span>
+                      <span style={{ fontFamily:'Outfit, sans-serif', fontSize:'clamp(16px, 2.5vw, 20px)', fontWeight:'800', color:activeYear===r.year?r.color:'#F8FAFC' }}>{r.year}</span>
                       <span style={{ padding:'2px 10px', borderRadius:'100px', background:r.status==='complete'?'#22C55E18':r.status==='active'?r.color+'18':'rgba(255,255,255,.06)', border:`1px solid ${r.status==='complete'?'#22C55E40':r.status==='active'?r.color+'40':'rgba(255,255,255,.1)'}`, color:r.status==='complete'?'#22C55E':r.status==='active'?r.color:'#64748B', fontFamily:'DM Sans, sans-serif', fontSize:'10px', fontWeight:'700', textTransform:'uppercase', letterSpacing:'1px' }}>
                         {r.status==='complete'?'Done':r.status==='active'?'In Progress':'Upcoming'}
                       </span>
@@ -263,9 +292,9 @@ export default function Investors() {
                 <div style={{ position:'absolute', top:0, left:0, right:0, height:'2px', background:`linear-gradient(90deg,transparent,${activeRoadmap.color},transparent)` }}/>
                 <div style={{ position:'absolute', top:'-40px', right:'-40px', width:'180px', height:'180px', borderRadius:'50%', background:`radial-gradient(circle,${activeRoadmap.color}15 0%,transparent 70%)`, pointerEvents:'none' }}/>
                 <div style={{ marginBottom:'8px' }}>
-                  <span style={{ fontFamily:'Syne, sans-serif', fontSize:'48px', fontWeight:'800', color:activeRoadmap.color, filter:`drop-shadow(0 0 16px ${activeRoadmap.color}60)` }}>{activeRoadmap.year}</span>
+                  <span style={{ fontFamily:'Outfit, sans-serif', fontSize:'clamp(32px, 6vw, 48px)', fontWeight:'800', color:activeRoadmap.color, filter:`drop-shadow(0 0 16px ${activeRoadmap.color}60)` }}>{activeRoadmap.year}</span>
                 </div>
-                <h3 style={{ fontFamily:'Syne, sans-serif', fontSize:'22px', fontWeight:'700', color:'#F8FAFC', marginBottom:'32px' }}>{activeRoadmap.title}</h3>
+                <h3 style={{ fontFamily:'Outfit, sans-serif', fontSize:'clamp(16px, 2.5vw, 22px)', fontWeight:'700', color:'#F8FAFC', marginBottom:'32px' }}>{activeRoadmap.title}</h3>
                 <div style={{ display:'flex', flexDirection:'column', gap:'14px' }}>
                   {activeRoadmap.items.map((item, i) => (
                     <div key={i} style={{ display:'flex', alignItems:'flex-start', gap:'14px', padding:'16px 18px', borderRadius:'12px', background:'rgba(255,255,255,.025)', border:'1px solid rgba(255,255,255,.05)', animation:`fadeUp .4s ease ${i*.08}s both` }}>
@@ -289,8 +318,8 @@ export default function Investors() {
           </div>
           <div className="inv-gov-grid" style={{ display:'grid', gridTemplateColumns:'0.9fr 1.1fr', gap:'80px', alignItems:'start' }}>
             <div style={{ opacity:govInView?1:0, transform:govInView?'translateX(0)':'translateX(-24px)', transition:'all .8s ease' }}>
-              <h2 style={{ fontFamily:'Syne, sans-serif', fontSize:'clamp(22px,3.5vw,38px)', fontWeight:'800', color:'#F8FAFC', marginBottom:'20px', lineHeight:'1.2' }}>
-                How We're<br/>
+              <h2 className="inv-gov-h2" style={{ fontFamily:'Outfit, sans-serif', fontWeight:'800', color:'#F8FAFC', marginBottom:'20px', lineHeight:'1.2' }}>
+                How We're{' '}
                 <span style={{ background:'linear-gradient(135deg,#3B82F6,#22D3EE)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text' }}>Accountable</span>
               </h2>
               <p style={{ fontFamily:'DM Sans, sans-serif', fontSize:'15px', color:'#94A3B8', lineHeight:'1.9', marginBottom:'32px' }}>
@@ -299,7 +328,7 @@ export default function Investors() {
               <div className="inv-gov-diagram" style={{ position:'relative', height:'220px', display:'flex', alignItems:'center', justifyContent:'center' }}>
                 {['Group Holding','Investment Committee','Vertical Leads','External Advisory'].map((label, i) => (
                   <div key={i} style={{ position:'absolute', width:`${100+i*58}px`, height:`${100+i*58}px`, borderRadius:'50%', border:`1px solid rgba(59,130,246,${.6-i*.12})`, display:'flex', alignItems:'center', justifyContent:'center' }}>
-                    {i===0 && <div style={{ fontFamily:'Syne, sans-serif', fontSize:'11px', fontWeight:'700', color:'#3B82F6', textAlign:'center', lineHeight:'1.3', padding:'8px' }}>Group<br/>Holding</div>}
+                    {i===0 && <div style={{ fontFamily:'Outfit, sans-serif', fontSize:'11px', fontWeight:'700', color:'#3B82F6', textAlign:'center', lineHeight:'1.3', padding:'8px' }}>Group<br/>Holding</div>}
                   </div>
                 ))}
                 {[{ label:'Investment\nCommittee', angle:0, r:95 }, { label:'Vertical\nLeads', angle:120, r:95 }, { label:'External\nAdvisory', angle:240, r:95 }].map((item, i) => {
@@ -321,7 +350,7 @@ export default function Investors() {
                   onMouseLeave={e => { e.currentTarget.style.background='rgba(255,255,255,.025)'; e.currentTarget.style.borderColor='rgba(255,255,255,.06)' }}>
                   <div style={{ fontSize:'22px', color:g.color, flexShrink:0, marginTop:'2px', filter:`drop-shadow(0 0 8px ${g.color}55)` }}>{g.icon}</div>
                   <div>
-                    <div style={{ fontFamily:'Syne, sans-serif', fontSize:'15px', fontWeight:'700', color:'#F8FAFC', marginBottom:'5px' }}>{g.title}</div>
+                    <div style={{ fontFamily:'Outfit, sans-serif', fontSize:'15px', fontWeight:'700', color:'#F8FAFC', marginBottom:'5px' }}>{g.title}</div>
                     <div style={{ fontFamily:'DM Sans, sans-serif', fontSize:'13px', color:'#94A3B8', lineHeight:'1.7' }}>{g.desc}</div>
                   </div>
                 </div>
@@ -338,7 +367,7 @@ export default function Investors() {
             <div style={{ width:'32px', height:'2px', background:'linear-gradient(90deg,#3B82F6,#22D3EE)' }}/>
             <span style={{ color:'#22D3EE', fontSize:'12px', fontWeight:'600', letterSpacing:'3px', textTransform:'uppercase', fontFamily:'DM Sans, sans-serif' }}>Who We Work With</span>
           </div>
-          <h2 style={{ fontFamily:'Syne, sans-serif', fontSize:'clamp(22px,4vw,42px)', fontWeight:'800', color:'#F8FAFC', marginBottom:'56px' }}>Partner With TMG</h2>
+          <h2 className="inv-partners-h2" style={{ fontFamily:'Outfit, sans-serif', fontWeight:'800', color:'#F8FAFC', marginBottom:'56px' }}>Partner With TMG</h2>
           <div className="inv-partners-grid" style={{ display:'grid', gridTemplateColumns:'repeat(3,1fr)', gap:'20px', marginBottom:'48px' }}>
             {PARTNER_TYPES.map((p, i) => (
               <div key={i} className="partner-card" style={{ background:'rgba(255,255,255,.03)', border:'1px solid rgba(255,255,255,.07)', borderRadius:'20px', padding:'36px', position:'relative', overflow:'hidden', opacity:partInView?1:0, transform:partInView?'translateY(0)':'translateY(28px)', transition:`all .65s ease ${i*.12}s` }}
@@ -346,7 +375,7 @@ export default function Investors() {
                 onMouseLeave={e => { e.currentTarget.style.borderColor='rgba(255,255,255,.07)'; e.currentTarget.style.background='rgba(255,255,255,.03)' }}>
                 <div style={{ position:'absolute', top:'-20px', right:'-20px', width:'100px', height:'100px', borderRadius:'50%', background:`radial-gradient(circle,${p.color}18 0%,transparent 70%)`, pointerEvents:'none' }}/>
                 <div style={{ fontSize:'28px', color:p.color, marginBottom:'20px', filter:`drop-shadow(0 0 10px ${p.color}55)` }}>{p.icon}</div>
-                <h3 style={{ fontFamily:'Syne, sans-serif', fontSize:'18px', fontWeight:'700', color:'#F8FAFC', marginBottom:'12px' }}>{p.type}</h3>
+                <h3 style={{ fontFamily:'Outfit, sans-serif', fontSize:'clamp(15px, 1.8vw, 18px)', fontWeight:'700', color:'#F8FAFC', marginBottom:'12px' }}>{p.type}</h3>
                 <p style={{ fontFamily:'DM Sans, sans-serif', fontSize:'14px', color:'#94A3B8', lineHeight:'1.85', marginBottom:'20px' }}>{p.desc}</p>
                 <div style={{ display:'flex', alignItems:'center', gap:'8px' }}>
                   <span style={{ fontFamily:'DM Sans, sans-serif', fontSize:'11px', color:'#64748B' }}>Ticket size:</span>
@@ -359,17 +388,15 @@ export default function Investors() {
           {/* CTA */}
           <div className="inv-cta" style={{ padding:'48px 56px', borderRadius:'24px', background:'linear-gradient(135deg,rgba(26,86,219,.12),rgba(34,211,238,.06))', border:'1px solid rgba(59,130,246,.22)', display:'grid', gridTemplateColumns:'1fr auto', gap:'40px', alignItems:'center', opacity:partInView?1:0, transition:'all .7s ease .4s' }}>
             <div>
-              <h3 style={{ fontFamily:'Syne, sans-serif', fontSize:'24px', fontWeight:'800', color:'#F8FAFC', marginBottom:'10px' }}>Ready to explore a partnership?</h3>
+              <h3 className="inv-cta-h3" style={{ fontFamily:'Outfit, sans-serif', fontWeight:'800', color:'#F8FAFC', marginBottom:'10px' }}>Ready to explore a partnership?</h3>
               <p style={{ fontFamily:'DM Sans, sans-serif', fontSize:'15px', color:'#94A3B8', lineHeight:'1.7' }}>We have a simple process — a conversation first, numbers second. Reach out and we'll respond within 48 hours.</p>
             </div>
             <div className="inv-cta-btns" style={{ display:'flex', flexDirection:'column', gap:'10px', flexShrink:0 }}>
-              {/* Start a Conversation → mailto or contact (no separate contact page, so use about) */}
-              <button onClick={() => navigate('/about')} style={{ padding:'14px 32px', borderRadius:'10px', background:'linear-gradient(135deg,#1A56DB,#3B82F6)', border:'none', color:'#fff', fontFamily:'Syne, sans-serif', fontWeight:'600', fontSize:'14px', cursor:'pointer', transition:'all .25s ease', boxShadow:'0 0 24px rgba(26,86,219,.4)', whiteSpace:'nowrap' }}
+              <button onClick={() => navigate('/about')} style={{ padding:'14px 32px', borderRadius:'10px', background:'linear-gradient(135deg,#1A56DB,#3B82F6)', border:'none', color:'#fff', fontFamily:'Outfit, sans-serif', fontWeight:'600', fontSize:'14px', cursor:'pointer', transition:'all .25s ease', boxShadow:'0 0 24px rgba(26,86,219,.4)', whiteSpace:'nowrap' }}
                 onMouseEnter={e => { e.currentTarget.style.transform='translateY(-2px)'; e.currentTarget.style.boxShadow='0 0 40px rgba(26,86,219,.65)' }}
                 onMouseLeave={e => { e.currentTarget.style.transform='translateY(0)'; e.currentTarget.style.boxShadow='0 0 24px rgba(26,86,219,.4)' }}>
                 Start a Conversation →
               </button>
-              {/* Download Strategy Deck → scrolls to roadmap */}
               <button onClick={() => document.querySelector('.inv-roadmap-section')?.scrollIntoView({ behavior:'smooth' })} style={{ padding:'12px 32px', borderRadius:'10px', background:'transparent', border:'1px solid rgba(255,255,255,.1)', color:'#94A3B8', fontFamily:'DM Sans, sans-serif', fontWeight:'600', fontSize:'13px', cursor:'pointer', transition:'all .25s ease', whiteSpace:'nowrap' }}
                 onMouseEnter={e => { e.currentTarget.style.borderColor='rgba(59,130,246,.4)'; e.currentTarget.style.color='#F8FAFC' }}
                 onMouseLeave={e => { e.currentTarget.style.borderColor='rgba(255,255,255,.1)'; e.currentTarget.style.color='#94A3B8' }}>

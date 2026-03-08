@@ -130,6 +130,22 @@ export default function GlobalPresence() {
           to   { opacity:1; transform:translateY(0); }
         }
 
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@400;500;600;700;800&display=swap');
+
+        /* ── Heading sizes ── */
+        .gp-hero-h1-main {
+          font-size: clamp(1.75rem, 5vw, 4rem);
+        }
+        .gp-hero-h1-grad {
+          font-size: clamp(1.75rem, 5vw, 4rem);
+        }
+        .gp-region-name {
+          font-size: clamp(1.4rem, 3.5vw, 2.8rem);
+        }
+        .gp-matrix-title {
+          font-size: clamp(20px, 3vw, 32px);
+        }
+
         /* ── Layout ── */
         .gp-hero       { padding: 60px 80px 72px; }
         .gp-counters   { padding: 0 80px 80px; }
@@ -187,6 +203,10 @@ export default function GlobalPresence() {
           .gp-region-tabs button { padding: 8px 14px !important; font-size: 12px !important; }
 
           .gp-left-card  { padding: 32px 24px !important; min-height: 320px !important; }
+
+          .gp-hero-h1-main { font-size: clamp(1.5rem, 8vw, 2.4rem); }
+          .gp-hero-h1-grad { font-size: clamp(1.5rem, 8vw, 2.4rem); }
+          .gp-region-name  { font-size: clamp(1.2rem, 6vw, 1.8rem); }
         }
       `}</style>
 
@@ -222,22 +242,22 @@ export default function GlobalPresence() {
             </span>
           </div>
 
-          <h1 style={{
-            fontFamily: "Syne, sans-serif", fontSize: "clamp(2.4rem,5vw,4rem)",
-            fontWeight: "800", color: "#F8FAFC", lineHeight: "1.1", marginBottom: "12px",
+          <h1 className="gp-hero-h1-main" style={{
+            fontFamily: "Bebas Neue, sans-serif",
+            fontWeight: "400", letterSpacing: "2px", color: "#F8FAFC", lineHeight: "1.0", marginBottom: "12px",
             opacity: visible ? 1 : 0, transform: visible ? "translateY(0)" : "translateY(30px)", transition: "all .7s ease .2s",
           }}>One Group.</h1>
 
-          <h1 style={{
-            fontFamily: "Syne, sans-serif", fontSize: "clamp(2.4rem,5vw,4rem)",
-            fontWeight: "800", lineHeight: "1.1", marginBottom: "28px",
+          <h1 className="gp-hero-h1-grad" style={{
+            fontFamily: "Bebas Neue, sans-serif",
+            fontWeight: "400", letterSpacing: "2px", lineHeight: "1.0", marginBottom: "28px",
             background: "linear-gradient(135deg,#3B82F6,#22D3EE,#A78BFA)",
             WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text",
             opacity: visible ? 1 : 0, transform: visible ? "translateY(0)" : "translateY(30px)", transition: "all .7s ease .35s",
           }}>Four Markets.</h1>
 
           <p style={{
-            fontFamily: "DM Sans, sans-serif", fontSize: "18px", color: "#94A3B8",
+            fontFamily: "DM Sans, sans-serif", fontSize: "clamp(15px, 2vw, 18px)", color: "#94A3B8",
             lineHeight: "1.8", maxWidth: "520px",
             opacity: visible ? 1 : 0, transform: visible ? "translateY(0)" : "translateY(20px)", transition: "all .7s ease .5s",
           }}>
@@ -261,7 +281,7 @@ export default function GlobalPresence() {
               onMouseLeave={(e) => { e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.borderColor = s.color + "22"; e.currentTarget.style.background = "rgba(255,255,255,.03)"; }}
             >
               <div style={{ position: "absolute", top: "-20px", right: "-20px", width: "80px", height: "80px", borderRadius: "50%", background: `radial-gradient(circle,${s.color}22 0%,transparent 70%)`, pointerEvents: "none" }} />
-              <div style={{ fontFamily: "Syne, sans-serif", fontSize: "clamp(28px,3vw,40px)", fontWeight: "800", color: s.color, marginBottom: "10px", lineHeight: "1", filter: `drop-shadow(0 0 12px ${s.color}50)` }}>
+              <div style={{ fontFamily: "Outfit, sans-serif", fontSize: "clamp(24px,3vw,40px)", fontWeight: "800", color: s.color, marginBottom: "10px", lineHeight: "1", filter: `drop-shadow(0 0 12px ${s.color}50)` }}>
                 <AnimatedCounter target={s.value} suffix={s.suffix} inView={statsInView} />
               </div>
               <div style={{ fontFamily: "DM Sans, sans-serif", fontSize: "13px", color: "#64748B", fontWeight: "500" }}>{s.label}</div>
@@ -328,7 +348,7 @@ export default function GlobalPresence() {
 
               <div style={{ position: "relative", zIndex: 1 }}>
                 <div style={{ fontSize: "56px", marginBottom: "20px" }}>{active.flag}</div>
-                <h2 style={{ fontFamily: "Syne, sans-serif", fontWeight: "800", fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)", color: "#F8FAFC", lineHeight: "1.1", marginBottom: "8px" }}>
+                <h2 className="gp-region-name" style={{ fontFamily: "Outfit, sans-serif", fontWeight: "800", color: "#F8FAFC", lineHeight: "1.1", marginBottom: "8px" }}>
                   {active.name}
                 </h2>
                 <div style={{ display: "inline-flex", alignItems: "center", gap: "6px", padding: "4px 12px", borderRadius: "100px", background: `${active.color}15`, border: `1px solid ${active.color}30`, marginBottom: "24px" }}>
@@ -337,7 +357,7 @@ export default function GlobalPresence() {
                     {active.role}
                   </span>
                 </div>
-                <p style={{ fontFamily: "DM Sans, sans-serif", fontSize: "15px", color: "#94A3B8", lineHeight: "1.8", maxWidth: "380px" }}>
+                <p style={{ fontFamily: "DM Sans, sans-serif", fontSize: "clamp(13px, 1.8vw, 15px)", color: "#94A3B8", lineHeight: "1.8", maxWidth: "380px" }}>
                   {active.detail}
                 </p>
               </div>
@@ -345,7 +365,7 @@ export default function GlobalPresence() {
               <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "12px", marginTop: "32px", position: "relative", zIndex: 1 }}>
                 {active.stats.map((s, i) => (
                   <div key={i} style={{ background: "rgba(0,0,0,.25)", border: `1px solid ${active.color}20`, borderRadius: "12px", padding: "16px 18px" }}>
-                    <div style={{ fontFamily: "Syne, sans-serif", fontWeight: "800", fontSize: "1.2rem", color: active.color, marginBottom: "4px" }}>{s.value}</div>
+                    <div style={{ fontFamily: "Outfit, sans-serif", fontWeight: "800", fontSize: "1.2rem", color: active.color, marginBottom: "4px" }}>{s.value}</div>
                     <div style={{ fontFamily: "DM Sans, sans-serif", fontSize: "11px", color: "#64748B" }}>{s.label}</div>
                   </div>
                 ))}
@@ -373,7 +393,7 @@ export default function GlobalPresence() {
                     {region.flag}
                   </div>
                   <div style={{ flex: 1, minWidth: 0 }}>
-                    <div style={{ fontFamily: "Syne, sans-serif", fontWeight: "700", fontSize: "15px", color: "#F8FAFC", marginBottom: "4px" }}>{region.name}</div>
+                    <div style={{ fontFamily: "Outfit, sans-serif", fontWeight: "700", fontSize: "15px", color: "#F8FAFC", marginBottom: "4px" }}>{region.name}</div>
                     <div style={{ color: "#64748B", fontSize: "12px", fontFamily: "DM Sans, sans-serif", marginBottom: "8px" }}>{region.role}</div>
                     <div style={{ display: "flex", gap: "6px", flexWrap: "wrap" }}>
                       {region.verticals.map((v, j) => (
@@ -433,7 +453,7 @@ export default function GlobalPresence() {
               <tbody>
                 {matrixRows.map((row, ri) => (
                   <tr key={ri}>
-                    <td style={{ ...tdStyle, fontFamily: "Syne, sans-serif", fontWeight: "700", color: row.color, fontSize: "14px", borderLeft: `3px solid ${row.color}44` }}>
+                    <td style={{ ...tdStyle, fontFamily: "Outfit, sans-serif", fontWeight: "700", color: row.color, fontSize: "14px", borderLeft: `3px solid ${row.color}44` }}>
                       {row.name}
                     </td>
                     {row.presence.map((on, ci) => (

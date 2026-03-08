@@ -59,6 +59,8 @@ export default function Contractors() {
     <div style={{ background:'var(--navy)', minHeight:'100vh', paddingTop:'100px' }}>
 
       <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@400;500;600;700;800&display=swap');
+
         @keyframes blueprintScroll {
           from{background-position:0 0,0 0,0 0,0 0}
           to{background-position:100px 100px,100px 100px,20px 20px,20px 20px}
@@ -103,7 +105,7 @@ export default function Contractors() {
                 <span style={{ fontSize:'16px' }}>⚡</span>
                 <span style={{ color:'#F59E0B', fontSize:'12px', fontWeight:'600', letterSpacing:'2px' }}>VERTICAL 03 · INDUSTRIAL</span>
               </div>
-              <h1 style={{ fontFamily:'Syne, sans-serif', fontSize:'clamp(2rem,4vw,3.2rem)', fontWeight:'800', lineHeight:'1.15', color:'#F8FAFC', marginBottom:'20px', opacity:heroInView?1:0, transform:heroInView?'translateY(0)':'translateY(24px)', transition:'all 0.6s ease 0.2s' }}>
+              <h1 style={{ fontFamily:'Bebas Neue, sans-serif', fontSize:'clamp(3rem,6vw,5rem)', fontWeight:'400', lineHeight:'1.0', letterSpacing:'2px', color:'#F8FAFC', marginBottom:'20px', opacity:heroInView?1:0, transform:heroInView?'translateY(0)':'translateY(24px)', transition:'all 0.6s ease 0.2s' }}>
                 Maven{' '}
                 <span style={{ background:'linear-gradient(135deg,#F59E0B,#FCD34D)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text' }}>Contractors</span>
               </h1>
@@ -125,7 +127,7 @@ export default function Contractors() {
                   <div style={{ display:'flex', justifyContent:'space-between', alignItems:'center', marginBottom:'24px' }}>
                     <div>
                       <div style={{ color:'#64748B', fontSize:'11px', letterSpacing:'1px', marginBottom:'4px' }}>PRIMARY MARKET</div>
-                      <div style={{ fontFamily:'Syne, sans-serif', fontWeight:'800', fontSize:'1.4rem', color:'#F8FAFC', display:'flex', alignItems:'center', gap:'10px' }}>🇸🇦 Saudi Arabia</div>
+                      <div style={{ fontFamily:'Outfit, sans-serif', fontWeight:'800', fontSize:'1.4rem', color:'#F8FAFC', display:'flex', alignItems:'center', gap:'10px' }}>🇸🇦 Saudi Arabia</div>
                     </div>
                     <div style={{ padding:'6px 12px', borderRadius:'100px', background:'rgba(245,158,11,0.12)', border:'1px solid rgba(245,158,11,0.25)', color:'#F59E0B', fontSize:'12px', fontWeight:'600' }}>● ACTIVE</div>
                   </div>
@@ -140,7 +142,7 @@ export default function Contractors() {
                   <div style={{ marginTop:'16px', padding:'12px 16px', borderRadius:'10px', background:'rgba(245,158,11,0.08)', border:'1px solid rgba(245,158,11,0.15)', display:'flex', alignItems:'center', gap:'10px' }}>
                     <span style={{ fontSize:'20px' }}>🏙️</span>
                     <div>
-                      <div style={{ color:'#F59E0B', fontFamily:'Syne, sans-serif', fontWeight:'700', fontSize:'13px' }}>Vision 2030 Aligned</div>
+                      <div style={{ color:'#F59E0B', fontFamily:'Outfit, sans-serif', fontWeight:'700', fontSize:'13px' }}>Vision 2030 Aligned</div>
                       <div style={{ color:'#64748B', fontSize:'11px' }}>Targeting KSA infrastructure mega-projects</div>
                     </div>
                   </div>
@@ -157,7 +159,7 @@ export default function Contractors() {
           <div className="con-stats-grid" style={{ display:'grid', gridTemplateColumns:'repeat(4,1fr)', gap:'24px' }}>
             {stats.map((stat,i) => (
               <div key={i} style={{ textAlign:'center', padding:'28px', borderRadius:'16px', background:'rgba(255,255,255,0.02)', border:'1px solid rgba(255,255,255,0.05)', opacity:heroInView?1:0, transform:heroInView?'translateY(0)':'translateY(20px)', transition:`all 0.6s ease ${0.3+i*0.1}s` }}>
-                <div style={{ fontFamily:'Syne, sans-serif', fontWeight:'800', fontSize:'2rem', color:stat.color, marginBottom:'8px' }}>{stat.value}</div>
+                <div style={{ fontFamily:'Outfit, sans-serif', fontWeight:'800', fontSize:'2rem', color:stat.color, marginBottom:'8px' }}>{stat.value}</div>
                 <div style={{ color:'#64748B', fontSize:'13px' }}>{stat.label}</div>
               </div>
             ))}
@@ -172,13 +174,13 @@ export default function Contractors() {
             <div style={{ width:'32px', height:'2px', background:'linear-gradient(90deg,#F59E0B,#FCD34D)' }}/>
             <span style={{ color:'#F59E0B', fontSize:'12px', fontWeight:'600', letterSpacing:'3px', textTransform:'uppercase' }}>Our Services</span>
           </div>
-          <h2 style={{ fontFamily:'Syne, sans-serif', fontWeight:'800', fontSize:'clamp(1.6rem,3vw,2.4rem)', color:'#F8FAFC', marginBottom:'48px', opacity:servicesInView?1:0, transform:servicesInView?'translateY(0)':'translateY(20px)', transition:'all 0.6s ease 0.1s' }}>What We Build & Deliver</h2>
+          <h2 style={{ fontFamily:'Outfit, sans-serif', fontWeight:'800', fontSize:'clamp(1.6rem,3vw,2.4rem)', color:'#F8FAFC', marginBottom:'48px', opacity:servicesInView?1:0, transform:servicesInView?'translateY(0)':'translateY(20px)', transition:'all 0.6s ease 0.1s' }}>What We Build & Deliver</h2>
           <div className="con-services-grid" style={{ display:'grid', gridTemplateColumns:'repeat(3,1fr)', gap:'20px' }}>
             {services.map((service,i) => (
               <div key={i} onMouseEnter={() => setHoveredService(i)} onMouseLeave={() => setHoveredService(null)} style={{ padding:'28px', borderRadius:'16px', background:hoveredService===i?'rgba(255,255,255,0.05)':'rgba(255,255,255,0.02)', border:hoveredService===i?`1px solid ${service.color}44`:'1px solid rgba(255,255,255,0.05)', cursor:'default', transition:'all 0.3s ease', transform:hoveredService===i?'translateY(-6px)':servicesInView?'translateY(0)':'translateY(24px)', opacity:servicesInView?1:0, boxShadow:hoveredService===i?`0 12px 40px rgba(0,0,0,0.3),0 0 0 1px ${service.color}11`:'none', transitionDelay:servicesInView?`${i*0.08}s`:'0s', position:'relative', overflow:'hidden' }}>
                 {hoveredService===i && <div style={{ position:'absolute', top:0, right:0, width:'150px', height:'150px', borderRadius:'50%', background:`radial-gradient(circle,${service.color}15 0%,transparent 70%)`, pointerEvents:'none' }}/>}
                 <div style={{ fontSize:'32px', marginBottom:'16px', filter:hoveredService===i?`drop-shadow(0 0 8px ${service.color})`:'none', transition:'filter 0.3s ease' }}>{service.icon}</div>
-                <h3 style={{ fontFamily:'Syne, sans-serif', fontWeight:'700', fontSize:'15px', color:'#F8FAFC', marginBottom:'10px' }}>{service.title}</h3>
+                <h3 style={{ fontFamily:'Outfit, sans-serif', fontWeight:'700', fontSize:'15px', color:'#F8FAFC', marginBottom:'10px' }}>{service.title}</h3>
                 <p style={{ color:'#64748B', fontSize:'13px', lineHeight:'1.7', marginBottom:'16px' }}>{service.desc}</p>
                 <div style={{ display:'flex', flexWrap:'wrap', gap:'6px' }}>
                   {service.tags.map(tag => (
@@ -198,12 +200,12 @@ export default function Contractors() {
             <div style={{ width:'32px', height:'2px', background:'linear-gradient(90deg,#34D399,#22D3EE)' }}/>
             <span style={{ color:'#34D399', fontSize:'12px', fontWeight:'600', letterSpacing:'3px', textTransform:'uppercase' }}>Compliance & Certifications</span>
           </div>
-          <h2 style={{ fontFamily:'Syne, sans-serif', fontWeight:'800', fontSize:'clamp(1.6rem,3vw,2.4rem)', color:'#F8FAFC', marginBottom:'48px', opacity:complianceInView?1:0, transform:complianceInView?'translateY(0)':'translateY(20px)', transition:'all 0.6s ease 0.1s' }}>Built to KSA Standards</h2>
+          <h2 style={{ fontFamily:'Outfit, sans-serif', fontWeight:'800', fontSize:'clamp(1.6rem,3vw,2.4rem)', color:'#F8FAFC', marginBottom:'48px', opacity:complianceInView?1:0, transform:complianceInView?'translateY(0)':'translateY(20px)', transition:'all 0.6s ease 0.1s' }}>Built to KSA Standards</h2>
           <div className="con-compliance-grid" style={{ display:'grid', gridTemplateColumns:'repeat(4,1fr)', gap:'20px' }}>
             {compliance.map((item,i) => (
               <div key={i} style={{ padding:'28px 24px', borderRadius:'16px', background:'rgba(255,255,255,0.02)', border:'1px solid rgba(52,211,153,0.12)', textAlign:'center', opacity:complianceInView?1:0, transform:complianceInView?'translateY(0)':'translateY(20px)', transition:`all 0.6s ease ${i*0.1}s` }}>
                 <div style={{ fontSize:'32px', marginBottom:'12px' }}>{item.icon}</div>
-                <div style={{ fontFamily:'Syne, sans-serif', fontWeight:'700', fontSize:'14px', color:'#F8FAFC', marginBottom:'6px' }}>{item.label}</div>
+                <div style={{ fontFamily:'Outfit, sans-serif', fontWeight:'700', fontSize:'14px', color:'#F8FAFC', marginBottom:'6px' }}>{item.label}</div>
                 <div style={{ color:'#64748B', fontSize:'12px' }}>{item.desc}</div>
               </div>
             ))}
@@ -221,7 +223,7 @@ export default function Contractors() {
 
           <div className="con-contract-grid" style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:'60px', alignItems:'center' }}>
             <div>
-              <h2 style={{ fontFamily:'Syne, sans-serif', fontWeight:'800', fontSize:'clamp(1.6rem,3vw,2.4rem)', color:'#F8FAFC', marginBottom:'16px', opacity:contractInView?1:0, transform:contractInView?'translateY(0)':'translateY(20px)', transition:'all 0.6s ease 0.1s' }}>Contract Models We Operate</h2>
+              <h2 style={{ fontFamily:'Outfit, sans-serif', fontWeight:'800', fontSize:'clamp(1.6rem,3vw,2.4rem)', color:'#F8FAFC', marginBottom:'16px', opacity:contractInView?1:0, transform:contractInView?'translateY(0)':'translateY(20px)', transition:'all 0.6s ease 0.1s' }}>Contract Models We Operate</h2>
               <p style={{ color:'#64748B', lineHeight:'1.8', marginBottom:'36px', opacity:contractInView?1:0, transition:'all 0.6s ease 0.2s' }}>
                 Flexible engagement structures designed for Saudi project owners, developers, and government authorities — from small civil works to large-scale EPC contracts.
               </p>
@@ -230,7 +232,7 @@ export default function Contractors() {
                   <div key={i} onMouseEnter={() => setHoveredContract(i)} onMouseLeave={() => setHoveredContract(null)} style={{ padding:'18px 20px', borderRadius:'12px', background:hoveredContract===i?'rgba(255,255,255,0.05)':'rgba(255,255,255,0.02)', border:hoveredContract===i?`1px solid ${model.color}44`:'1px solid rgba(255,255,255,0.05)', display:'flex', alignItems:'center', gap:'16px', cursor:'default', transition:'all 0.3s ease', transform:hoveredContract===i?'translateX(6px)':'translateX(0)', opacity:contractInView?1:0, transitionDelay:contractInView?`${0.2+i*0.1}s`:'0s' }}>
                     <div style={{ width:'10px', height:'10px', borderRadius:'50%', background:model.color, boxShadow:`0 0 8px ${model.color}`, flexShrink:0 }}/>
                     <div>
-                      <div style={{ fontFamily:'Syne, sans-serif', fontWeight:'700', fontSize:'14px', color:'#F8FAFC', marginBottom:'2px' }}>{model.label}</div>
+                      <div style={{ fontFamily:'Outfit, sans-serif', fontWeight:'700', fontSize:'14px', color:'#F8FAFC', marginBottom:'2px' }}>{model.label}</div>
                       <div style={{ color:'#64748B', fontSize:'12px' }}>{model.desc}</div>
                     </div>
                     <div style={{ marginLeft:'auto', color:model.color, fontSize:'16px', opacity:hoveredContract===i?1:0, transition:'opacity 0.3s ease' }}>→</div>
@@ -238,9 +240,8 @@ export default function Contractors() {
                 ))}
               </div>
 
-              {/* CTA — Get in Touch */}
               <div style={{ marginTop:'32px', display:'flex', gap:'12px', flexWrap:'wrap', opacity:contractInView?1:0, transition:'all 0.7s ease 0.6s' }}>
-                <button onClick={() => navigate('/investors')} style={{ padding:'12px 24px', borderRadius:'10px', background:'linear-gradient(135deg,#F59E0B,#FCD34D)', border:'none', color:'#0B1C2D', fontFamily:'Syne, sans-serif', fontWeight:'700', fontSize:'14px', cursor:'pointer', transition:'all .25s ease', boxShadow:'0 0 20px rgba(245,158,11,0.4)' }}
+                <button onClick={() => navigate('/investors')} style={{ padding:'12px 24px', borderRadius:'10px', background:'linear-gradient(135deg,#F59E0B,#FCD34D)', border:'none', color:'#0B1C2D', fontFamily:'Outfit, sans-serif', fontWeight:'700', fontSize:'14px', cursor:'pointer', transition:'all .25s ease', boxShadow:'0 0 20px rgba(245,158,11,0.4)' }}
                   onMouseEnter={e=>{e.currentTarget.style.transform='translateY(-2px)';e.currentTarget.style.boxShadow='0 0 36px rgba(245,158,11,0.6)'}}
                   onMouseLeave={e=>{e.currentTarget.style.transform='translateY(0)';e.currentTarget.style.boxShadow='0 0 20px rgba(245,158,11,0.4)'}}>
                   Get in Touch →
@@ -257,7 +258,7 @@ export default function Contractors() {
                   <div style={{ display:'flex', alignItems:'center', gap:'16px', marginBottom:'32px' }}>
                     <div style={{ flex:1, padding:'16px', borderRadius:'12px', background:'rgba(59,130,246,0.1)', border:'1px solid rgba(59,130,246,0.2)', textAlign:'center' }}>
                       <div style={{ fontSize:'28px', marginBottom:'6px' }}>🇮🇳</div>
-                      <div style={{ fontFamily:'Syne, sans-serif', fontWeight:'700', fontSize:'13px', color:'#F8FAFC' }}>India</div>
+                      <div style={{ fontFamily:'Outfit, sans-serif', fontWeight:'700', fontSize:'13px', color:'#F8FAFC' }}>India</div>
                       <div style={{ color:'#64748B', fontSize:'10px', marginTop:'4px' }}>Manpower & Materials</div>
                     </div>
                     <div style={{ display:'flex', flexDirection:'column', alignItems:'center', gap:'4px' }}>
@@ -268,7 +269,7 @@ export default function Contractors() {
                     </div>
                     <div style={{ flex:1, padding:'16px', borderRadius:'12px', background:'rgba(245,158,11,0.1)', border:'1px solid rgba(245,158,11,0.2)', textAlign:'center' }}>
                       <div style={{ fontSize:'28px', marginBottom:'6px' }}>🇸🇦</div>
-                      <div style={{ fontFamily:'Syne, sans-serif', fontWeight:'700', fontSize:'13px', color:'#F8FAFC' }}>Saudi Arabia</div>
+                      <div style={{ fontFamily:'Outfit, sans-serif', fontWeight:'700', fontSize:'13px', color:'#F8FAFC' }}>Saudi Arabia</div>
                       <div style={{ color:'#64748B', fontSize:'10px', marginTop:'4px' }}>Project Execution</div>
                     </div>
                   </div>

@@ -1,4 +1,5 @@
 import { useRef, useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 function useInView(threshold = 0.2) {
   const ref = useRef(null)
@@ -42,15 +43,16 @@ const pillars = [
 ]
 
 const verticals = [
-  { name: 'Maven Business Services', tag: 'Finance & Markets', color: '#1A56DB' },
-  { name: 'Maven AI Tech', tag: 'Artificial Intelligence & SaaS', color: '#22D3EE' },
-  { name: 'Maven Contractors', tag: 'Infrastructure & Construction', color: '#A78BFA' },
-  { name: 'Maven E-Commerce', tag: 'Retail & Digital Commerce', color: '#F59E0B' },
+  { name: 'Maven Business Services', tag: 'Finance & Markets',            color: '#1A56DB', route: '/verticals/business-services' },
+  { name: 'Maven AI Tech',           tag: 'Artificial Intelligence & SaaS', color: '#22D3EE', route: '/verticals/ai-tech' },
+  { name: 'Maven Contractors',       tag: 'Infrastructure & Construction', color: '#A78BFA', route: '/verticals/contractors' },
+  { name: 'Maven E-Commerce',        tag: 'Retail & Digital Commerce',     color: '#F59E0B', route: '/verticals/ecommerce' },
 ]
 
 
 
 export default function About() {
+  const navigate = useNavigate()
   const [heroRef, heroInView] = useInView(0.1)
   const [storyRef, storyInView] = useInView(0.1)
   const [pillarsRef, pillarsInView] = useInView(0.1)
@@ -83,9 +85,8 @@ export default function About() {
             <div style={{ width: '32px', height: '2px', background: 'linear-gradient(90deg, #22D3EE, #3B82F6)' }} />
           </div>
 
-          <h1 style={{
+          <h1 className="about-hero-h1" style={{
             fontFamily: 'Syne, sans-serif',
-            fontSize: 'clamp(40px, 6vw, 72px)',
             fontWeight: '800',
             color: '#F8FAFC',
             lineHeight: '1.1',
@@ -100,7 +101,7 @@ export default function About() {
 
           <p style={{
             fontFamily: 'DM Sans, sans-serif',
-            fontSize: '18px',
+            fontSize: 'clamp(15px, 2vw, 18px)',
             color: '#94A3B8',
             lineHeight: '1.8',
             maxWidth: '600px',
@@ -125,9 +126,8 @@ export default function About() {
             </span>
           </div>
 
-          <h2 style={{
+          <h2 className="about-section-h2" style={{
             fontFamily: 'Syne, sans-serif',
-            fontSize: 'clamp(28px, 4vw, 44px)',
             fontWeight: '800',
             color: '#F8FAFC',
             lineHeight: '1.2',
@@ -137,20 +137,20 @@ export default function About() {
             <span className="gradient-text">Multi-Market Group</span>
           </h2>
 
-          <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: '16px', color: '#94A3B8', lineHeight: '1.9', marginBottom: '20px' }}>
+          <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 'clamp(14px, 1.8vw, 16px)', color: '#94A3B8', lineHeight: '1.9', marginBottom: '20px' }}>
             The Maven's Group didn't start with a masterplan. It started with a conviction — that conviction,
             when paired with clarity of purpose and operational discipline, can build something meaningful
             across borders.
           </p>
 
-          <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: '16px', color: '#94A3B8', lineHeight: '1.9', marginBottom: '20px' }}>
+          <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 'clamp(14px, 1.8vw, 16px)', color: '#94A3B8', lineHeight: '1.9', marginBottom: '20px' }}>
             Headquartered in Saudi Arabia and registered in the UAE, our roots trace back to Indian
             financial markets — where the group first deployed capital and built its investment discipline.
             Over time, that evolved into a structured group spanning AI technology, construction,
             e-commerce, and social impact.
           </p>
 
-          <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: '16px', color: '#94A3B8', lineHeight: '1.9' }}>
+          <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 'clamp(14px, 1.8vw, 16px)', color: '#94A3B8', lineHeight: '1.9' }}>
             Today, TMG is not just an investment vehicle. It is an operating group — with tech operations
             running out of India, headquarters anchored in Saudi Arabia, and our legal and commercial
             structure registered in the UAE. People on the ground, real execution, and a long-term view
@@ -164,7 +164,7 @@ export default function About() {
 
       {/* PILLARS */}
       <section ref={pillarsRef} style={{
-        padding: '100px 80px',
+        padding: 'clamp(60px, 8vw, 100px) clamp(20px, 6vw, 80px)',
         background: 'rgba(255,255,255,0.015)',
         borderTop: '1px solid rgba(255,255,255,0.05)',
         borderBottom: '1px solid rgba(255,255,255,0.05)',
@@ -177,14 +177,13 @@ export default function About() {
             </span>
           </div>
 
-          <h2 style={{
+          <h2 className="about-section-h2" style={{
             fontFamily: 'Syne, sans-serif',
-            fontSize: 'clamp(28px, 4vw, 44px)',
             fontWeight: '800',
             color: '#F8FAFC',
             marginBottom: '64px',
           }}>
-            Four Pillars.<br />One Direction.
+            Four Pillars. One Direction.
           </h2>
 
           <div className="about-pillars-grid">
@@ -216,10 +215,10 @@ export default function About() {
                 }}>
                   {p.icon}
                 </div>
-                <h3 style={{ fontFamily: 'Syne, sans-serif', fontSize: '17px', fontWeight: '700', color: '#F8FAFC', marginBottom: '12px' }}>
+                <h3 style={{ fontFamily: 'Syne, sans-serif', fontSize: 'clamp(14px, 1.8vw, 17px)', fontWeight: '700', color: '#F8FAFC', marginBottom: '12px' }}>
                   {p.title}
                 </h3>
-                <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: '14px', color: '#94A3B8', lineHeight: '1.8' }}>
+                <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 'clamp(13px, 1.5vw, 14px)', color: '#94A3B8', lineHeight: '1.8' }}>
                   {p.desc}
                 </p>
               </div>
@@ -229,7 +228,7 @@ export default function About() {
       </section>
 
       {/* VERTICALS */}
-      <section ref={verticalsRef} style={{ padding: '100px 80px' }}>
+      <section ref={verticalsRef} style={{ padding: 'clamp(60px, 8vw, 100px) clamp(20px, 6vw, 80px)' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '64px' }}>
             <div style={{ width: '32px', height: '2px', background: 'linear-gradient(90deg, #3B82F6, #22D3EE)' }} />
@@ -262,16 +261,22 @@ export default function About() {
                   <div style={{ fontFamily: 'DM Sans, sans-serif', fontSize: '12px', color: v.color, fontWeight: '600', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '10px' }}>
                     {v.tag}
                   </div>
-                  <div style={{ fontFamily: 'Syne, sans-serif', fontSize: '20px', fontWeight: '700', color: '#F8FAFC' }}>
+                  <div style={{ fontFamily: 'Syne, sans-serif', fontSize: 'clamp(15px, 2vw, 20px)', fontWeight: '700', color: '#F8FAFC' }}>
                     {v.name}
                   </div>
                 </div>
-                <div style={{
+                <div
+                  onClick={() => navigate(v.route)}
+                  style={{
                   width: '40px', height: '40px', borderRadius: '50%',
                   background: v.color + '15', border: `1px solid ${v.color}30`,
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
                   color: v.color, fontSize: '18px', flexShrink: 0,
-                }}>
+                  cursor: 'pointer', transition: 'all .25s ease',
+                }}
+                  onMouseEnter={e => { e.currentTarget.style.background = v.color + '30'; e.currentTarget.style.transform = 'scale(1.12)' }}
+                  onMouseLeave={e => { e.currentTarget.style.background = v.color + '15'; e.currentTarget.style.transform = 'scale(1)' }}
+                >
                   →
                 </div>
               </div>
@@ -282,7 +287,7 @@ export default function About() {
 
       {/* CLOSING */}
       <section ref={closingRef} style={{
-        padding: '100px 20px',
+        padding: 'clamp(60px, 8vw, 100px) 20px',
         textAlign: 'center',
         borderTop: '1px solid rgba(255,255,255,0.05)',
         position: 'relative',
@@ -294,9 +299,8 @@ export default function About() {
           pointerEvents: 'none',
         }} />
         <div style={{ maxWidth: '700px', margin: '0 auto', position: 'relative' }}>
-          <p style={{
+          <p className="about-closing-quote" style={{
             fontFamily: 'Syne, sans-serif',
-            fontSize: 'clamp(22px, 4vw, 36px)',
             fontWeight: '700',
             color: '#F8FAFC',
             lineHeight: '1.5',
@@ -311,13 +315,23 @@ export default function About() {
       </section>
 
       <style>{`
+        .about-hero-h1 {
+          font-size: clamp(28px, 6vw, 72px);
+        }
+        .about-section-h2 {
+          font-size: clamp(22px, 4vw, 44px);
+        }
+        .about-closing-quote {
+          font-size: clamp(18px, 4vw, 36px);
+        }
+
         .about-two-col {
           display: flex;
           gap: 80px;
           align-items: center;
           max-width: 1200px;
           margin: 0 auto;
-          padding: 0 80px 100px;
+          padding: 0 clamp(20px, 6vw, 80px) clamp(60px, 8vw, 100px);
         }
 
         .stats-grid {
@@ -374,7 +388,7 @@ export default function About() {
 
         @media (max-width: 900px) {
           .about-two-col {
-            grid-template-columns: 1fr;
+            flex-direction: column;
             gap: 48px;
             padding: 0 20px 80px;
           }
@@ -389,12 +403,26 @@ export default function About() {
         }
 
         @media (max-width: 600px) {
+          .about-hero-h1 {
+            font-size: clamp(22px, 8vw, 36px);
+          }
+          .about-section-h2 {
+            font-size: clamp(18px, 6vw, 28px);
+          }
+          .about-closing-quote {
+            font-size: clamp(16px, 5vw, 22px);
+          }
+
           .about-pillars-grid {
             grid-template-columns: 1fr;
           }
 
           .stats-grid {
             grid-template-columns: repeat(2, 1fr);
+          }
+
+          .vertical-card {
+            padding: 24px;
           }
         }
       `}</style>

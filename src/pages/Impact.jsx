@@ -77,6 +77,19 @@ export default function Impact() {
         @keyframes growBar { from{width:0%} to{width:100%} }
         @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
 
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@400;500;600;700;800&display=swap');
+
+        /* ── Heading sizes ── */
+        .imp-hero-h1 {
+          font-size: clamp(1.6rem, 4vw, 3.2rem);
+        }
+        .imp-section-h2 {
+          font-size: clamp(1.3rem, 3vw, 2.4rem);
+        }
+        .imp-cta-h2 {
+          font-size: clamp(1.3rem, 3vw, 2.4rem);
+        }
+
         /* ── Responsive ── */
         @media(max-width:900px){
           .imp-hero-grid{grid-template-columns:1fr!important}
@@ -91,6 +104,10 @@ export default function Impact() {
         @media(max-width:600px){
           .imp-stats-grid{grid-template-columns:1fr!important}
           .imp-init-grid{grid-template-columns:1fr!important}
+
+          .imp-hero-h1    { font-size: clamp(1.4rem, 7vw, 2rem); }
+          .imp-section-h2 { font-size: clamp(1.2rem, 6vw, 1.6rem); }
+          .imp-cta-h2     { font-size: clamp(1.2rem, 6vw, 1.6rem); }
         }
       `}</style>
 
@@ -113,11 +130,11 @@ export default function Impact() {
                 <span style={{ fontSize:'16px' }}>🤲</span>
                 <span style={{ color:'#34D399', fontSize:'12px', fontWeight:'600', letterSpacing:'2px' }}>SOCIAL IMPACT · GIVING BACK</span>
               </div>
-              <h1 style={{ fontFamily:'Syne, sans-serif', fontSize:'clamp(2rem,4vw,3.2rem)', fontWeight:'800', lineHeight:'1.15', color:'#F8FAFC', marginBottom:'20px', opacity:heroInView?1:0, transform:heroInView?'translateY(0)':'translateY(24px)', transition:'all 0.6s ease 0.2s' }}>
+              <h1 className="imp-hero-h1" style={{ fontFamily:'Bebas Neue, sans-serif', fontWeight:'400', letterSpacing:'2px', lineHeight:'1.0', color:'#F8FAFC', marginBottom:'20px', opacity:heroInView?1:0, transform:heroInView?'translateY(0)':'translateY(24px)', transition:'all 0.6s ease 0.2s' }}>
                 Growth That{' '}
                 <span style={{ background:'linear-gradient(135deg,#34D399,#22D3EE)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text' }}>Gives Back</span>
               </h1>
-              <p style={{ color:'#94A3B8', fontSize:'1rem', lineHeight:'1.8', maxWidth:'480px', marginBottom:'16px', opacity:heroInView?1:0, transform:heroInView?'translateY(0)':'translateY(20px)', transition:'all 0.6s ease 0.35s' }}>
+              <p style={{ color:'#94A3B8', fontSize:'clamp(0.88rem, 2vw, 1rem)', lineHeight:'1.8', maxWidth:'480px', marginBottom:'16px', opacity:heroInView?1:0, transform:heroInView?'translateY(0)':'translateY(20px)', transition:'all 0.6s ease 0.35s' }}>
                 At The Maven's Group, we believe that every rupee earned carries a responsibility. Our social impact work is not a footnote — it is woven into the fabric of how we build and operate.
               </p>
               <p style={{ color:'#64748B', fontSize:'0.95rem', lineHeight:'1.8', maxWidth:'480px', marginBottom:'32px', opacity:heroInView?1:0, transition:'all 0.6s ease 0.45s' }}>
@@ -135,12 +152,12 @@ export default function Impact() {
                 <div style={{ position:'absolute', inset:0, background:'radial-gradient(ellipse at 70% 20%,rgba(52,211,153,0.07) 0%,transparent 60%)' }}/>
                 <div style={{ position:'relative', zIndex:1 }}>
                   <div style={{ width:'64px', height:'64px', borderRadius:'16px', background:'rgba(52,211,153,0.12)', border:'1px solid rgba(52,211,153,0.25)', display:'flex', alignItems:'center', justifyContent:'center', fontSize:'30px', marginBottom:'20px', animation:'heartbeat 2s ease-in-out infinite' }}>🤲</div>
-                  <div style={{ fontFamily:'Syne, sans-serif', fontWeight:'800', fontSize:'1.3rem', color:'#F8FAFC', marginBottom:'8px' }}>Profit with Purpose</div>
+                  <div style={{ fontFamily:'Outfit, sans-serif', fontWeight:'800', fontSize:'1.3rem', color:'#F8FAFC', marginBottom:'8px' }}>Profit with Purpose</div>
                   <p style={{ color:'#64748B', fontSize:'13px', lineHeight:'1.7', marginBottom:'24px' }}>A fixed percentage of group profits is allocated annually to verified social impact programs — with full accountability and transparent reporting.</p>
                   <div style={{ marginBottom:'20px' }}>
                     <div style={{ display:'flex', justifyContent:'space-between', marginBottom:'8px' }}>
                       <span style={{ color:'#94A3B8', fontSize:'12px' }}>Annual Impact Allocation</span>
-                      <span style={{ color:'#34D399', fontFamily:'Syne, sans-serif', fontWeight:'700' }}>10%+</span>
+                      <span style={{ color:'#34D399', fontFamily:'Outfit, sans-serif', fontWeight:'700' }}>10%+</span>
                     </div>
                     <div style={{ height:'8px', borderRadius:'100px', background:'rgba(255,255,255,0.05)' }}>
                       <div style={{ height:'100%', width:'100%', borderRadius:'100px', background:'linear-gradient(90deg,#34D399,#22D3EE)', animation:'growBar 2s ease 0.5s both' }}/>
@@ -168,10 +185,10 @@ export default function Impact() {
               <div key={i} style={{ padding:'32px 24px', borderRadius:'20px', background:'rgba(255,255,255,0.02)', border:`1px solid ${stat.color}15`, textAlign:'center', opacity:statsInView?1:0, transform:statsInView?'translateY(0)':'translateY(24px)', transition:`all 0.6s ease ${i*0.12}s`, position:'relative', overflow:'hidden' }}>
                 <div style={{ position:'absolute', top:0, left:0, right:0, height:'3px', background:`linear-gradient(90deg,${stat.color},${stat.color}44)` }}/>
                 <div style={{ fontSize:'36px', marginBottom:'16px' }}>{stat.icon}</div>
-                <div style={{ fontFamily:'Syne, sans-serif', fontWeight:'800', fontSize:'2.4rem', color:stat.color, marginBottom:'8px', lineHeight:'1' }}>
+                <div style={{ fontFamily:'Outfit, sans-serif', fontWeight:'800', fontSize:'clamp(1.8rem, 5vw, 2.4rem)', color:stat.color, marginBottom:'8px', lineHeight:'1' }}>
                   <AnimatedCounter target={stat.value} suffix={stat.suffix} inView={statsInView} duration={1800}/>
                 </div>
-                <div style={{ fontFamily:'Syne, sans-serif', fontWeight:'600', fontSize:'14px', color:'#F8FAFC', marginBottom:'8px' }}>{stat.label}</div>
+                <div style={{ fontFamily:'Outfit, sans-serif', fontWeight:'600', fontSize:'14px', color:'#F8FAFC', marginBottom:'8px' }}>{stat.label}</div>
                 <div style={{ color:'#475569', fontSize:'12px', lineHeight:'1.6' }}>{stat.desc}</div>
               </div>
             ))}
@@ -186,14 +203,14 @@ export default function Impact() {
             <div style={{ width:'32px', height:'2px', background:'linear-gradient(90deg,#34D399,#22D3EE)' }}/>
             <span style={{ color:'#34D399', fontSize:'12px', fontWeight:'600', letterSpacing:'3px', textTransform:'uppercase' }}>Our Programs</span>
           </div>
-          <h2 style={{ fontFamily:'Syne, sans-serif', fontWeight:'800', fontSize:'clamp(1.6rem,3vw,2.4rem)', color:'#F8FAFC', marginBottom:'12px', opacity:initiativesInView?1:0, transform:initiativesInView?'translateY(0)':'translateY(20px)', transition:'all 0.6s ease 0.1s' }}>Where We Focus</h2>
-          <p style={{ color:'#64748B', marginBottom:'48px', maxWidth:'500px', opacity:initiativesInView?1:0, transition:'all 0.6s ease 0.2s' }}>Six pillars of impact that guide how we give, invest, and engage with communities.</p>
+          <h2 className="imp-section-h2" style={{ fontFamily:'Outfit, sans-serif', fontWeight:'800', color:'#F8FAFC', marginBottom:'12px', opacity:initiativesInView?1:0, transform:initiativesInView?'translateY(0)':'translateY(20px)', transition:'all 0.6s ease 0.1s' }}>Where We Focus</h2>
+          <p style={{ color:'#64748B', marginBottom:'48px', maxWidth:'500px', fontSize:'clamp(13px, 1.8vw, 15px)', opacity:initiativesInView?1:0, transition:'all 0.6s ease 0.2s' }}>Six pillars of impact that guide how we give, invest, and engage with communities.</p>
           <div className="imp-init-grid" style={{ display:'grid', gridTemplateColumns:'repeat(3,1fr)', gap:'20px' }}>
             {initiatives.map((item, i) => (
               <div key={i} onMouseEnter={() => setHoveredInit(i)} onMouseLeave={() => setHoveredInit(null)} style={{ padding:'28px', borderRadius:'18px', background:hoveredInit===i?`${item.color}08`:'rgba(255,255,255,0.02)', border:hoveredInit===i?`1px solid ${item.color}35`:'1px solid rgba(255,255,255,0.05)', cursor:'default', transition:'all 0.3s ease', transform:hoveredInit===i?'translateY(-6px)':initiativesInView?'translateY(0)':'translateY(24px)', opacity:initiativesInView?1:0, transitionDelay:initiativesInView?`${i*0.08}s`:'0s', position:'relative', overflow:'hidden' }}>
                 {hoveredInit===i && <div style={{ position:'absolute', top:'-30px', right:'-30px', width:'120px', height:'120px', borderRadius:'50%', background:`radial-gradient(circle,${item.color}15 0%,transparent 70%)`, pointerEvents:'none' }}/>}
                 <div style={{ width:'52px', height:'52px', borderRadius:'14px', background:`${item.color}15`, border:`1px solid ${item.color}25`, display:'flex', alignItems:'center', justifyContent:'center', fontSize:'24px', marginBottom:'16px', transition:'all 0.3s ease', boxShadow:hoveredInit===i?`0 0 20px ${item.color}25`:'none' }}>{item.icon}</div>
-                <h3 style={{ fontFamily:'Syne, sans-serif', fontWeight:'700', fontSize:'15px', color:'#F8FAFC', marginBottom:'10px' }}>{item.title}</h3>
+                <h3 style={{ fontFamily:'Outfit, sans-serif', fontWeight:'700', fontSize:'clamp(13px, 1.8vw, 15px)', color:'#F8FAFC', marginBottom:'10px' }}>{item.title}</h3>
                 <p style={{ color:'#64748B', fontSize:'13px', lineHeight:'1.7', marginBottom:'16px' }}>{item.desc}</p>
                 <div style={{ display:'flex', flexDirection:'column', gap:'6px' }}>
                   {item.points.map((point, j) => (
@@ -218,17 +235,17 @@ export default function Impact() {
               <span style={{ color:'#34D399', fontSize:'12px', fontWeight:'600', letterSpacing:'3px', textTransform:'uppercase' }}>Human Stories</span>
               <div style={{ width:'32px', height:'2px', background:'linear-gradient(90deg,#22D3EE,#34D399)' }}/>
             </div>
-            <h2 style={{ fontFamily:'Syne, sans-serif', fontWeight:'800', fontSize:'clamp(1.6rem,3vw,2.4rem)', color:'#F8FAFC', opacity:storiesInView?1:0, transform:storiesInView?'translateY(0)':'translateY(20px)', transition:'all 0.6s ease 0.1s' }}>Lives We've Touched</h2>
+            <h2 className="imp-section-h2" style={{ fontFamily:'Outfit, sans-serif', fontWeight:'800', color:'#F8FAFC', opacity:storiesInView?1:0, transform:storiesInView?'translateY(0)':'translateY(20px)', transition:'all 0.6s ease 0.1s' }}>Lives We've Touched</h2>
           </div>
           <div className="imp-stories-grid" style={{ display:'grid', gridTemplateColumns:'repeat(3,1fr)', gap:'20px' }}>
             {stories.map((story, i) => (
               <div key={i} onClick={() => setActiveStory(i)} style={{ padding:'32px', borderRadius:'20px', background:activeStory===i?`${story.color}08`:'rgba(255,255,255,0.02)', border:activeStory===i?`1px solid ${story.color}35`:'1px solid rgba(255,255,255,0.05)', cursor:'pointer', transition:'all 0.4s ease', transform:activeStory===i?'translateY(-6px)':storiesInView?'translateY(0)':'translateY(24px)', opacity:storiesInView?1:0, transitionDelay:storiesInView?`${i*0.12}s`:'0s', position:'relative', overflow:'hidden' }}>
                 {activeStory===i && <div style={{ position:'absolute', inset:0, background:`radial-gradient(ellipse at 50% 0%,${story.color}08 0%,transparent 70%)`, pointerEvents:'none' }}/>}
-                <div style={{ fontFamily:'Syne, sans-serif', fontSize:'4rem', lineHeight:'1', color:story.color, opacity:0.3, marginBottom:'8px' }}>"</div>
+                <div style={{ fontFamily:'Outfit, sans-serif', fontSize:'4rem', lineHeight:'1', color:story.color, opacity:0.3, marginBottom:'8px' }}>"</div>
                 <p style={{ color:activeStory===i?'#94A3B8':'#64748B', fontSize:'14px', lineHeight:'1.8', fontStyle:'italic', marginBottom:'24px', transition:'color 0.3s ease' }}>{story.quote}</p>
                 <div style={{ display:'flex', alignItems:'center', gap:'12px' }}>
                   <div style={{ width:'40px', height:'40px', borderRadius:'50%', background:`${story.color}15`, border:`1px solid ${story.color}30`, display:'flex', alignItems:'center', justifyContent:'center', fontSize:'20px' }}>{story.icon}</div>
-                  <div style={{ fontFamily:'Syne, sans-serif', fontWeight:'600', fontSize:'13px', color:activeStory===i?story.color:'#475569', transition:'color 0.3s ease' }}>{story.name}</div>
+                  <div style={{ fontFamily:'Outfit, sans-serif', fontWeight:'600', fontSize:'13px', color:activeStory===i?story.color:'#475569', transition:'color 0.3s ease' }}>{story.name}</div>
                 </div>
                 {activeStory===i && <div style={{ position:'absolute', bottom:'16px', right:'16px', width:'8px', height:'8px', borderRadius:'50%', background:story.color, boxShadow:`0 0 8px ${story.color}`, animation:'pulse 2s infinite' }}/>}
               </div>
@@ -249,19 +266,17 @@ export default function Impact() {
             <div style={{ position:'absolute', top:'-60px', left:'50%', transform:'translateX(-50%)', width:'300px', height:'300px', borderRadius:'50%', background:'radial-gradient(circle,rgba(52,211,153,0.08) 0%,transparent 70%)', pointerEvents:'none' }}/>
             <div style={{ position:'relative', zIndex:1 }}>
               <div style={{ fontSize:'48px', marginBottom:'20px' }}>🤲</div>
-              <h2 style={{ fontFamily:'Syne, sans-serif', fontWeight:'800', fontSize:'clamp(1.6rem,3vw,2.4rem)', color:'#F8FAFC', marginBottom:'16px' }}>Partner in Purpose</h2>
-              <p style={{ color:'#64748B', fontSize:'1rem', lineHeight:'1.8', maxWidth:'500px', margin:'0 auto 36px' }}>
+              <h2 className="imp-cta-h2" style={{ fontFamily:'Outfit, sans-serif', fontWeight:'800', color:'#F8FAFC', marginBottom:'16px' }}>Partner in Purpose</h2>
+              <p style={{ color:'#64748B', fontSize:'clamp(13px, 1.8vw, 1rem)', lineHeight:'1.8', maxWidth:'500px', margin:'0 auto 36px' }}>
                 If you're an institution, NGO, or individual looking to collaborate on impactful community programs — we'd love to connect.
               </p>
               <div className="imp-cta-btns" style={{ display:'flex', gap:'16px', justifyContent:'center', flexWrap:'wrap' }}>
-                {/* Get Involved → /investors (partnership inquiry) */}
-                <button onClick={() => navigate('/investors')} style={{ padding:'14px 32px', background:'linear-gradient(135deg,#34D399,#22D3EE)', border:'none', borderRadius:'10px', color:'#0B1C2D', fontFamily:'Syne, sans-serif', fontWeight:'700', fontSize:'14px', cursor:'pointer', transition:'all 0.3s ease', boxShadow:'0 0 24px rgba(52,211,153,0.3)' }}
+                <button onClick={() => navigate('/investors')} style={{ padding:'14px 32px', background:'linear-gradient(135deg,#34D399,#22D3EE)', border:'none', borderRadius:'10px', color:'#0B1C2D', fontFamily:'Outfit, sans-serif', fontWeight:'700', fontSize:'14px', cursor:'pointer', transition:'all 0.3s ease', boxShadow:'0 0 24px rgba(52,211,153,0.3)' }}
                   onMouseEnter={e => { e.currentTarget.style.transform='translateY(-2px)'; e.currentTarget.style.boxShadow='0 0 40px rgba(52,211,153,0.5)' }}
                   onMouseLeave={e => { e.currentTarget.style.transform='translateY(0)'; e.currentTarget.style.boxShadow='0 0 24px rgba(52,211,153,0.3)' }}>
                   Get Involved →
                 </button>
-                {/* View Impact Report → /initiative (related programs) */}
-                <button onClick={() => navigate('/initiative')} style={{ padding:'14px 32px', background:'transparent', border:'1px solid rgba(52,211,153,0.25)', borderRadius:'10px', color:'#34D399', fontFamily:'Syne, sans-serif', fontWeight:'600', fontSize:'14px', cursor:'pointer', transition:'all 0.3s ease' }}
+                <button onClick={() => navigate('/initiative')} style={{ padding:'14px 32px', background:'transparent', border:'1px solid rgba(52,211,153,0.25)', borderRadius:'10px', color:'#34D399', fontFamily:'Outfit, sans-serif', fontWeight:'600', fontSize:'14px', cursor:'pointer', transition:'all 0.3s ease' }}
                   onMouseEnter={e => { e.currentTarget.style.background='rgba(52,211,153,0.08)'; e.currentTarget.style.borderColor='rgba(52,211,153,0.4)' }}
                   onMouseLeave={e => { e.currentTarget.style.background='transparent'; e.currentTarget.style.borderColor='rgba(52,211,153,0.25)' }}>
                   View Initiative →

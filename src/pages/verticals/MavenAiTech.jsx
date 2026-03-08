@@ -1,7 +1,6 @@
 import { useRef, useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-// ─── useInView ────────────────────────────────────────────────────────────────
 function useInView(threshold = 0.15) {
   const ref = useRef(null)
   const [inView, setInView] = useState(false)
@@ -16,7 +15,6 @@ function useInView(threshold = 0.15) {
   return [ref, inView]
 }
 
-// ─── Neural network node positions ────────────────────────────────────────────
 const NEURAL_NODES = Array.from({ length: 28 }, (_, i) => ({
   id: i,
   x: 8 + Math.random() * 84,
@@ -35,7 +33,6 @@ const NEURAL_EDGES = NEURAL_NODES.flatMap((n, i) =>
     .map(m => ({ x1: n.x, y1: n.y, x2: m.x, y2: m.y, id: `${i}-${m.id}` }))
 )
 
-// ─── Products ─────────────────────────────────────────────────────────────────
 const PRODUCTS = [
   {
     id: 'investigat',
@@ -99,7 +96,6 @@ const PRODUCTS = [
   },
 ]
 
-// ─── Capabilities ─────────────────────────────────────────────────────────────
 const CAPABILITIES = [
   { label: 'Natural Language Processing', pct: 92, color: '#3B82F6' },
   { label: 'Predictive Analytics',         pct: 85, color: '#22D3EE' },
@@ -107,7 +103,6 @@ const CAPABILITIES = [
   { label: 'Autonomous Agents',            pct: 70, color: '#F59E0B' },
 ]
 
-// ─── Launch flow steps ────────────────────────────────────────────────────────
 const FLOW = [
   { label: 'R&D',    sub: 'Bangalore, India',    color: '#3B82F6', icon: '◈' },
   { label: 'Build',  sub: 'Remote-first team',   color: '#22D3EE', icon: '⬡' },
@@ -132,6 +127,8 @@ export default function AITech() {
     <div style={{ background: 'var(--navy)', minHeight: '100vh', paddingTop: '100px', overflow: 'hidden' }}>
 
       <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@400;500;600;700;800&display=swap');
+
         @keyframes neuralPulse { 0%,100%{opacity:.18} 50%{opacity:.55} }
         @keyframes auraRing { 0%{transform:scale(1);opacity:.5} 100%{transform:scale(1.9);opacity:0} }
         @keyframes softPulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.4;transform:scale(.8)} }
@@ -194,8 +191,8 @@ export default function AITech() {
             <span style={{ color:'#A78BFA', fontSize:'12px', fontWeight:'600', letterSpacing:'2px', fontFamily:'DM Sans, sans-serif' }}>MAVEN AI TECH</span>
           </div>
 
-          <h1 style={{ fontFamily:'Syne, sans-serif', fontSize:'clamp(2.4rem,6vw,5rem)', fontWeight:'800', color:'#F8FAFC', lineHeight:'1.08', marginBottom:'12px', letterSpacing:'-1px', opacity:visible?1:0, transform:visible?'translateY(0)':'translateY(30px)', transition:'all .75s ease .2s' }}>Intelligence,</h1>
-          <h1 style={{ fontFamily:'Syne, sans-serif', fontSize:'clamp(2.4rem,6vw,5rem)', fontWeight:'800', lineHeight:'1.08', marginBottom:'36px', letterSpacing:'-1px', background:'linear-gradient(135deg,#A78BFA 0%,#22D3EE 60%,#3B82F6 100%)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text', opacity:visible?1:0, transform:visible?'translateY(0)':'translateY(30px)', transition:'all .75s ease .32s' }}>Productised.</h1>
+          <h1 style={{ fontFamily:'Bebas Neue, sans-serif', fontSize:'clamp(3.5rem,8vw,7rem)', fontWeight:'400', color:'#F8FAFC', lineHeight:'0.95', marginBottom:'8px', letterSpacing:'3px', opacity:visible?1:0, transform:visible?'translateY(0)':'translateY(30px)', transition:'all .75s ease .2s' }}>Intelligence,</h1>
+          <h1 style={{ fontFamily:'Bebas Neue, sans-serif', fontSize:'clamp(3.5rem,8vw,7rem)', fontWeight:'400', lineHeight:'0.95', marginBottom:'36px', letterSpacing:'3px', background:'linear-gradient(135deg,#A78BFA 0%,#22D3EE 60%,#3B82F6 100%)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text', opacity:visible?1:0, transform:visible?'translateY(0)':'translateY(30px)', transition:'all .75s ease .32s' }}>Productised.</h1>
 
           <p style={{ fontFamily:'DM Sans, sans-serif', fontSize:'clamp(15px,2vw,18px)', color:'#94A3B8', lineHeight:'1.85', maxWidth:'560px', margin:'0 auto 52px', opacity:visible?1:0, transform:visible?'translateY(0)':'translateY(20px)', transition:'all .7s ease .45s' }}>
             We build AI products that work in the real world — deployed across India and the Gulf, solving real problems with clean, reliable software.
@@ -208,7 +205,7 @@ export default function AITech() {
               { val:'2026', label:'Gulf Launch', color:'#3B82F6' },
             ].map((s,i) => (
               <div key={i} style={{ textAlign:'center' }}>
-                <div style={{ fontFamily:'Syne, sans-serif', fontSize:'32px', fontWeight:'800', color:s.color, marginBottom:'4px', filter:`drop-shadow(0 0 10px ${s.color}55)` }}>{s.val}</div>
+                <div style={{ fontFamily:'Outfit, sans-serif', fontSize:'32px', fontWeight:'800', color:s.color, marginBottom:'4px', filter:`drop-shadow(0 0 10px ${s.color}55)` }}>{s.val}</div>
                 <div style={{ fontFamily:'DM Sans, sans-serif', fontSize:'12px', color:'#64748B' }}>{s.label}</div>
               </div>
             ))}
@@ -249,8 +246,8 @@ export default function AITech() {
             <div>
               <div style={{ display:'inline-flex', alignItems:'center', justifyContent:'center', width:'72px', height:'72px', borderRadius:'20px', background:active.color+'15', border:`1px solid ${active.color}35`, color:active.color, marginBottom:'28px', boxShadow:`0 0 30px ${active.glow}` }}>{active.icon}</div>
               <div style={{ fontFamily:'DM Sans, sans-serif', fontSize:'11px', color:active.color, fontWeight:'700', letterSpacing:'2px', textTransform:'uppercase', marginBottom:'10px' }}>{active.type}</div>
-              <h2 style={{ fontFamily:'Syne, sans-serif', fontSize:'clamp(1.8rem,4vw,3.2rem)', fontWeight:'800', color:'#F8FAFC', lineHeight:'1.1', marginBottom:'8px' }}>{active.name}</h2>
-              <p style={{ fontFamily:'Syne, sans-serif', fontSize:'18px', color:active.color, fontWeight:'600', marginBottom:'24px', opacity:0.8 }}>{active.tagline}</p>
+              <h2 style={{ fontFamily:'Outfit, sans-serif', fontSize:'clamp(1.8rem,4vw,3.2rem)', fontWeight:'800', color:'#F8FAFC', lineHeight:'1.1', marginBottom:'8px' }}>{active.name}</h2>
+              <p style={{ fontFamily:'Outfit, sans-serif', fontSize:'18px', color:active.color, fontWeight:'600', marginBottom:'24px', opacity:0.8 }}>{active.tagline}</p>
               <p style={{ fontFamily:'DM Sans, sans-serif', fontSize:'16px', color:'#94A3B8', lineHeight:'1.9', marginBottom:'36px' }}>{active.desc}</p>
 
               <div className="ai-features-grid" style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:'10px', marginBottom:'36px' }}>
@@ -279,7 +276,7 @@ export default function AITech() {
               )}
               <div style={{ background:'rgba(11,28,45,0.7)', border:`1px solid ${active.color}22`, borderRadius:'24px', padding:'40px', backdropFilter:'blur(16px)', boxShadow:`0 32px 80px rgba(0,0,0,0.4),0 0 0 1px ${active.color}10,0 0 60px ${active.glow}20`, position:'relative', zIndex:1, textAlign:'center' }}>
                 <div style={{ display:'inline-flex', alignItems:'center', justifyContent:'center', width:'100px', height:'100px', borderRadius:'28px', background:`linear-gradient(135deg,${active.color}25,${active.color}08)`, border:`1px solid ${active.color}35`, color:active.color, marginBottom:'28px', boxShadow:`0 0 40px ${active.glow}`, transform:'scale(1.5)' }}>{active.icon}</div>
-                <h3 style={{ fontFamily:'Syne, sans-serif', fontSize:'28px', fontWeight:'800', color:'#F8FAFC', marginBottom:'8px', marginTop:'20px' }}>{active.name}</h3>
+                <h3 style={{ fontFamily:'Outfit, sans-serif', fontSize:'28px', fontWeight:'800', color:'#F8FAFC', marginBottom:'8px', marginTop:'20px' }}>{active.name}</h3>
                 <p style={{ fontFamily:'DM Sans, sans-serif', fontSize:'14px', color:active.color, marginBottom:'32px' }}>{active.tagline}</p>
                 <div style={{ display:'inline-flex', alignItems:'center', gap:'8px', padding:'10px 20px', borderRadius:'100px', background:active.color+'10', border:`1px solid ${active.color}25` }}>
                   <div style={{ width:'7px', height:'7px', borderRadius:'50%', background:active.color, animation:'softPulse 1.8s infinite', boxShadow:`0 0 8px ${active.color}` }}/>
@@ -300,7 +297,7 @@ export default function AITech() {
               <div key={p.id} className="prod-card" onClick={() => setActive(p.id)} style={{ padding:'28px', borderRadius:'18px', cursor:'pointer', border:`1px solid ${activeProduct===p.id ? p.color+'50' : 'rgba(255,255,255,0.06)'}`, background:activeProduct===p.id ? p.color+'0D' : 'rgba(255,255,255,0.02)', opacity:prodInView?1:0, transform:prodInView?'translateY(0)':'translateY(24px)', transition:`opacity .6s ease ${i*.1}s,transform .6s ease ${i*.1}s`, position:'relative', overflow:'hidden' }}>
                 {activeProduct===p.id && <div style={{ position:'absolute', top:0, left:0, right:0, height:'2px', background:`linear-gradient(90deg,transparent,${p.color},transparent)` }}/>}
                 <div style={{ color:p.color, marginBottom:'16px', filter:`drop-shadow(0 0 8px ${p.color}50)` }}>{p.icon}</div>
-                <div style={{ fontFamily:'Syne, sans-serif', fontSize:'17px', fontWeight:'700', color:'#F8FAFC', marginBottom:'6px' }}>{p.name}</div>
+                <div style={{ fontFamily:'Outfit, sans-serif', fontSize:'17px', fontWeight:'700', color:'#F8FAFC', marginBottom:'6px' }}>{p.name}</div>
                 <div style={{ fontFamily:'DM Sans, sans-serif', fontSize:'12px', color:'#64748B', marginBottom:'14px' }}>{p.type}</div>
                 <span style={{ padding:'4px 10px', borderRadius:'100px', fontSize:'11px', fontFamily:'DM Sans, sans-serif', fontWeight:'600', background:p.color+'12', border:`1px solid ${p.color}28`, color:p.color }}>{p.status}</span>
               </div>
@@ -318,7 +315,7 @@ export default function AITech() {
                 <div style={{ width:'32px', height:'2px', background:'linear-gradient(90deg,#A78BFA,#22D3EE)' }}/>
                 <span style={{ color:'#A78BFA', fontSize:'12px', fontWeight:'600', letterSpacing:'3px', textTransform:'uppercase', fontFamily:'DM Sans, sans-serif' }}>Core Capabilities</span>
               </div>
-              <h2 style={{ fontFamily:'Syne, sans-serif', fontSize:'clamp(22px,3.5vw,38px)', fontWeight:'800', color:'#F8FAFC', marginBottom:'16px', lineHeight:'1.2' }}>
+              <h2 style={{ fontFamily:'Outfit, sans-serif', fontSize:'clamp(22px,3.5vw,38px)', fontWeight:'800', color:'#F8FAFC', marginBottom:'16px', lineHeight:'1.2' }}>
                 What Our AI<br/>
                 <span style={{ background:'linear-gradient(135deg,#A78BFA,#22D3EE)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text' }}>Can Actually Do</span>
               </h2>
@@ -331,7 +328,7 @@ export default function AITech() {
                 <div key={i} style={{ marginBottom:i<CAPABILITIES.length-1?'28px':0 }}>
                   <div style={{ display:'flex', justifyContent:'space-between', marginBottom:'10px' }}>
                     <span style={{ fontFamily:'DM Sans, sans-serif', fontSize:'14px', fontWeight:'600', color:'#F8FAFC' }}>{c.label}</span>
-                    <span style={{ fontFamily:'Syne, sans-serif', fontSize:'14px', fontWeight:'700', color:c.color }}>{c.pct}%</span>
+                    <span style={{ fontFamily:'Outfit, sans-serif', fontSize:'14px', fontWeight:'700', color:c.color }}>{c.pct}%</span>
                   </div>
                   <div style={{ height:'5px', borderRadius:'5px', background:'rgba(255,255,255,0.06)', overflow:'hidden' }}>
                     <div style={{ height:'100%', borderRadius:'5px', background:`linear-gradient(90deg,${c.color},${c.color}88)`, width:capInView?`${c.pct}%`:'0%', transition:`width 1.2s ease ${.2+i*.15}s`, boxShadow:`0 0 10px ${c.color}55` }}/>
@@ -351,7 +348,7 @@ export default function AITech() {
             <span style={{ color:'#A78BFA', fontSize:'12px', fontWeight:'600', letterSpacing:'3px', textTransform:'uppercase', fontFamily:'DM Sans, sans-serif' }}>Go-To-Market</span>
             <div style={{ width:'32px', height:'2px', background:'linear-gradient(90deg,#22D3EE,#A78BFA)' }}/>
           </div>
-          <h2 style={{ fontFamily:'Syne, sans-serif', fontSize:'clamp(22px,4vw,42px)', fontWeight:'800', color:'#F8FAFC', marginBottom:'16px' }}>From India to the Gulf</h2>
+          <h2 style={{ fontFamily:'Outfit, sans-serif', fontSize:'clamp(22px,4vw,42px)', fontWeight:'800', color:'#F8FAFC', marginBottom:'16px' }}>From India to the Gulf</h2>
           <p style={{ fontFamily:'DM Sans, sans-serif', fontSize:'16px', color:'#94A3B8', lineHeight:'1.8', maxWidth:'480px', margin:'0 auto 72px' }}>
             Every product is built and validated in India first, then expanded into Saudi Arabia, UAE, and beyond.
           </p>
@@ -374,7 +371,7 @@ export default function AITech() {
                   {step.icon}
                 </div>
                 <div>
-                  <div style={{ fontFamily:'Syne, sans-serif', fontSize:'16px', fontWeight:'700', color:'#F8FAFC', marginBottom:'4px' }}>{step.label}</div>
+                  <div style={{ fontFamily:'Outfit, sans-serif', fontSize:'16px', fontWeight:'700', color:'#F8FAFC', marginBottom:'4px' }}>{step.label}</div>
                   <div style={{ fontFamily:'DM Sans, sans-serif', fontSize:'12px', color:'#64748B' }}>{step.sub}</div>
                 </div>
                 <div style={{ position:'absolute', top:'-10px', right:'calc(50% - 32px)', width:'18px', height:'18px', borderRadius:'50%', background:step.color, display:'flex', alignItems:'center', justifyContent:'center', fontFamily:'DM Sans, sans-serif', fontSize:'10px', fontWeight:'700', color:'#fff' }}>{i+1}</div>
@@ -384,17 +381,15 @@ export default function AITech() {
 
           {/* CTA */}
           <div style={{ marginTop:'80px', padding:'40px 48px', borderRadius:'20px', background:'linear-gradient(135deg,rgba(167,139,250,0.08),rgba(34,211,238,0.05))', border:'1px solid rgba(167,139,250,0.18)', opacity:flowInView?1:0, transition:'all .7s ease .6s' }}>
-            <h3 style={{ fontFamily:'Syne, sans-serif', fontSize:'22px', fontWeight:'800', color:'#F8FAFC', marginBottom:'10px' }}>Interested in our products?</h3>
+            <h3 style={{ fontFamily:'Outfit, sans-serif', fontSize:'22px', fontWeight:'800', color:'#F8FAFC', marginBottom:'10px' }}>Interested in our products?</h3>
             <p style={{ fontFamily:'DM Sans, sans-serif', fontSize:'14px', color:'#64748B', marginBottom:'24px' }}>We're onboarding early partners and beta users for Investigat and OmniX.</p>
             <div className="ai-cta-btns" style={{ display:'flex', gap:'12px', justifyContent:'center', flexWrap:'wrap' }}>
-              {/* Request Early Access → /investors (partner inquiry) */}
-              <button onClick={() => navigate('/investors')} style={{ padding:'12px 28px', borderRadius:'10px', background:'linear-gradient(135deg,#A78BFA,#7C3AED)', border:'none', color:'#fff', fontFamily:'Syne, sans-serif', fontWeight:'600', fontSize:'14px', cursor:'pointer', transition:'all .25s ease', boxShadow:'0 0 24px rgba(167,139,250,0.4)' }}
+              <button onClick={() => navigate('/investors')} style={{ padding:'12px 28px', borderRadius:'10px', background:'linear-gradient(135deg,#A78BFA,#7C3AED)', border:'none', color:'#fff', fontFamily:'Outfit, sans-serif', fontWeight:'600', fontSize:'14px', cursor:'pointer', transition:'all .25s ease', boxShadow:'0 0 24px rgba(167,139,250,0.4)' }}
                 onMouseEnter={e=>{e.currentTarget.style.transform='translateY(-2px)';e.currentTarget.style.boxShadow='0 0 40px rgba(167,139,250,0.6)'}}
                 onMouseLeave={e=>{e.currentTarget.style.transform='translateY(0)';e.currentTarget.style.boxShadow='0 0 24px rgba(167,139,250,0.4)'}}>
                 Request Early Access →
               </button>
-              {/* Learn More → scrolls to capabilities */}
-              <button onClick={() => navigate('/about')} style={{ padding:'12px 28px', borderRadius:'10px', background:'transparent', border:'1px solid rgba(255,255,255,0.1)', color:'#94A3B8', fontFamily:'Syne, sans-serif', fontWeight:'600', fontSize:'14px', cursor:'pointer', transition:'all .25s ease' }}
+              <button onClick={() => navigate('/about')} style={{ padding:'12px 28px', borderRadius:'10px', background:'transparent', border:'1px solid rgba(255,255,255,0.1)', color:'#94A3B8', fontFamily:'Outfit, sans-serif', fontWeight:'600', fontSize:'14px', cursor:'pointer', transition:'all .25s ease' }}
                 onMouseEnter={e=>{e.currentTarget.style.borderColor='rgba(167,139,250,0.4)';e.currentTarget.style.color='#F8FAFC'}}
                 onMouseLeave={e=>{e.currentTarget.style.borderColor='rgba(255,255,255,0.1)';e.currentTarget.style.color='#94A3B8'}}>
                 Learn More

@@ -71,6 +71,8 @@ export default function ECommerce() {
     <div style={{ background:'var(--navy)', minHeight:'100vh', paddingTop:'100px' }}>
 
       <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@400;500;600;700;800&display=swap');
+
         @keyframes floatDot {
           from{transform:translateY(0px) translateX(0px) rotate(0deg)}
           to{transform:translateY(-30px) translateX(15px) rotate(180deg)}
@@ -115,7 +117,7 @@ export default function ECommerce() {
                 <span style={{ fontSize:'16px' }}>🛍️</span>
                 <span style={{ color:'#FB7185', fontSize:'12px', fontWeight:'600', letterSpacing:'2px' }}>VERTICAL 04 · RETAIL</span>
               </div>
-              <h1 style={{ fontFamily:'Syne, sans-serif', fontSize:'clamp(2rem,4vw,3.2rem)', fontWeight:'800', lineHeight:'1.15', color:'#F8FAFC', marginBottom:'20px', opacity:heroInView?1:0, transform:heroInView?'translateY(0)':'translateY(24px)', transition:'all 0.6s ease 0.2s' }}>
+              <h1 style={{ fontFamily:'Bebas Neue, sans-serif', fontSize:'clamp(3rem,6vw,5rem)', fontWeight:'400', lineHeight:'1.0', letterSpacing:'2px', color:'#F8FAFC', marginBottom:'20px', opacity:heroInView?1:0, transform:heroInView?'translateY(0)':'translateY(24px)', transition:'all 0.6s ease 0.2s' }}>
                 Maven{' '}<span style={{ background:'linear-gradient(135deg,#FB7185,#A78BFA)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text' }}>E-Commerce</span>
               </h1>
               <p style={{ color:'#94A3B8', fontSize:'1rem', lineHeight:'1.8', maxWidth:'480px', marginBottom:'32px', opacity:heroInView?1:0, transform:heroInView?'translateY(0)':'translateY(20px)', transition:'all 0.6s ease 0.35s' }}>
@@ -135,7 +137,7 @@ export default function ECommerce() {
                   <div style={{ display:'flex', justifyContent:'space-between', alignItems:'center', marginBottom:'20px' }}>
                     <div>
                       <div style={{ color:'#64748B', fontSize:'11px', letterSpacing:'1px', marginBottom:'4px' }}>MONTHLY ORDERS</div>
-                      <div style={{ fontFamily:'Syne, sans-serif', fontWeight:'800', fontSize:'1.8rem', color:'#F8FAFC' }}>2,400+</div>
+                      <div style={{ fontFamily:'Outfit, sans-serif', fontWeight:'800', fontSize:'1.8rem', color:'#F8FAFC' }}>2,400+</div>
                     </div>
                     <div style={{ padding:'6px 12px', borderRadius:'100px', background:'rgba(52,211,153,0.1)', border:'1px solid rgba(52,211,153,0.2)', color:'#34D399', fontSize:'12px', fontWeight:'600' }}>↑ Growing</div>
                   </div>
@@ -168,7 +170,7 @@ export default function ECommerce() {
           <div className="ec-stats-grid" style={{ display:'grid', gridTemplateColumns:'repeat(4,1fr)', gap:'24px' }}>
             {stats.map((stat,i) => (
               <div key={i} style={{ textAlign:'center', padding:'28px', borderRadius:'16px', background:'rgba(255,255,255,0.02)', border:'1px solid rgba(255,255,255,0.05)', opacity:heroInView?1:0, transform:heroInView?'translateY(0)':'translateY(20px)', transition:`all 0.6s ease ${0.3+i*0.1}s` }}>
-                <div style={{ fontFamily:'Syne, sans-serif', fontWeight:'800', fontSize:'2rem', color:stat.color, marginBottom:'8px' }}>{stat.value}</div>
+                <div style={{ fontFamily:'Outfit, sans-serif', fontWeight:'800', fontSize:'2rem', color:stat.color, marginBottom:'8px' }}>{stat.value}</div>
                 <div style={{ color:'#64748B', fontSize:'13px' }}>{stat.label}</div>
               </div>
             ))}
@@ -188,7 +190,7 @@ export default function ECommerce() {
             </div>
           </div>
           <div style={{ textAlign:'center', marginBottom:'60px' }}>
-            <h2 style={{ fontFamily:'Syne, sans-serif', fontWeight:'800', fontSize:'clamp(2rem,5vw,4rem)', lineHeight:'1.1', marginBottom:'16px', opacity:unboxInView?1:0, transform:unboxInView?'translateY(0)':'translateY(24px)', transition:'all 0.7s ease 0.1s' }}>
+            <h2 style={{ fontFamily:'Outfit, sans-serif', fontWeight:'800', fontSize:'clamp(2rem,5vw,4rem)', lineHeight:'1.1', marginBottom:'16px', opacity:unboxInView?1:0, transform:unboxInView?'translateY(0)':'translateY(24px)', transition:'all 0.7s ease 0.1s' }}>
               <span style={{ background:'linear-gradient(135deg,#FB7185,#A78BFA,#22D3EE)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text' }}>Unboxing Wonders</span>
             </h2>
             <p style={{ color:'#64748B', fontSize:'1rem', maxWidth:'500px', margin:'0 auto', lineHeight:'1.8', opacity:unboxInView?1:0, transition:'all 0.6s ease 0.25s' }}>
@@ -204,7 +206,7 @@ export default function ECommerce() {
               <div key={i} style={{ padding:'32px', borderRadius:'20px', background:card.bg, border:`1px solid ${card.color}20`, textAlign:'center', opacity:unboxInView?1:0, transform:unboxInView?'translateY(0)':'translateY(24px)', transition:`all 0.6s ease ${0.2+i*0.15}s`, position:'relative', overflow:'hidden' }}>
                 <div style={{ position:'absolute', bottom:'-30px', right:'-30px', width:'100px', height:'100px', borderRadius:'50%', background:`radial-gradient(circle,${card.color}15 0%,transparent 70%)` }}/>
                 <div style={{ fontSize:'40px', marginBottom:'16px' }}>{card.icon}</div>
-                <h3 style={{ fontFamily:'Syne, sans-serif', fontWeight:'700', fontSize:'16px', color:'#F8FAFC', marginBottom:'10px' }}>{card.title}</h3>
+                <h3 style={{ fontFamily:'Outfit, sans-serif', fontWeight:'700', fontSize:'16px', color:'#F8FAFC', marginBottom:'10px' }}>{card.title}</h3>
                 <p style={{ color:'#64748B', fontSize:'13px', lineHeight:'1.7' }}>{card.desc}</p>
               </div>
             ))}
@@ -219,13 +221,13 @@ export default function ECommerce() {
             <div style={{ width:'32px', height:'2px', background:'linear-gradient(90deg,#FB7185,#A78BFA)' }}/>
             <span style={{ color:'#FB7185', fontSize:'12px', fontWeight:'600', letterSpacing:'3px', textTransform:'uppercase' }}>Product Categories</span>
           </div>
-          <h2 style={{ fontFamily:'Syne, sans-serif', fontWeight:'800', fontSize:'clamp(1.6rem,3vw,2.4rem)', color:'#F8FAFC', marginBottom:'48px', opacity:categoriesInView?1:0, transform:categoriesInView?'translateY(0)':'translateY(20px)', transition:'all 0.6s ease 0.1s' }}>What We Sell</h2>
+          <h2 style={{ fontFamily:'Outfit, sans-serif', fontWeight:'800', fontSize:'clamp(1.6rem,3vw,2.4rem)', color:'#F8FAFC', marginBottom:'48px', opacity:categoriesInView?1:0, transform:categoriesInView?'translateY(0)':'translateY(20px)', transition:'all 0.6s ease 0.1s' }}>What We Sell</h2>
           <div className="ec-cats-grid" style={{ display:'grid', gridTemplateColumns:'repeat(3,1fr)', gap:'16px' }}>
             {categories.map((cat,i) => (
               <div key={i} onMouseEnter={() => setHoveredCat(i)} onMouseLeave={() => setHoveredCat(null)} style={{ padding:'24px', borderRadius:'16px', background:hoveredCat===i?`${cat.color}10`:'rgba(255,255,255,0.02)', border:hoveredCat===i?`1px solid ${cat.color}40`:'1px solid rgba(255,255,255,0.05)', display:'flex', alignItems:'center', gap:'16px', cursor:'default', transition:'all 0.3s ease', transform:hoveredCat===i?'translateY(-4px)':categoriesInView?'translateY(0)':'translateY(20px)', opacity:categoriesInView?1:0, transitionDelay:categoriesInView?`${i*0.07}s`:'0s' }}>
                 <div style={{ width:'52px', height:'52px', borderRadius:'14px', background:`${cat.color}15`, border:`1px solid ${cat.color}25`, display:'flex', alignItems:'center', justifyContent:'center', fontSize:'24px', flexShrink:0, transition:'all 0.3s ease', boxShadow:hoveredCat===i?`0 0 20px ${cat.color}30`:'none' }}>{cat.icon}</div>
                 <div style={{ flex:1 }}>
-                  <div style={{ fontFamily:'Syne, sans-serif', fontWeight:'700', fontSize:'14px', color:'#F8FAFC', marginBottom:'4px' }}>{cat.label}</div>
+                  <div style={{ fontFamily:'Outfit, sans-serif', fontWeight:'700', fontSize:'14px', color:'#F8FAFC', marginBottom:'4px' }}>{cat.label}</div>
                   <div style={{ color:cat.color, fontSize:'11px', fontWeight:'500' }}>{cat.count}</div>
                 </div>
                 <div style={{ color:cat.color, fontSize:'18px', opacity:hoveredCat===i?1:0, transform:hoveredCat===i?'translateX(0)':'translateX(-8px)', transition:'all 0.3s ease' }}>→</div>
@@ -242,13 +244,13 @@ export default function ECommerce() {
             <div style={{ width:'32px', height:'2px', background:'linear-gradient(90deg,#A78BFA,#22D3EE)' }}/>
             <span style={{ color:'#A78BFA', fontSize:'12px', fontWeight:'600', letterSpacing:'3px', textTransform:'uppercase' }}>Where We Sell</span>
           </div>
-          <h2 style={{ fontFamily:'Syne, sans-serif', fontWeight:'800', fontSize:'clamp(1.6rem,3vw,2.4rem)', color:'#F8FAFC', marginBottom:'48px', opacity:platformsInView?1:0, transform:platformsInView?'translateY(0)':'translateY(20px)', transition:'all 0.6s ease 0.1s' }}>Multi-Platform Distribution</h2>
+          <h2 style={{ fontFamily:'Outfit, sans-serif', fontWeight:'800', fontSize:'clamp(1.6rem,3vw,2.4rem)', color:'#F8FAFC', marginBottom:'48px', opacity:platformsInView?1:0, transform:platformsInView?'translateY(0)':'translateY(20px)', transition:'all 0.6s ease 0.1s' }}>Multi-Platform Distribution</h2>
           <div className="ec-plats-grid" style={{ display:'grid', gridTemplateColumns:'repeat(3,1fr)', gap:'16px', marginBottom:'60px' }}>
             {platforms.map((platform,i) => (
               <div key={i} onMouseEnter={() => setHoveredPlatform(i)} onMouseLeave={() => setHoveredPlatform(null)} style={{ padding:'24px', borderRadius:'16px', background:hoveredPlatform===i?`${platform.color}08`:'rgba(255,255,255,0.02)', border:hoveredPlatform===i?`1px solid ${platform.color}35`:'1px solid rgba(255,255,255,0.05)', display:'flex', alignItems:'center', gap:'16px', cursor:'default', transition:'all 0.3s ease', transform:hoveredPlatform===i?'translateY(-4px)':platformsInView?'translateY(0)':'translateY(20px)', opacity:platformsInView?1:0, transitionDelay:platformsInView?`${i*0.08}s`:'0s' }}>
                 <div style={{ width:'48px', height:'48px', borderRadius:'12px', background:`${platform.color}15`, border:`1px solid ${platform.color}25`, display:'flex', alignItems:'center', justifyContent:'center', fontSize:'22px', flexShrink:0 }}>{platform.icon}</div>
                 <div style={{ flex:1 }}>
-                  <div style={{ fontFamily:'Syne, sans-serif', fontWeight:'700', fontSize:'14px', color:'#F8FAFC', marginBottom:'4px' }}>{platform.name}</div>
+                  <div style={{ fontFamily:'Outfit, sans-serif', fontWeight:'700', fontSize:'14px', color:'#F8FAFC', marginBottom:'4px' }}>{platform.name}</div>
                   <span style={{ padding:'2px 10px', borderRadius:'100px', background:platform.status==='Live'?'rgba(52,211,153,0.1)':platform.status==='Active'?'rgba(59,130,246,0.1)':'rgba(245,158,11,0.1)', border:`1px solid ${platform.status==='Live'?'rgba(52,211,153,0.25)':platform.status==='Active'?'rgba(59,130,246,0.25)':'rgba(245,158,11,0.25)'}`, color:platform.status==='Live'?'#34D399':platform.status==='Active'?'#3B82F6':'#F59E0B', fontSize:'10px', fontWeight:'600' }}>● {platform.status}</span>
                 </div>
               </div>
@@ -264,14 +266,14 @@ export default function ECommerce() {
             <div style={{ width:'32px', height:'2px', background:'linear-gradient(90deg,#FB7185,#A78BFA)' }}/>
             <span style={{ color:'#FB7185', fontSize:'12px', fontWeight:'600', letterSpacing:'3px', textTransform:'uppercase' }}>How It Works</span>
           </div>
-          <h2 style={{ fontFamily:'Syne, sans-serif', fontWeight:'800', fontSize:'clamp(1.6rem,3vw,2.4rem)', color:'#F8FAFC', marginBottom:'48px', opacity:stepsInView?1:0, transform:stepsInView?'translateY(0)':'translateY(20px)', transition:'all 0.6s ease 0.1s' }}>From Source to Doorstep</h2>
+          <h2 style={{ fontFamily:'Outfit, sans-serif', fontWeight:'800', fontSize:'clamp(1.6rem,3vw,2.4rem)', color:'#F8FAFC', marginBottom:'48px', opacity:stepsInView?1:0, transform:stepsInView?'translateY(0)':'translateY(20px)', transition:'all 0.6s ease 0.1s' }}>From Source to Doorstep</h2>
 
           <div className="ec-steps" style={{ display:'flex', gap:'0', position:'relative', flexWrap:'wrap' }}>
             <div style={{ position:'absolute', top:'36px', left:'36px', right:'36px', height:'2px', background:'linear-gradient(90deg,#FB7185,#A78BFA,#22D3EE,#34D399,#F59E0B)', opacity:0.2, zIndex:0 }}/>
             {steps.map((step,i) => (
               <div key={i} onClick={() => setActiveStep(i)} style={{ flex:1, minWidth:'120px', display:'flex', flexDirection:'column', alignItems:'center', textAlign:'center', padding:'0 12px', cursor:'pointer', opacity:stepsInView?1:0, transform:stepsInView?'translateY(0)':'translateY(20px)', transition:`all 0.6s ease ${i*0.1}s`, position:'relative', zIndex:1 }}>
                 <div style={{ width:'72px', height:'72px', borderRadius:'50%', background:activeStep===i?`${step.color}20`:'rgba(255,255,255,0.03)', border:activeStep===i?`2px solid ${step.color}60`:'2px solid rgba(255,255,255,0.08)', display:'flex', alignItems:'center', justifyContent:'center', fontSize:'28px', marginBottom:'16px', transition:'all 0.4s ease', boxShadow:activeStep===i?`0 0 24px ${step.color}30`:'none' }}>{step.icon}</div>
-                <div style={{ fontFamily:'Syne, sans-serif', fontWeight:'700', fontSize:'13px', color:activeStep===i?step.color:'#94A3B8', marginBottom:'8px', transition:'color 0.3s ease' }}>{step.title}</div>
+                <div style={{ fontFamily:'Outfit, sans-serif', fontWeight:'700', fontSize:'13px', color:activeStep===i?step.color:'#94A3B8', marginBottom:'8px', transition:'color 0.3s ease' }}>{step.title}</div>
                 <div style={{ color:'#475569', fontSize:'12px', lineHeight:'1.6', maxHeight:activeStep===i?'80px':'0px', overflow:'hidden', transition:'max-height 0.4s ease,opacity 0.3s ease', opacity:activeStep===i?1:0 }}>{step.desc}</div>
               </div>
             ))}

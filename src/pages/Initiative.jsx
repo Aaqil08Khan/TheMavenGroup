@@ -52,6 +52,22 @@ export default function Initiative() {
     <div style={{ background:'var(--navy)', minHeight:'100vh', paddingTop:'100px' }}>
 
       <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@400;500;600;700;800&display=swap');
+
+        /* ── Heading sizes ── */
+        .ini-hero-h1 {
+          font-size: clamp(1.6rem, 4vw, 3.2rem);
+        }
+        .ini-section-h2 {
+          font-size: clamp(1.3rem, 3vw, 2.4rem);
+        }
+        .ini-cta-h2 {
+          font-size: clamp(1.3rem, 3vw, 2.4rem);
+        }
+        .ini-pillars-h2 {
+          font-size: clamp(1.3rem, 3vw, 2.4rem);
+        }
+
         /* ── Responsive ── */
         @media(max-width:900px){
           .ini-hero-grid{grid-template-columns:1fr!important}
@@ -66,6 +82,11 @@ export default function Initiative() {
         @media(max-width:600px){
           .ini-pillars-grid{grid-template-columns:repeat(2,1fr)!important}
           .ini-values-grid{grid-template-columns:1fr!important}
+
+          .ini-hero-h1    { font-size: clamp(1.4rem, 7vw, 2rem); }
+          .ini-section-h2 { font-size: clamp(1.2rem, 6vw, 1.6rem); }
+          .ini-cta-h2     { font-size: clamp(1.2rem, 6vw, 1.6rem); }
+          .ini-pillars-h2 { font-size: clamp(1.2rem, 6vw, 1.6rem); }
         }
       `}</style>
 
@@ -87,12 +108,12 @@ export default function Initiative() {
                 <span style={{ fontSize:'16px' }}>🕌</span>
                 <span style={{ color:'#C8A96E', fontSize:'12px', fontWeight:'600', letterSpacing:'2px' }}>TMG INITIATIVE</span>
               </div>
-              <div style={{ fontFamily:'serif', fontSize:'clamp(1.2rem,2.5vw,1.8rem)', color:'rgba(200,169,110,0.55)', marginBottom:'10px', letterSpacing:'3px', direction:'rtl', opacity:heroInView?1:0, transition:'all 0.6s ease 0.15s' }}>الأسرة الإسلامية</div>
-              <h1 style={{ fontFamily:'Syne, sans-serif', fontSize:'clamp(2rem,4vw,3.2rem)', fontWeight:'800', lineHeight:'1.15', color:'#F8FAFC', marginBottom:'20px', opacity:heroInView?1:0, transform:heroInView?'translateY(0)':'translateY(24px)', transition:'all 0.6s ease 0.2s' }}>
+              <div style={{ fontFamily:'serif', fontSize:'clamp(1rem, 2.5vw, 1.8rem)', color:'rgba(200,169,110,0.55)', marginBottom:'10px', letterSpacing:'3px', direction:'rtl', opacity:heroInView?1:0, transition:'all 0.6s ease 0.15s' }}>الأسرة الإسلامية</div>
+              <h1 className="ini-hero-h1" style={{ fontFamily:'Bebas Neue, sans-serif', fontWeight:'400', letterSpacing:'2px', lineHeight:'1.0', color:'#F8FAFC', marginBottom:'20px', opacity:heroInView?1:0, transform:heroInView?'translateY(0)':'translateY(24px)', transition:'all 0.6s ease 0.2s' }}>
                 The{' '}
                 <span style={{ background:'linear-gradient(135deg,#C8A96E,#FCD34D)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text' }}>Islamic Family</span>
               </h1>
-              <p style={{ color:'#94A3B8', fontSize:'1rem', lineHeight:'1.8', maxWidth:'480px', marginBottom:'16px', opacity:heroInView?1:0, transform:heroInView?'translateY(0)':'translateY(20px)', transition:'all 0.6s ease 0.35s' }}>
+              <p style={{ color:'#94A3B8', fontSize:'clamp(0.88rem, 2vw, 1rem)', lineHeight:'1.8', maxWidth:'480px', marginBottom:'16px', opacity:heroInView?1:0, transform:heroInView?'translateY(0)':'translateY(20px)', transition:'all 0.6s ease 0.35s' }}>
                 A dedicated initiative by The Maven's Group committed to strengthening Muslim families — through faith, education, financial literacy, and community belonging.
               </p>
               <p style={{ color:'#64748B', fontSize:'0.95rem', lineHeight:'1.8', maxWidth:'480px', marginBottom:'32px', opacity:heroInView?1:0, transition:'all 0.6s ease 0.45s' }}>
@@ -119,7 +140,7 @@ export default function Initiative() {
                       <circle cx="40" cy="40" r="4" fill="#C8A96E" opacity="0.8"/>
                     </svg>
                   </div>
-                  <div style={{ textAlign:'center', fontFamily:'Syne, sans-serif', fontWeight:'700', fontSize:'1.2rem', color:'#F8FAFC', marginBottom:'4px' }}>The Islamic Family</div>
+                  <div style={{ textAlign:'center', fontFamily:'Outfit, sans-serif', fontWeight:'700', fontSize:'1.2rem', color:'#F8FAFC', marginBottom:'4px' }}>The Islamic Family</div>
                   <div style={{ textAlign:'center', color:'#C8A96E', fontSize:'11px', letterSpacing:'2px', marginBottom:'28px' }}>AN INITIATIVE BY TMG</div>
                   <div style={{ padding:'16px 20px', borderRadius:'12px', background:'rgba(200,169,110,0.06)', border:'1px solid rgba(200,169,110,0.12)', marginBottom:'20px' }}>
                     <div style={{ color:'#94A3B8', fontSize:'13px', lineHeight:'1.7', textAlign:'center', fontStyle:'italic' }}>"And of His signs is that He created for you from yourselves mates that you may find tranquility in them."</div>
@@ -149,15 +170,15 @@ export default function Initiative() {
               <span style={{ color:'#C8A96E', fontSize:'12px', fontWeight:'600', letterSpacing:'3px', textTransform:'uppercase' }}>Our Foundation</span>
               <div style={{ width:'32px', height:'1px', background:'linear-gradient(90deg,#C8A96E,transparent)' }}/>
             </div>
-            <h2 style={{ fontFamily:'Syne, sans-serif', fontWeight:'800', fontSize:'clamp(1.6rem,3vw,2.4rem)', color:'#F8FAFC' }}>Four Pillars of the Islamic Family</h2>
+            <h2 className="ini-pillars-h2" style={{ fontFamily:'Outfit, sans-serif', fontWeight:'800', color:'#F8FAFC' }}>Four Pillars of the Islamic Family</h2>
           </div>
           <div className="ini-pillars-grid" style={{ display:'grid', gridTemplateColumns:'repeat(4,1fr)', gap:'20px' }}>
             {pillars.map((pillar, i) => (
               <div key={i} style={{ padding:'36px 24px', borderRadius:'20px', background:'rgba(255,255,255,0.02)', border:`1px solid ${pillar.color}20`, textAlign:'center', position:'relative', overflow:'hidden', opacity:pillarsInView?1:0, transform:pillarsInView?'translateY(0)':'translateY(24px)', transition:`all 0.6s ease ${i*0.12}s` }}>
                 <div style={{ position:'absolute', top:0, left:0, right:0, height:'2px', background:`linear-gradient(90deg,transparent,${pillar.color},transparent)` }}/>
                 <div style={{ fontSize:'28px', marginBottom:'12px' }}>{pillar.icon}</div>
-                <div style={{ fontFamily:'serif', fontSize:'1.6rem', color:pillar.color, marginBottom:'8px', opacity:0.8, direction:'rtl' }}>{pillar.arabic}</div>
-                <div style={{ fontFamily:'Syne, sans-serif', fontWeight:'800', fontSize:'1.1rem', color:'#F8FAFC', marginBottom:'4px' }}>{pillar.english}</div>
+                <div style={{ fontFamily:'serif', fontSize:'clamp(1.2rem, 2vw, 1.6rem)', color:pillar.color, marginBottom:'8px', opacity:0.8, direction:'rtl' }}>{pillar.arabic}</div>
+                <div style={{ fontFamily:'Outfit, sans-serif', fontWeight:'800', fontSize:'clamp(0.95rem, 1.5vw, 1.1rem)', color:'#F8FAFC', marginBottom:'4px' }}>{pillar.english}</div>
                 <div style={{ color:pillar.color, fontSize:'12px', fontWeight:'500', letterSpacing:'1px' }}>{pillar.translation}</div>
               </div>
             ))}
@@ -172,8 +193,8 @@ export default function Initiative() {
             <div style={{ width:'32px', height:'2px', background:'linear-gradient(90deg,#C8A96E,#FCD34D)' }}/>
             <span style={{ color:'#C8A96E', fontSize:'12px', fontWeight:'600', letterSpacing:'3px', textTransform:'uppercase' }}>What We Stand For</span>
           </div>
-          <h2 style={{ fontFamily:'Syne, sans-serif', fontWeight:'800', fontSize:'clamp(1.6rem,3vw,2.4rem)', color:'#F8FAFC', marginBottom:'12px', opacity:valuesInView?1:0, transform:valuesInView?'translateY(0)':'translateY(20px)', transition:'all 0.6s ease 0.1s' }}>Our Core Values</h2>
-          <p style={{ color:'#64748B', marginBottom:'48px', maxWidth:'500px', opacity:valuesInView?1:0, transition:'all 0.6s ease 0.2s' }}>
+          <h2 className="ini-section-h2" style={{ fontFamily:'Outfit, sans-serif', fontWeight:'800', color:'#F8FAFC', marginBottom:'12px', opacity:valuesInView?1:0, transform:valuesInView?'translateY(0)':'translateY(20px)', transition:'all 0.6s ease 0.1s' }}>Our Core Values</h2>
+          <p style={{ color:'#64748B', marginBottom:'48px', maxWidth:'500px', fontSize:'clamp(13px, 1.8vw, 15px)', opacity:valuesInView?1:0, transition:'all 0.6s ease 0.2s' }}>
             Six principles that guide every program, every resource, and every conversation under The Islamic Family initiative.
           </p>
           <div className="ini-values-grid" style={{ display:'grid', gridTemplateColumns:'repeat(3,1fr)', gap:'20px' }}>
@@ -181,7 +202,7 @@ export default function Initiative() {
               <div key={i} onMouseEnter={() => setHoveredValue(i)} onMouseLeave={() => setHoveredValue(null)} style={{ padding:'28px', borderRadius:'18px', background:hoveredValue===i?`${value.color}08`:'rgba(255,255,255,0.02)', border:hoveredValue===i?`1px solid ${value.color}35`:'1px solid rgba(255,255,255,0.05)', cursor:'default', transition:'all 0.3s ease', transform:hoveredValue===i?'translateY(-6px)':valuesInView?'translateY(0)':'translateY(24px)', opacity:valuesInView?1:0, transitionDelay:valuesInView?`${i*0.08}s`:'0s', position:'relative', overflow:'hidden' }}>
                 {hoveredValue===i && <div style={{ position:'absolute', top:'-30px', right:'-30px', width:'120px', height:'120px', borderRadius:'50%', background:`radial-gradient(circle,${value.color}12 0%,transparent 70%)`, pointerEvents:'none' }}/>}
                 <div style={{ width:'52px', height:'52px', borderRadius:'14px', background:`${value.color}12`, border:`1px solid ${value.color}22`, display:'flex', alignItems:'center', justifyContent:'center', fontSize:'24px', marginBottom:'16px', transition:'all 0.3s ease', boxShadow:hoveredValue===i?`0 0 20px ${value.color}20`:'none' }}>{value.icon}</div>
-                <h3 style={{ fontFamily:'Syne, sans-serif', fontWeight:'700', fontSize:'15px', color:'#F8FAFC', marginBottom:'10px' }}>{value.title}</h3>
+                <h3 style={{ fontFamily:'Outfit, sans-serif', fontWeight:'700', fontSize:'clamp(13px, 1.8vw, 15px)', color:'#F8FAFC', marginBottom:'10px' }}>{value.title}</h3>
                 <p style={{ color:'#64748B', fontSize:'13px', lineHeight:'1.7' }}>{value.desc}</p>
               </div>
             ))}
@@ -196,7 +217,7 @@ export default function Initiative() {
             <div style={{ width:'32px', height:'2px', background:'linear-gradient(90deg,#C8A96E,#FCD34D)' }}/>
             <span style={{ color:'#C8A96E', fontSize:'12px', fontWeight:'600', letterSpacing:'3px', textTransform:'uppercase' }}>Active Programs</span>
           </div>
-          <h2 style={{ fontFamily:'Syne, sans-serif', fontWeight:'800', fontSize:'clamp(1.6rem,3vw,2.4rem)', color:'#F8FAFC', marginBottom:'48px', opacity:programsInView?1:0, transform:programsInView?'translateY(0)':'translateY(20px)', transition:'all 0.6s ease 0.1s' }}>What We Run</h2>
+          <h2 className="ini-section-h2" style={{ fontFamily:'Outfit, sans-serif', fontWeight:'800', color:'#F8FAFC', marginBottom:'48px', opacity:programsInView?1:0, transform:programsInView?'translateY(0)':'translateY(20px)', transition:'all 0.6s ease 0.1s' }}>What We Run</h2>
           <div className="ini-programs-grid" style={{ display:'grid', gridTemplateColumns:'repeat(2,1fr)', gap:'20px' }}>
             {programs.map((program, i) => (
               <div key={i} onMouseEnter={() => setHoveredProgram(i)} onMouseLeave={() => setHoveredProgram(null)} style={{ padding:'32px', borderRadius:'20px', background:hoveredProgram===i?'rgba(200,169,110,0.05)':'rgba(255,255,255,0.02)', border:hoveredProgram===i?'1px solid rgba(200,169,110,0.25)':'1px solid rgba(255,255,255,0.05)', cursor:'default', transition:'all 0.3s ease', transform:hoveredProgram===i?'translateY(-4px)':programsInView?'translateY(0)':'translateY(24px)', opacity:programsInView?1:0, transitionDelay:programsInView?`${i*0.1}s`:'0s', position:'relative', overflow:'hidden' }}>
@@ -210,7 +231,7 @@ export default function Initiative() {
                     </span>
                   </div>
                 </div>
-                <h3 style={{ fontFamily:'Syne, sans-serif', fontWeight:'700', fontSize:'16px', color:'#F8FAFC', marginBottom:'10px' }}>{program.title}</h3>
+                <h3 style={{ fontFamily:'Outfit, sans-serif', fontWeight:'700', fontSize:'clamp(14px, 1.8vw, 16px)', color:'#F8FAFC', marginBottom:'10px' }}>{program.title}</h3>
                 <p style={{ color:'#64748B', fontSize:'13px', lineHeight:'1.7' }}>{program.desc}</p>
               </div>
             ))}
@@ -226,20 +247,18 @@ export default function Initiative() {
             <div style={{ position:'absolute', top:'-80px', left:'50%', transform:'translateX(-50%)', width:'400px', height:'400px', borderRadius:'50%', background:'radial-gradient(circle,rgba(200,169,110,0.07) 0%,transparent 70%)', pointerEvents:'none' }}/>
             <div style={{ position:'relative', zIndex:1 }}>
               <div style={{ fontSize:'48px', marginBottom:'16px' }}>🕌</div>
-              <div style={{ fontFamily:'serif', fontSize:'1.3rem', color:'rgba(200,169,110,0.5)', marginBottom:'16px', direction:'rtl', letterSpacing:'2px' }}>بسم الله الرحمن الرحيم</div>
-              <h2 style={{ fontFamily:'Syne, sans-serif', fontWeight:'800', fontSize:'clamp(1.6rem,3vw,2.4rem)', color:'#F8FAFC', marginBottom:'16px' }}>Join The Islamic Family</h2>
-              <p style={{ color:'#64748B', fontSize:'1rem', lineHeight:'1.8', maxWidth:'500px', margin:'0 auto 36px' }}>
+              <div style={{ fontFamily:'serif', fontSize:'clamp(1rem, 2vw, 1.3rem)', color:'rgba(200,169,110,0.5)', marginBottom:'16px', direction:'rtl', letterSpacing:'2px' }}>بسم الله الرحمن الرحيم</div>
+              <h2 className="ini-cta-h2" style={{ fontFamily:'Outfit, sans-serif', fontWeight:'800', color:'#F8FAFC', marginBottom:'16px' }}>Join The Islamic Family</h2>
+              <p style={{ color:'#64748B', fontSize:'clamp(13px, 1.8vw, 1rem)', lineHeight:'1.8', maxWidth:'500px', margin:'0 auto 36px' }}>
                 Whether you're a family, scholar, educator, or institution — there is a place for you in this movement. Let's build stronger Muslim families together.
               </p>
               <div className="ini-cta-btns" style={{ display:'flex', gap:'16px', justifyContent:'center', flexWrap:'wrap' }}>
-                {/* Join the Initiative → /investors (partner/contact) */}
-                <button onClick={() => navigate('/investors')} style={{ padding:'14px 32px', background:'linear-gradient(135deg,#C8A96E,#FCD34D)', border:'none', borderRadius:'10px', color:'#0B1C2D', fontFamily:'Syne, sans-serif', fontWeight:'700', fontSize:'14px', cursor:'pointer', transition:'all 0.3s ease', boxShadow:'0 0 24px rgba(200,169,110,0.3)' }}
+                <button onClick={() => navigate('/investors')} style={{ padding:'14px 32px', background:'linear-gradient(135deg,#C8A96E,#FCD34D)', border:'none', borderRadius:'10px', color:'#0B1C2D', fontFamily:'Outfit, sans-serif', fontWeight:'700', fontSize:'14px', cursor:'pointer', transition:'all 0.3s ease', boxShadow:'0 0 24px rgba(200,169,110,0.3)' }}
                   onMouseEnter={e => { e.currentTarget.style.transform='translateY(-2px)'; e.currentTarget.style.boxShadow='0 0 40px rgba(200,169,110,0.5)' }}
                   onMouseLeave={e => { e.currentTarget.style.transform='translateY(0)'; e.currentTarget.style.boxShadow='0 0 24px rgba(200,169,110,0.3)' }}>
                   Join the Initiative →
                 </button>
-                {/* Learn More → /impact (social impact programs) */}
-                <button onClick={() => navigate('/impact')} style={{ padding:'14px 32px', background:'transparent', border:'1px solid rgba(200,169,110,0.25)', borderRadius:'10px', color:'#C8A96E', fontFamily:'Syne, sans-serif', fontWeight:'600', fontSize:'14px', cursor:'pointer', transition:'all 0.3s ease' }}
+                <button onClick={() => navigate('/impact')} style={{ padding:'14px 32px', background:'transparent', border:'1px solid rgba(200,169,110,0.25)', borderRadius:'10px', color:'#C8A96E', fontFamily:'Outfit, sans-serif', fontWeight:'600', fontSize:'14px', cursor:'pointer', transition:'all 0.3s ease' }}
                   onMouseEnter={e => { e.currentTarget.style.background='rgba(200,169,110,0.08)'; e.currentTarget.style.borderColor='rgba(200,169,110,0.4)' }}
                   onMouseLeave={e => { e.currentTarget.style.background='transparent'; e.currentTarget.style.borderColor='rgba(200,169,110,0.25)' }}>
                   Learn More

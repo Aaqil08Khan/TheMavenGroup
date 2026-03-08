@@ -3,7 +3,7 @@ import { Link, useLocation } from 'react-router-dom'
 
 const verticals = [
   { label: 'Business Services', path: '/verticals/business-services' },
-  { label: 'AI Tech', path: '/verticals/ai-tech' },
+  { label: 'Maven Ai Tech', path: '/verticals/MavenAiTech' },
   { label: 'Contractors', path: '/verticals/contractors' },
   { label: 'E-Commerce', path: '/verticals/ecommerce' },
 ]
@@ -16,6 +16,7 @@ const navLinks = [
   { label: 'Impact', path: '/impact' },
   { label: 'Investors', path: '/investors' },
   { label: 'Initiative', path: '/initiative' },
+  { label: 'Contact', path: '/contact' },
 ]
 
 // ── Scroll to top on every route change ──────────────────────────────────────

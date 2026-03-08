@@ -12,12 +12,6 @@ const particles = Array.from({ length: 60 }, (_, i) => ({
   opacity: Math.random() * 0.5 + 0.1,
 }))
 
-const projectStreams = [
-  { id: 'capital', title: 'Capital Engine', value: '₹1.60Cr+', note: 'Portfolio Momentum', color: '#3B82F6', icon: '📈' },
-  { id: 'tech', title: 'AI Venture Lab', value: '3 Products', note: 'Investigat · OmniX · Aura', color: '#22D3EE', icon: '🤖' },
-  { id: 'infra', title: 'Saudi Infra', value: 'Live Ops', note: 'Execution + Compliance', color: '#A78BFA', icon: '🏗️' },
-  { id: 'commerce', title: 'Global Commerce', value: 'Cross-border', note: 'Brand Expansion Layer', color: '#F59E0B', icon: '🌐' },
-]
 
 function useInView(threshold = 0.2) {
   const ref = useRef(null)
@@ -110,10 +104,10 @@ function HeroSection() {
             <span style={{ color: '#22D3EE', fontSize: '11px', fontWeight: '500', letterSpacing: '1px', fontFamily: 'DM Sans, sans-serif' }}>GLOBAL HOLDING GROUP · EST. 2024</span>
           </div>
 
-          <h1 style={{ fontFamily: 'Syne, sans-serif', fontSize: 'clamp(2.2rem, 5vw, 4.2rem)', fontWeight: '800', lineHeight: '1.1', color: '#F8FAFC', marginBottom: '12px', opacity: visible ? 1 : 0, transform: visible ? 'translateY(0)' : 'translateY(30px)', transition: 'all 0.7s ease 0.2s' }}>Engineering Growth</h1>
-          <h1 style={{ fontFamily: 'Syne, sans-serif', fontSize: 'clamp(2.2rem, 5vw, 4.2rem)', fontWeight: '800', lineHeight: '1.1', marginBottom: '28px', background: 'linear-gradient(135deg, #3B82F6, #22D3EE, #A78BFA)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text', opacity: visible ? 1 : 0, transform: visible ? 'translateY(0)' : 'translateY(30px)', transition: 'all 0.7s ease 0.35s' }}>Across Borders.</h1>
+          <h1 className="home-hero-h1" style={{ fontFamily: 'Bebas Neue, sans-serif', fontWeight: '400', letterSpacing: '2px', lineHeight: '1.0', color: '#F8FAFC', marginBottom: '12px', opacity: visible ? 1 : 0, transform: visible ? 'translateY(0)' : 'translateY(30px)', transition: 'all 0.7s ease 0.2s' }}>Engineering Growth</h1>
+          <h1 className="home-hero-h1" style={{ fontFamily: 'Bebas Neue, sans-serif', fontWeight: '400', letterSpacing: '2px', lineHeight: '1.0', marginBottom: '28px', background: 'linear-gradient(135deg, #3B82F6, #22D3EE, #A78BFA)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text', opacity: visible ? 1 : 0, transform: visible ? 'translateY(0)' : 'translateY(30px)', transition: 'all 0.7s ease 0.35s' }}>Across Borders.</h1>
 
-          <p style={{ color: '#94A3B8', fontSize: 'clamp(0.95rem, 2vw, 1.1rem)', lineHeight: '1.8', maxWidth: '480px', marginBottom: '40px', fontFamily: 'DM Sans, sans-serif', opacity: visible ? 1 : 0, transform: visible ? 'translateY(0)' : 'translateY(20px)', transition: 'all 0.7s ease 0.5s' }}>
+          <p style={{ color: '#94A3B8', fontSize: 'clamp(0.9rem, 2vw, 1.1rem)', lineHeight: '1.8', maxWidth: '480px', marginBottom: '40px', fontFamily: 'DM Sans, sans-serif', opacity: visible ? 1 : 0, transform: visible ? 'translateY(0)' : 'translateY(20px)', transition: 'all 0.7s ease 0.5s' }}>
             A diversified holding group building scalable enterprises across
             <span style={{ color: '#60A5FA' }}> India</span>,
             <span style={{ color: '#22D3EE' }}> Saudi Arabia</span>, and
@@ -133,14 +127,7 @@ function HeroSection() {
             </button>
           </div>
 
-          <div style={{ display: 'flex', gap: '32px', marginTop: '52px', paddingTop: '32px', borderTop: '1px solid rgba(255,255,255,0.07)', opacity: visible ? 1 : 0, transition: 'all 0.7s ease 0.8s' }}>
-            {[{ value: '4', label: 'Active Verticals' }, { value: '3', label: 'Global Markets' }].map(stat => (
-              <div key={stat.label}>
-                <div style={{ fontFamily: 'Syne, sans-serif', fontSize: '1.6rem', fontWeight: '800', background: 'linear-gradient(135deg, #3B82F6, #22D3EE)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>{stat.value}</div>
-                <div style={{ color: '#64748B', fontSize: '12px', marginTop: '2px', fontFamily: 'DM Sans, sans-serif' }}>{stat.label}</div>
-              </div>
-            ))}
-          </div>
+          
         </div>
 
         {/* RIGHT — hidden on mobile */}
@@ -174,11 +161,12 @@ function WhatWeDoSection() {
 
       <div style={{ textAlign: 'center', marginBottom: '60px', opacity: inView ? 1 : 0, transform: inView ? 'translateY(0)' : 'translateY(24px)', transition: 'all 0.7s ease' }}>
         <SectionLabel text="What We Do" />
-        <h2 style={{ fontFamily: 'Syne, sans-serif', fontSize: 'clamp(1.8rem, 4vw, 3rem)', fontWeight: '800', color: '#F8FAFC', lineHeight: '1.15', marginBottom: '20px' }}>
-          One Group. Four Engines.<br />
+        <h2 className="home-section-h2" style={{ fontFamily: 'Outfit, sans-serif', fontWeight: '800', color: '#F8FAFC', lineHeight: '1.15', marginBottom: '20px' }}>
+          One Group. Four Engines.{' '}
+          <span className="home-h2-break" />
           <span style={{ background: 'linear-gradient(135deg, #3B82F6, #22D3EE)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>Infinite Potential.</span>
         </h2>
-        <p style={{ color: '#94A3B8', fontSize: 'clamp(0.95rem, 2vw, 1.05rem)', lineHeight: '1.8', maxWidth: '540px', margin: '0 auto', fontFamily: 'DM Sans, sans-serif' }}>
+        <p style={{ color: '#94A3B8', fontSize: 'clamp(0.9rem, 2vw, 1.05rem)', lineHeight: '1.8', maxWidth: '540px', margin: '0 auto', fontFamily: 'DM Sans, sans-serif' }}>
           TMG operates through four distinct verticals, each built to be independently powerful — and exponentially stronger together.
         </p>
       </div>
@@ -197,7 +185,7 @@ function WhatWeDoSection() {
           >
             <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '2px', background: `linear-gradient(90deg, ${p.color}, transparent)` }} />
             <div style={{ fontSize: '32px', marginBottom: '20px' }}>{p.icon}</div>
-            <h3 style={{ fontFamily: 'Syne, sans-serif', fontWeight: '700', fontSize: '1.1rem', color: '#F8FAFC', marginBottom: '12px' }}>{p.title}</h3>
+            <h3 style={{ fontFamily: 'Outfit, sans-serif', fontWeight: '700', fontSize: '1.1rem', color: '#F8FAFC', marginBottom: '12px' }}>{p.title}</h3>
             <p style={{ color: '#94A3B8', fontSize: '0.92rem', lineHeight: '1.7', fontFamily: 'DM Sans, sans-serif' }}>{p.desc}</p>
           </div>
         ))}
@@ -212,7 +200,7 @@ function VerticalsSection() {
   const [activeVertical, setActiveVertical] = useState(0)
 
   const verticals = [
-    { id: 'business-services', name: 'Maven Business Services', tag: 'Finance & Strategy', color: '#3B82F6', gradient: 'linear-gradient(135deg, rgba(59,130,246,0.15), rgba(34,211,238,0.08))', icon: '📈', headline: 'Markets. Compounded.', description: 'Systematic deployment across Indian equities, international instruments, and Saudi real estate — with discipline and conviction.', stats: [{ label: 'AUM Growth', value: '18%', suffix: '+' }, { label: 'Markets', value: '3' }, { label: 'Strategy', value: 'Multi-asset' }], href: '/verticals/business-services' },
+    { id: 'business-services', name: 'Maven Business Services', tag: 'Finance & Strategy', color: '#3B82F6', gradient: 'linear-gradient(135deg, rgba(59,130,246,0.15), rgba(34,211,238,0.08))', icon: '📈', headline: 'Markets. Compounded.', description: 'Systematic deployment across Indian equities, international instruments, and Saudi real estate — with discipline and conviction.', stats: [{ label: 'Markets', value: '3' }, { label: 'Approach', value: 'Long-Term' }, { label: 'Strategy', value: 'Multi-asset' }], href: '/verticals/business-services' },
     { id: 'ai-tech', name: 'Maven AI Tech', tag: 'Artificial Intelligence', color: '#22D3EE', gradient: 'linear-gradient(135deg, rgba(34,211,238,0.15), rgba(167,139,250,0.08))', icon: '🧠', headline: 'AI Built for the Real World.', description: 'Three flagship products: Investigat (legal intelligence), OmniX (enterprise AI), and Aura (human-centered AI). Now expanding from India to Saudi Arabia.', stats: [{ label: 'Products', value: '3' }, { label: 'Markets', value: 'IN → KSA' }, { label: 'Focus', value: 'Enterprise' }], href: '/verticals/ai-tech' },
     { id: 'contractors', name: 'Maven Contractors', tag: 'Infrastructure', color: '#A78BFA', gradient: 'linear-gradient(135deg, rgba(167,139,250,0.15), rgba(59,130,246,0.08))', icon: '🏗️', headline: "Building the Gulf's Future.", description: 'Infrastructure contracting in Saudi Arabia — navigating Iqama, Kafala, and compliance complexities to deliver critical projects with precision and trust.', stats: [{ label: 'Region', value: 'KSA' }, { label: 'Focus', value: 'Infrastructure' }, { label: 'Status', value: 'Active' }], href: '/verticals/contractors' },
     { id: 'ecommerce', name: 'Maven E-Commerce', tag: 'Commerce & Retail', color: '#F59E0B', gradient: 'linear-gradient(135deg, rgba(245,158,11,0.15), rgba(59,130,246,0.08))', icon: '📦', headline: 'Unboxing Wonders.', description: 'Curated e-commerce experiences that transcend transactions. Bringing quality products to customers across India and global markets.', stats: [{ label: 'Brand', value: 'Unboxing Wonders' }, { label: 'Model', value: 'D2C' }, { label: 'Markets', value: 'Global' }], href: '/verticals/ecommerce' },
@@ -225,7 +213,7 @@ function VerticalsSection() {
       <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '48px', opacity: inView ? 1 : 0, transform: inView ? 'translateY(0)' : 'translateY(24px)', transition: 'all 0.7s ease' }}>
           <SectionLabel text="Our Verticals" />
-          <h2 style={{ fontFamily: 'Syne, sans-serif', fontSize: 'clamp(1.8rem, 4vw, 3rem)', fontWeight: '800', color: '#F8FAFC', lineHeight: '1.15' }}>
+          <h2 className="home-section-h2" style={{ fontFamily: 'Outfit, sans-serif', fontWeight: '800', color: '#F8FAFC', lineHeight: '1.15' }}>
             The <span style={{ background: 'linear-gradient(135deg, #A78BFA, #22D3EE)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>Four Pillars</span> of TMG
           </h2>
         </div>
@@ -260,13 +248,13 @@ function VerticalsSection() {
             <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '4px 12px', borderRadius: '100px', background: `${v.color}18`, border: `1px solid ${v.color}33`, marginBottom: '24px' }}>
               <span style={{ color: v.color, fontSize: '11px', fontWeight: '600', letterSpacing: '2px', fontFamily: 'DM Sans, sans-serif' }}>{v.tag.toUpperCase()}</span>
             </div>
-            <h3 style={{ fontFamily: 'Syne, sans-serif', fontSize: 'clamp(1.4rem, 3vw, 2.4rem)', fontWeight: '800', color: '#F8FAFC', lineHeight: '1.2', marginBottom: '20px' }}>{v.headline}</h3>
-            <p style={{ color: '#94A3B8', fontSize: 'clamp(0.9rem, 1.8vw, 1rem)', lineHeight: '1.8', marginBottom: '32px', fontFamily: 'DM Sans, sans-serif' }}>{v.description}</p>
+            <h3 className="home-vertical-h3" style={{ fontFamily: 'Outfit, sans-serif', fontWeight: '800', color: '#F8FAFC', lineHeight: '1.2', marginBottom: '20px' }}>{v.headline}</h3>
+            <p style={{ color: '#94A3B8', fontSize: 'clamp(0.88rem, 1.8vw, 1rem)', lineHeight: '1.8', marginBottom: '32px', fontFamily: 'DM Sans, sans-serif' }}>{v.description}</p>
             <a href={v.href} style={{
               display: 'inline-flex', alignItems: 'center', gap: '8px',
               padding: '12px 24px', borderRadius: '10px',
               background: `linear-gradient(135deg, ${v.color}, ${v.color}99)`,
-              color: '#fff', fontFamily: 'Syne, sans-serif', fontWeight: '600', fontSize: '14px',
+              color: '#fff', fontFamily: 'Outfit, sans-serif', fontWeight: '600', fontSize: '14px',
               textDecoration: 'none', transition: 'all 0.3s ease', boxShadow: `0 0 24px ${v.color}44`,
             }}
               onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-2px)'; e.currentTarget.style.boxShadow = `0 0 40px ${v.color}66` }}
@@ -280,7 +268,7 @@ function VerticalsSection() {
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '10px' }}>
               {v.stats.map(s => (
                 <div key={s.label} style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.07)', borderRadius: '14px', padding: 'clamp(10px, 2vw, 18px) clamp(6px, 1.5vw, 14px)', textAlign: 'center' }}>
-                  <div style={{ fontFamily: 'Syne, sans-serif', fontWeight: '800', fontSize: 'clamp(0.78rem, 1.5vw, 1.1rem)', color: v.color, marginBottom: '6px', wordBreak: 'break-word' }}>{s.value}{s.suffix || ''}</div>
+                  <div style={{ fontFamily: 'Outfit, sans-serif', fontWeight: '800', fontSize: 'clamp(0.78rem, 1.5vw, 1.1rem)', color: v.color, marginBottom: '6px', wordBreak: 'break-word' }}>{s.value}{s.suffix || ''}</div>
                   <div style={{ color: '#64748B', fontSize: '10px', fontFamily: 'DM Sans, sans-serif' }}>{s.label}</div>
                 </div>
               ))}
@@ -309,7 +297,7 @@ function GlobalStatsSection() {
       <div style={{ maxWidth: '1280px', margin: '0 auto', position: 'relative' }}>
         <div style={{ textAlign: 'center', marginBottom: '56px', opacity: inView ? 1 : 0, transform: inView ? 'translateY(0)' : 'translateY(24px)', transition: 'all 0.7s ease' }}>
           <SectionLabel text="By The Numbers" />
-          <h2 style={{ fontFamily: 'Syne, sans-serif', fontSize: 'clamp(1.8rem, 4vw, 3rem)', fontWeight: '800', color: '#F8FAFC' }}>
+          <h2 className="home-section-h2" style={{ fontFamily: 'Outfit, sans-serif', fontWeight: '800', color: '#F8FAFC' }}>
             Measured in <span style={{ background: 'linear-gradient(135deg, #3B82F6, #22D3EE)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>Milestones</span>
           </h2>
         </div>
@@ -326,7 +314,7 @@ function GlobalStatsSection() {
               onMouseLeave={e => { e.currentTarget.style.border = '1px solid rgba(255,255,255,0.07)'; e.currentTarget.style.transform = 'translateY(0)' }}
             >
               <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '2px', background: `linear-gradient(90deg, transparent, ${s.color}, transparent)` }} />
-              <div style={{ fontFamily: 'Syne, sans-serif', fontSize: 'clamp(1.8rem, 5vw, 3rem)', fontWeight: '800', color: s.color, marginBottom: '12px', letterSpacing: '-1px' }}>
+              <div style={{ fontFamily: 'Outfit, sans-serif', fontSize: 'clamp(1.8rem, 5vw, 3rem)', fontWeight: '800', color: s.color, marginBottom: '12px', letterSpacing: '-1px' }}>
                 <AnimatedCounter target={s.value} suffix={s.suffix} />
               </div>
               <div style={{ color: '#94A3B8', fontSize: '0.88rem', fontFamily: 'DM Sans, sans-serif', lineHeight: '1.5' }}>{s.label}</div>
@@ -356,11 +344,12 @@ function WhyTMGSection() {
         <div className="home-why-grid">
           <div style={{ opacity: inView ? 1 : 0, transform: inView ? 'translateX(0)' : 'translateX(-24px)', transition: 'all 0.7s ease' }}>
             <SectionLabel text="Why TMG" />
-            <h2 style={{ fontFamily: 'Syne, sans-serif', fontSize: 'clamp(1.8rem, 3.5vw, 2.8rem)', fontWeight: '800', color: '#F8FAFC', lineHeight: '1.15', marginBottom: '24px' }}>
-              We Don't Just Invest.<br />
+            <h2 className="home-why-h2" style={{ fontFamily: 'Outfit, sans-serif', fontWeight: '800', color: '#F8FAFC', lineHeight: '1.15', marginBottom: '24px' }}>
+              We Don't Just Invest.{' '}
+              <span className="home-h2-break" />
               <span style={{ background: 'linear-gradient(135deg, #3B82F6, #22D3EE)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>We Build.</span>
             </h2>
-            <p style={{ color: '#94A3B8', fontSize: 'clamp(0.95rem, 2vw, 1.05rem)', lineHeight: '1.85', fontFamily: 'DM Sans, sans-serif', marginBottom: '32px' }}>
+            <p style={{ color: '#94A3B8', fontSize: 'clamp(0.9rem, 2vw, 1.05rem)', lineHeight: '1.85', fontFamily: 'DM Sans, sans-serif', marginBottom: '32px' }}>
               TMG is not a fund. It's not an agency. It's not a consultancy. It's a holding group built by operators — for operators.
             </p>
             <p style={{ color: '#64748B', fontSize: '0.95rem', lineHeight: '1.8', fontFamily: 'DM Sans, sans-serif' }}>
@@ -386,7 +375,7 @@ function WhyTMGSection() {
                 onMouseLeave={e => { e.currentTarget.style.border = '1px solid rgba(255,255,255,0.06)'; e.currentTarget.style.background = 'rgba(255,255,255,0.02)' }}
               >
                 <div style={{ fontSize: '22px', marginBottom: '10px' }}>{v.icon}</div>
-                <div style={{ fontFamily: 'Syne, sans-serif', fontWeight: '700', fontSize: '0.88rem', color: '#F8FAFC', marginBottom: '8px' }}>{v.title}</div>
+                <div style={{ fontFamily: 'Outfit, sans-serif', fontWeight: '700', fontSize: '0.88rem', color: '#F8FAFC', marginBottom: '8px' }}>{v.title}</div>
                 <div style={{ color: '#64748B', fontSize: '0.78rem', lineHeight: '1.6', fontFamily: 'DM Sans, sans-serif' }}>{v.desc}</div>
               </div>
             ))}
@@ -411,11 +400,12 @@ function CTASection() {
           <div style={{ width: '5px', height: '5px', borderRadius: '50%', background: '#22D3EE', animation: 'pulse 2s infinite', flexShrink: 0 }} />
           <span style={{ color: '#22D3EE', fontSize: '11px', fontWeight: '600', letterSpacing: '2px', fontFamily: 'DM Sans, sans-serif' }}>LET'S BUILD TOGETHER</span>
         </div>
-        <h2 style={{ fontFamily: 'Syne, sans-serif', fontSize: 'clamp(2rem, 5vw, 3.8rem)', fontWeight: '800', color: '#F8FAFC', lineHeight: '1.1', marginBottom: '24px' }}>
-          Ready to Grow<br />
+        <h2 className="home-cta-h2" style={{ fontFamily: 'Outfit, sans-serif', fontWeight: '800', color: '#F8FAFC', lineHeight: '1.1', marginBottom: '24px' }}>
+          Ready to Grow{' '}
+          <span className="home-h2-break" />
           <span style={{ background: 'linear-gradient(135deg, #3B82F6, #22D3EE, #A78BFA)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>Across Borders?</span>
         </h2>
-        <p style={{ color: '#94A3B8', fontSize: 'clamp(0.95rem, 2vw, 1.1rem)', lineHeight: '1.8', maxWidth: '520px', margin: '0 auto 48px', fontFamily: 'DM Sans, sans-serif' }}>
+        <p style={{ color: '#94A3B8', fontSize: 'clamp(0.9rem, 2vw, 1.1rem)', lineHeight: '1.8', maxWidth: '520px', margin: '0 auto 48px', fontFamily: 'DM Sans, sans-serif' }}>
           Whether you're an investor, a partner, or a builder — there's a place for you in the TMG ecosystem. Let's talk.
         </p>
         <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
@@ -440,39 +430,46 @@ function CTASection() {
   )
 }
 
-// ─── PROJECT PULSE PANEL ──────────────────────────────────────
+// ─── HERO IMAGE PANEL ─────────────────────────────────────────
 function ProjectPulsePanel({ visible }) {
   return (
-    <div style={{ position: 'relative', height: '500px', opacity: visible ? 1 : 0, transform: visible ? 'translateX(0)' : 'translateX(40px)', transition: 'all 0.9s ease 0.4s' }}>
-      <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', width: '420px', height: '420px', borderRadius: '50%', background: 'radial-gradient(circle, rgba(34,211,238,0.16) 0%, rgba(26,86,219,0.08) 45%, transparent 72%)', animation: 'orbPulse 4s ease-in-out infinite' }} />
-      <div style={{ position: 'absolute', inset: 0, borderRadius: '20px', background: 'linear-gradient(145deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01))', border: '1px solid rgba(255,255,255,0.08)', overflow: 'hidden', backdropFilter: 'blur(5px)', padding: '24px' }}>
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '16px' }}>
-          <div>
-            <p style={{ color: '#22D3EE', letterSpacing: '2px', fontSize: '11px', fontWeight: '600', marginBottom: '4px', fontFamily: 'DM Sans, sans-serif' }}>LIVE EXECUTION MATRIX</p>
-            <h3 style={{ color: '#F8FAFC', fontFamily: 'Syne, sans-serif', fontSize: '1.2rem' }}>TMG Growth Engine</h3>
+    <div style={{
+      position: 'relative', height: '500px',
+      opacity: visible ? 1 : 0, transform: visible ? 'translateX(0)' : 'translateX(40px)',
+      transition: 'all 0.9s ease 0.4s',
+    }}>
+      {/* Image container */}
+      <div style={{ borderRadius: '20px', overflow: 'hidden', height: '100%', position: 'relative', boxShadow: '0 32px 80px rgba(0,0,0,0.55)' }}>
+        <img
+          src="../images/landingpage.avif"
+          alt="Global network"
+          style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+        />
+        {/* Blue tint overlay */}
+        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(135deg, rgba(26,86,219,0.5) 0%, rgba(11,28,45,0.6) 100%)' }} />
+        {/* Top accent line */}
+        <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '2px', background: 'linear-gradient(90deg, transparent, #3B82F6, #22D3EE, transparent)' }} />
+        {/* Bottom caption card */}
+        <div style={{
+          position: 'absolute', bottom: '24px', left: '24px', right: '24px',
+          background: 'rgba(11,28,45,0.88)', backdropFilter: 'blur(16px)',
+          border: '1px solid rgba(59,130,246,0.25)', borderRadius: '16px',
+          padding: '20px 24px',
+        }}>
+          <div style={{ fontFamily: 'DM Sans, sans-serif', fontSize: '11px', color: '#64748B', letterSpacing: '2px', fontWeight: '600', marginBottom: '8px' }}>OUR MANDATE</div>
+          <div style={{ fontFamily: 'Outfit, sans-serif', fontSize: '15px', fontWeight: '600', color: '#F8FAFC', lineHeight: '1.6' }}>
+            "Engineering growth across borders —<br/>one disciplined decision at a time."
           </div>
-          <div style={{ width: '10px', height: '10px', borderRadius: '50%', background: '#22D3EE', boxShadow: '0 0 14px #22D3EE', animation: 'pulse 2s infinite', flexShrink: 0 }} />
         </div>
-        <div style={{ display: 'grid', gap: '12px' }}>
-          {projectStreams.map((stream, idx) => (
-            <div key={stream.id} style={{ border: `1px solid ${stream.color}44`, borderRadius: '12px', padding: '12px 14px', background: 'rgba(11,28,45,0.65)', animation: `fadeInCard 0.6s ${0.15 * idx}s both` }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                <span style={{ fontSize: '18px', flexShrink: 0 }}>{stream.icon}</span>
-                <div style={{ flex: 1, minWidth: 0 }}>
-                  <p style={{ color: '#E2E8F0', fontFamily: 'Syne, sans-serif', fontSize: '13px', fontWeight: '700', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{stream.title}</p>
-                  <p style={{ color: '#64748B', fontFamily: 'DM Sans, sans-serif', fontSize: '11px' }}>{stream.note}</p>
-                </div>
-                <p style={{ color: stream.color, fontFamily: 'Syne, sans-serif', fontSize: '12px', fontWeight: '700', flexShrink: 0 }}>{stream.value}</p>
-              </div>
-              <div style={{ marginTop: '8px', height: '4px', borderRadius: '10px', background: 'rgba(148,163,184,0.18)', overflow: 'hidden' }}>
-                <div style={{ width: `${75 + idx * 6}%`, height: '100%', borderRadius: '10px', background: `linear-gradient(90deg, ${stream.color}, rgba(255,255,255,0.2))`, animation: `dataFlow 3s ${0.3 * idx}s ease-in-out infinite` }} />
-              </div>
-            </div>
-          ))}
-        </div>
-        <div style={{ marginTop: '14px', display: 'flex', alignItems: 'center', gap: '8px' }}>
-          <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#3B82F6', boxShadow: '0 0 10px #3B82F6', flexShrink: 0 }} />
-          <p style={{ color: '#94A3B8', fontFamily: 'DM Sans, sans-serif', fontSize: '11px', lineHeight: '1.5' }}>Synchronized capital, AI products, infrastructure, and commerce in one operating rhythm.</p>
+        {/* Top-right badge */}
+        <div style={{
+          position: 'absolute', top: '24px', right: '24px',
+          background: 'rgba(11,28,45,0.85)', backdropFilter: 'blur(12px)',
+          border: '1px solid rgba(34,211,238,0.25)', borderRadius: '12px',
+          padding: '10px 16px', display: 'flex', alignItems: 'center', gap: '8px',
+        }}>
+          <div style={{ width: '7px', height: '7px', borderRadius: '50%', background: '#22D3EE', animation: 'pulse 2s infinite', boxShadow: '0 0 8px #22D3EE' }} />
+          <span style={{ fontFamily: 'DM Sans, sans-serif', fontSize: '11px', fontWeight: '700', color: '#22D3EE', letterSpacing: '1px' }}>EST. 2024 · GLOBAL</span>
         </div>
       </div>
     </div>
@@ -483,6 +480,8 @@ function ProjectPulsePanel({ visible }) {
 function GlobalStyles() {
   return (
     <style>{`
+      @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@400;500;600;700;800&display=swap');
+
       @keyframes float {
         from { transform: translateY(0px) translateX(0px); }
         to { transform: translateY(-20px) translateX(10px); }
@@ -504,9 +503,22 @@ function GlobalStyles() {
         from { opacity: 0; transform: translateY(12px); }
         to { opacity: 1; transform: translateY(0); }
       }
-      @keyframes dataFlow {
-        0%, 100% { opacity: 0.75; transform: translateX(0); }
-        50% { opacity: 1; transform: translateX(3%); }
+
+      /* ── Heading sizes ── */
+      .home-hero-h1 {
+        font-size: clamp(1.75rem, 5vw, 4.2rem);
+      }
+      .home-section-h2 {
+        font-size: clamp(1.5rem, 4vw, 3rem);
+      }
+      .home-why-h2 {
+        font-size: clamp(1.5rem, 3.5vw, 2.8rem);
+      }
+      .home-cta-h2 {
+        font-size: clamp(1.6rem, 5vw, 3.8rem);
+      }
+      .home-vertical-h3 {
+        font-size: clamp(1.1rem, 3vw, 2.4rem);
       }
 
       /* ── Shared buttons ── */
@@ -514,7 +526,7 @@ function GlobalStyles() {
         padding: 14px 28px;
         background: linear-gradient(135deg, #1A56DB, #22D3EE);
         border: none; border-radius: 10px;
-        color: white; font-family: 'Syne', sans-serif; font-weight: 600; font-size: 14px;
+        color: white; font-family: 'Outfit', sans-serif; font-weight: 600; font-size: 14px;
         cursor: pointer; transition: all 0.3s ease;
         box-shadow: 0 0 25px rgba(59,130,246,0.35);
         white-space: nowrap;
@@ -523,7 +535,7 @@ function GlobalStyles() {
         padding: 14px 28px;
         background: rgba(255,255,255,0.03);
         border: 1px solid rgba(255,255,255,0.12); border-radius: 10px;
-        color: #94A3B8; font-family: 'Syne', sans-serif; font-weight: 600; font-size: 14px;
+        color: #94A3B8; font-family: 'Outfit', sans-serif; font-weight: 600; font-size: 14px;
         cursor: pointer; transition: all 0.3s ease;
         white-space: nowrap;
       }
@@ -547,6 +559,9 @@ function GlobalStyles() {
         display: grid; grid-template-columns: 1fr 1fr;
         gap: clamp(32px, 5vw, 60px);
       }
+
+      /* ── br helper: shows on desktop, hides on mobile ── */
+      .home-h2-break { display: block; }
 
       /* ────────────────────────────
          TABLET  ≤ 900px
@@ -583,6 +598,26 @@ function GlobalStyles() {
           width: 100%; text-align: center;
           padding: 14px 20px !important;
           box-sizing: border-box;
+        }
+
+        /* Collapse line-break helpers on mobile */
+        .home-h2-break { display: inline; }
+
+        /* Tighten hero heading on small phones */
+        .home-hero-h1 {
+          font-size: clamp(1.6rem, 8vw, 2.4rem);
+        }
+        .home-section-h2 {
+          font-size: clamp(1.35rem, 6vw, 1.8rem);
+        }
+        .home-why-h2 {
+          font-size: clamp(1.35rem, 6vw, 1.8rem);
+        }
+        .home-cta-h2 {
+          font-size: clamp(1.5rem, 7vw, 2.2rem);
+        }
+        .home-vertical-h3 {
+          font-size: clamp(1rem, 5vw, 1.4rem);
         }
       }
 
